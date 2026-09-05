@@ -91,6 +91,22 @@
   .confetti i:nth-child(6){background:var(--blue); width:9px; height:9px; margin-top:2px;}
   .confetti i:nth-child(7){background:var(--coral); width:7px; height:7px; margin-top:3px;}
 
+  /* MAIN PAGE TABS */
+  .maintabs{
+    display:flex; justify-content:center; gap:12px; padding:0 24px 8px; flex-wrap:wrap;
+  }
+  .maintab-btn{
+    font-family:"Noto Sans SC",sans-serif; font-size:15px; font-weight:800; color:var(--text-dim);
+    background:var(--card); border:2px solid var(--line); border-radius:24px;
+    padding:12px 32px; cursor:pointer; transition:all .15s ease;
+    box-shadow:0 4px 14px rgba(43,36,56,0.05);
+  }
+  .maintab-btn:hover{color:var(--ink); border-color:var(--coral);}
+  .maintab-btn.active{background:var(--coral); border-color:var(--coral); color:#fff;}
+  .maintab-btn.active:nth-child(2){background:var(--purple); border-color:var(--purple);}
+  .page-panel{display:none;}
+  .page-panel.active{display:block;}
+
   /* FLIGHT STRIP */
   .flights{display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 24px; margin-top:8px;}
   .flight-col{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
@@ -242,20 +258,12 @@
   </div>
 </div>
 
-<div class="flights">
-  <div class="flight-col">
-    <h3>JUSTIN</h3>
-    <div class="flight-row"><span>抵達 10/15（四）</span><b>TSA 08:00 → PVG 10:00</b></div>
-    <div class="flight-row"><span class="flight-code">B7502</span><span></span></div>
-    <div class="flight-row"><span>離開 10/19（一）</span><b>PVG 20:05 → TPE 22:00</b></div>
-    <div class="flight-row"><span class="flight-code">BR721</span><span></span></div>
-  </div>
-  <div class="flight-col">
-    <h3>ANNE / MONICA</h3>
-    <div class="flight-row"><span>抵達 10/15（四）</span><b>TSA 12:30 → SHA 14:15</b></div>
-    <div class="flight-row"><span>離開 10/19（一）</span><b>SHA 16:15 → TSA 18:15</b></div>
-  </div>
+<div class="maintabs" id="maintabs">
+  <button class="maintab-btn active" data-page="overview">五日總表</button>
+  <button class="maintab-btn" data-page="budget">預算</button>
 </div>
+
+<div class="page-panel active" id="page-overview">
 
 <div class="section-title">五日總表</div>
 <div class="section-sub">點選日期卡片或下方按鈕，切換查看當天詳細行程</div>
@@ -420,6 +428,28 @@
 
 <div class="link-note">部分連結（如家、漢庭、豫園官網）為既有記憶提供，未經即時網路查證，建議使用前再次確認網址正確性。</div>
 
+<div class="section-title">航班資訊</div>
+<div class="section-sub">Justin ／ Anne · Monica 抵達與離開時間</div>
+
+<div class="flights">
+  <div class="flight-col">
+    <h3>JUSTIN</h3>
+    <div class="flight-row"><span>抵達 10/15（四）</span><b>TSA 08:00 → PVG 10:00</b></div>
+    <div class="flight-row"><span class="flight-code">B7502</span><span></span></div>
+    <div class="flight-row"><span>離開 10/19（一）</span><b>PVG 20:05 → TPE 22:00</b></div>
+    <div class="flight-row"><span class="flight-code">BR721</span><span></span></div>
+  </div>
+  <div class="flight-col">
+    <h3>ANNE / MONICA</h3>
+    <div class="flight-row"><span>抵達 10/15（四）</span><b>TSA 12:30 → SHA 14:15</b></div>
+    <div class="flight-row"><span>離開 10/19（一）</span><b>SHA 16:15 → TSA 18:15</b></div>
+  </div>
+</div>
+
+</div><!-- /page-overview -->
+
+<div class="page-panel" id="page-budget">
+
 <div class="section-title">旅程花費紀錄</div>
 <div class="section-sub">大家共同填寫，網頁會自動抓取最新紀錄</div>
 
@@ -451,7 +481,24 @@
   </div>
 </div>
 
+</div><!-- /page-budget -->
+
 <footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。</footer>
+
+<script>
+  (function(){
+    var mainBtns = document.querySelectorAll('#maintabs .maintab-btn');
+    var pagePanels = document.querySelectorAll('.page-panel');
+
+    mainBtns.forEach(function(b){
+      b.addEventListener('click', function(){
+        mainBtns.forEach(function(x){ x.classList.toggle('active', x === b); });
+        pagePanels.forEach(function(p){ p.classList.toggle('active', p.id === 'page-' + b.dataset.page); });
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    });
+  })();
+</script>
 
 <script>
   (function(){
