@@ -7,6 +7,8 @@
 <title>2026 PMI TVM- Shang Hai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   :root{
     --bg:#FFF8EF;
@@ -179,6 +181,12 @@
   .callout{margin:18px 0 4px; padding:16px 18px; background:var(--yellow-soft); border-radius:14px; font-size:13px; color:#6B5A22; line-height:1.7;}
   .callout b{color:#A9761A; font-weight:700;}
 
+  .day-map-wrap{margin-top:24px;}
+  .day-map-label{font-size:12px; font-weight:700; color:var(--text-dim); letter-spacing:0.05em; margin-bottom:8px;}
+  .day-map{height:260px; border-radius:16px; overflow:hidden; box-shadow:0 6px 18px rgba(43,36,56,0.08); background:var(--card-alt); z-index:0;}
+  .day-map-note{font-size:11.5px; color:var(--text-dim); margin-top:8px; line-height:1.6;}
+  .leaflet-popup-content{font-family:"Noto Sans SC",sans-serif; font-size:12.5px;}
+
   /* HOTELS */
   .hotels{display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:0 24px;}
   .hotel-card{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
@@ -272,8 +280,8 @@
   <div class="ov-card" data-day="1">
     <div class="ov-date">15</div>
     <div class="ov-wd">THU · 四</div>
-    <div class="ov-headline">抵達・外灘初探</div>
-    <div class="ov-note">入住 Westin／外灘夜景</div>
+    <div class="ov-headline">抵達・外灘＋夜遊船</div>
+    <div class="ov-note">江景晚餐／十六鋪夜遊船</div>
   </div>
   <div class="ov-card" data-day="2">
     <div class="ov-date">16</div>
@@ -312,17 +320,23 @@
 <div class="wrap">
 
   <div class="day-panel" data-day="1">
-    <div class="day-title">抵達上海・外灘初探</div>
+    <div class="day-title">抵達上海・外灘一路向南</div>
     <span class="day-tag">入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></span>
     <ul class="events">
       <li class="event"><div class="time">08:00 / 10:00</div><div class="desc">Justin：TSA → PVG（B7502）</div></li>
       <li class="event"><div class="time">12:30 / 14:15</div><div class="desc">Anne / Monica：TSA → SHA</div></li>
       <li class="event"><div class="time">下午</div><div class="desc">辦理入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></div><div class="note">Justin 抵達較早，可先寄放行李</div></li>
-      <li class="event"><div class="time">16:00 起</div><div class="desc">外灘建築群漫步（萬國建築博覽群）</div></li>
-      <li class="event"><div class="time">傍晚</div><div class="desc">沿江步行至黃浦公園</div></li>
-      <li class="event"><div class="time">晚間</div><div class="desc">晚餐</div></li>
-      <li class="event"><div class="time">餐後</div><div class="desc">外灘夜景</div><div class="note">建議 18:00 後華燈初上，是最佳觀賞時段</div></li>
+      <li class="event"><div class="time">16:00</div><div class="desc">外灘建築群漫步（萬國建築博覽群）</div><div class="note">沿中山東一路由北向南走，全程不需回頭</div></li>
+      <li class="event"><div class="time">17:00</div><div class="desc">黃浦公園</div><div class="note">外灘最北端，可稍作休息拍照</div></li>
+      <li class="event"><div class="time">17:45</div><div class="desc">晚餐：Yujintian 魚金天（外灘六號 3 樓）</div><div class="note">本幫菜配外灘江景，從黃浦公園步行幾分鐘即達，不需繞路</div></li>
+      <li class="event"><div class="time">19:30</div><div class="desc">十六鋪碼頭・黃浦江夜遊船（普通艙／短程航線）</div>
+        <div class="callout"><b>訂票建議：</b>選普通艙、短程航線（約 40–60 分鐘），票價約人民幣 100–150 元／人，即可控制在預算內，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。<br><br>晚餐＋遊船兩項預估每人約人民幣 200–300 元，建議晚餐點菜偏家常一些，把預算留給遊船體驗。</div>
+      </li>
     </ul>
+    <div class="day-map-wrap">
+      <div class="day-map-label">📍 當日地圖</div>
+      <div id="map-day-1" class="day-map"></div>
+    </div>
   </div>
 
   <div class="day-panel" data-day="2">
@@ -331,6 +345,11 @@
     <ul class="events">
       <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
     </ul>
+    <div class="day-map-wrap">
+      <div class="day-map-label">📍 當日地圖</div>
+      <div id="map-day-2" class="day-map"></div>
+      <div class="day-map-note">TVM 場地地址尚未提供，暫以下榻的 The Westin Bund Center 位置標示，之後有確切場地地址可以再更新。</div>
+    </div>
   </div>
 
   <div class="day-panel" data-day="3">
@@ -340,6 +359,11 @@
       <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
       <li class="event"><div class="time">18:00</div><div class="desc">Saturday Group Dinner</div></li>
     </ul>
+    <div class="day-map-wrap">
+      <div class="day-map-label">📍 當日地圖</div>
+      <div id="map-day-3" class="day-map"></div>
+      <div class="day-map-note">TVM／團體晚餐地點尚未提供，暫以下榻的 The Westin Bund Center 位置標示，之後有確切地址可以再更新。</div>
+    </div>
   </div>
 
   <div class="day-panel" data-day="4">
@@ -350,6 +374,11 @@
       <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
       <li class="event"><div class="time">TVM 結束後</div><div class="desc">The Westin Bund Center 退房，轉入住 Home Inn（南京東路外灘中心店）／ Hanting（人民廣場地鐵站店）</div></li>
     </ul>
+    <div class="day-map-wrap">
+      <div class="day-map-label">📍 當日地圖</div>
+      <div id="map-day-4" class="day-map"></div>
+      <div class="day-map-note">兩間備選飯店都標在圖上，實際入住以你們最終選定的為準。</div>
+    </div>
   </div>
 
   <div class="day-panel" data-day="5">
@@ -368,6 +397,11 @@
       <li class="event"><div class="time">16:15 / 18:15</div><div class="desc">Anne / Monica：SHA → TSA</div><div class="note">虹橋機場（SHA）離人民廣場飯店較近，約 30–40 分鐘車程，仍建議預留通關與安檢時間</div></li>
       <li class="event"><div class="time">20:05 / 22:00</div><div class="desc">Justin：PVG → TPE（BR721）</div><div class="note">浦東機場（PVG）車程較遠（約 50–60 分鐘以上，視交通狀況），建議下午提早出發，或先安排市區午後行程再前往機場</div></li>
     </ul>
+    <div class="day-map-wrap">
+      <div class="day-map-label">📍 當日地圖</div>
+      <div id="map-day-5" class="day-map"></div>
+      <div class="day-map-note">機場位置較遠未標示於圖上，實際離境交通請參考上方航班提醒。</div>
+    </div>
   </div>
 
 </div>
@@ -510,6 +544,9 @@
       overviewCards.forEach(function(c){ c.classList.toggle('active', c.dataset.day === day); });
       tabBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.day === day); });
       panels.forEach(function(p){ p.classList.toggle('active', p.dataset.day === day); });
+      if (window.dayMaps && window.dayMaps[day]){
+        setTimeout(function(){ window.dayMaps[day].invalidateSize(); }, 60);
+      }
     }
 
     overviewCards.forEach(function(c){
@@ -523,6 +560,74 @@
     });
 
     showDay('1');
+  })();
+</script>
+
+<script>
+  (function(){
+    var WESTIN = {lat:31.2323623, lng:121.4870096, label:"The Westin Bund Center, Shanghai"};
+    var HOME_INN = {lat:31.23966, lng:121.48126, label:"Home Inn 南京東路外灘中心店（備選）"};
+    var HANTING = {lat:31.2358752, lng:121.4701341, label:"Hanting 人民廣場地鐵站店（備選）"};
+    var YUYUAN = {lat:31.2263942, lng:121.4919337, label:"豫園老街／城隍廟商圈"};
+
+    var dayMapsData = {
+      "1": {
+        color: "#FF6B57",
+        route: true,
+        points: [
+          Object.assign({}, WESTIN, {label:"The Westin Bund Center（入住）"}),
+          {lat:31.239181, lng:121.489649, label:"萬國建築博覽群 · 16:00"},
+          {lat:31.241431, lng:121.49082, label:"黃浦公園 · 17:00"},
+          {lat:31.23472, lng:121.49066, label:"Yujintian 晚餐 · 17:45"},
+          {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 19:30"}
+        ]
+      },
+      "2": { color:"#00B8A9", route:false, points:[ WESTIN ] },
+      "3": { color:"#FFC845", route:false, points:[ WESTIN ] },
+      "4": { color:"#8B5CF6", route:false, points:[ WESTIN, HOME_INN, HANTING ] },
+      "5": { color:"#FF6FA5", route:false, points:[ YUYUAN, HOME_INN, HANTING ] }
+    };
+
+    window.dayMaps = {};
+
+    Object.keys(dayMapsData).forEach(function(day){
+      var el = document.getElementById('map-day-' + day);
+      if (!el || typeof L === 'undefined') return;
+
+      var data = dayMapsData[day];
+      var map = L.map(el, { zoomControl:true, scrollWheelZoom:false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      var latlngs = [];
+      data.points.forEach(function(p, idx){
+        var marker = L.circleMarker([p.lat, p.lng], {
+          radius: 9, color: '#fff', weight: 2,
+          fillColor: data.color, fillOpacity: 1
+        }).addTo(map);
+        marker.bindPopup('<b>' + (idx+1) + '. ' + p.label + '</b>');
+        latlngs.push([p.lat, p.lng]);
+      });
+
+      if (data.route && latlngs.length > 1){
+        L.polyline(latlngs, { color: data.color, weight: 3, opacity: 0.6, dashArray: '6,6' }).addTo(map);
+      }
+
+      if (latlngs.length > 1){
+        map.fitBounds(latlngs, { padding: [30,30] });
+      } else {
+        map.setView(latlngs[0], 15);
+      }
+
+      window.dayMaps[day] = map;
+    });
+
+    // Day 1 is visible by default on page load — make sure its tiles render correctly
+    setTimeout(function(){
+      if (window.dayMaps["1"]) window.dayMaps["1"].invalidateSize();
+    }, 200);
   })();
 </script>
 
