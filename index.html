@@ -106,6 +106,7 @@
   .maintab-btn:hover{color:var(--ink); border-color:var(--coral);}
   .maintab-btn.active{background:var(--coral); border-color:var(--coral); color:#fff;}
   .maintab-btn.active:nth-child(2){background:var(--purple); border-color:var(--purple);}
+  .maintab-btn.active:nth-child(3){background:var(--teal); border-color:var(--teal);}
   .page-panel{display:none;}
   .page-panel.active{display:block;}
 
@@ -234,10 +235,43 @@
   }
 
   .expense-chart-wrap{background:var(--card); border-radius:18px; padding:22px; text-align:center; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
+  .expense-chart-heading{font-size:12px; font-weight:800; color:var(--ink); text-align:left; margin-bottom:10px;}
   .expense-legend{list-style:none; margin-top:16px; text-align:left; font-size:12.5px; color:var(--text-dim); font-weight:500;}
   .expense-legend li{display:flex; align-items:center; gap:8px; padding:5px 0;}
   .expense-legend .swatch{width:10px; height:10px; border-radius:50%; flex:0 0 auto;}
   .expense-legend .pct{margin-left:auto; color:var(--ink); font-weight:700;}
+  .payer-legend{margin-top:0;}
+  .payer-legend .payer-bar-wrap{flex:1; height:6px; background:var(--card-alt); border-radius:4px; overflow:hidden; margin:0 8px;}
+  .payer-legend .payer-bar{height:100%; border-radius:4px;}
+  .payer-legend li{align-items:center;}
+
+  /* SOUVENIRS */
+  .souvenir-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; padding:0 24px;}
+  .souvenir-card{
+    position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+    background:var(--card); border:2px solid var(--line); border-radius:18px; padding:18px 18px 20px;
+    cursor:pointer; transition:all .15s ease; box-shadow:0 4px 14px rgba(43,36,56,0.05);
+  }
+  .souvenir-card:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(43,36,56,0.10);}
+  .souvenir-card input{position:absolute; opacity:0; pointer-events:none;}
+  .souvenir-icon{font-size:26px; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .souvenir-name{font-weight:800; font-size:14px; color:var(--ink); transition:color .15s ease;}
+  .souvenir-desc{font-size:12px; color:var(--text-dim); line-height:1.55;}
+  .souvenir-more{font-size:11.5px; font-weight:700; color:var(--coral); border-bottom:none; margin-top:2px;}
+  .souvenir-more:hover{text-decoration:underline;}
+  .souvenir-checkmark{
+    position:absolute; top:14px; right:14px; width:22px; height:22px; border-radius:50%;
+    border:2px solid var(--line); display:flex; align-items:center; justify-content:center;
+    font-size:12px; color:transparent; transition:all .15s ease; background:var(--card);
+  }
+  .souvenir-card.checked{background:var(--card-alt); border-color:var(--teal);}
+  .souvenir-card.checked .souvenir-name{text-decoration:line-through; color:var(--text-dim);}
+  .souvenir-card.checked .souvenir-checkmark{background:var(--teal); border-color:var(--teal); color:#fff;}
+  .souvenir-note{font-size:11.5px; color:var(--text-dim); padding:16px 24px 0; text-align:center;}
+
+  @media (max-width:640px){
+    .souvenir-grid{grid-template-columns:repeat(2,1fr);}
+  }
 
   @media (max-width:640px){
     .expense-layout{grid-template-columns:1fr;}
@@ -268,7 +302,8 @@
 
 <div class="maintabs" id="maintabs">
   <button class="maintab-btn active" data-page="overview">五日總表</button>
-  <button class="maintab-btn" data-page="budget">預算</button>
+  <button class="maintab-btn" data-page="budget">共用費用</button>
+  <button class="maintab-btn" data-page="souvenir">伴手禮</button>
 </div>
 
 <div class="page-panel active" id="page-overview">
@@ -304,7 +339,7 @@
   <div class="ov-card" data-day="5">
     <div class="ov-date">19</div>
     <div class="ov-wd">MON · 一</div>
-    <div class="ov-headline">豫園老街・賦歸</div>
+    <div class="ov-headline">人民公園・博物館・賦歸</div>
     <div class="ov-note">豫園週一休園／分兩機場離境</div>
   </div>
 </div>
@@ -326,6 +361,9 @@
       <li class="event"><div class="time">08:00 / 10:00</div><div class="desc">Justin：TSA → PVG（B7502）</div></li>
       <li class="event"><div class="time">12:30 / 14:15</div><div class="desc">Anne / Monica：TSA → SHA</div></li>
       <li class="event"><div class="time">下午</div><div class="desc">辦理入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></div><div class="note">Justin 抵達較早，可先寄放行李</div></li>
+      <li class="event"><div class="time">12:00 – 15:00</div><div class="desc">Justin 個人行程：豫園</div>
+        <div class="callout"><b>把握機會：</b>10/15 是週四，豫園本體正常開放（10/19 週一才休園），這是這趟行程唯一能真正入園參觀的時段，建議直接買票進園，而不是只逛外圍老街。開放至 16:30（16:00 停止入園），時間上很充裕。<br><br><b>行李提醒：</b>Westin 要到下午才能入住，Justin 若隨身有大件行李，可先請飯店協助寄放（多數飯店入住前都能寄放行李），輕裝去逛會方便很多。</div>
+      </li>
       <li class="event"><div class="time">16:00</div><div class="desc">外灘建築群漫步（萬國建築博覽群）</div><div class="note">沿中山東一路由北向南走，全程不需回頭</div></li>
       <li class="event"><div class="time">17:00</div><div class="desc">黃浦公園</div><div class="note">外灘最北端，可稍作休息拍照</div></li>
       <li class="event"><div class="time">17:45</div><div class="desc">晚餐：Yujintian 魚金天（外灘六號 3 樓）</div><div class="note">本幫菜配外灘江景，從黃浦公園步行幾分鐘即達，不需繞路</div></li>
@@ -344,6 +382,8 @@
     <span class="day-tag rose">全日行程</span>
     <ul class="events">
       <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
+      <li class="event"><div class="time">19:00</div><div class="desc">豫園老街／城隍廟夜市 逛逛</div><div class="note">從 Westin 步行約 15–18 分鐘可達，晚上燈籠點燈很有氣氛，適合吃小吃、逛紀念品</div></li>
+      <li class="event"><div class="time">22:00 前</div><div class="desc">返回 Westin Bund Center</div></li>
     </ul>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
@@ -373,6 +413,8 @@
     <ul class="events">
       <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
       <li class="event"><div class="time">TVM 結束後</div><div class="desc">The Westin Bund Center 退房，轉入住 Home Inn（南京東路外灘中心店）／ Hanting（人民廣場地鐵站店）</div></li>
+      <li class="event"><div class="time">19:00</div><div class="desc">南京東路步行街 逛逛</div><div class="note">兩間備選新飯店都在步行街附近（Home Inn 約 5–8 分鐘、Hanting 約 10–15 分鐘或一站地鐵），先辦好入住再輕裝出門會比較順</div></li>
+      <li class="event"><div class="time">22:00 前</div><div class="desc">返回新飯店</div></li>
     </ul>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
@@ -382,17 +424,16 @@
   </div>
 
   <div class="day-panel" data-day="5">
-    <div class="day-title">豫園老街・賦歸</div>
+    <div class="day-title">人民公園・上海博物館・賦歸</div>
     <span class="day-tag rose">豫園本體休園</span>
     <span class="day-tag">最後一天</span>
     <ul class="events">
-      <li class="event"><div class="time">上午</div><div class="desc">豫園老街 ／ 城隍廟商圈（不進豫園本體）</div>
-        <div class="callout"><b>已確認：豫園每週一休園</b>（國定假日除外，春節期間另以公告為準），10/19 為週一，故園區本體不開放，改安排逛周邊老街商圈（店家、小吃通常照常營業）。
-        <br><br><b>豫園參考資訊（供日後再訪參考）：</b>
-        <br>開放時間：9:00–16:30（16:00 停止入園）
-        <br>票價：旺季（4/1–6/30、9/1–11/30）成人 40 元；淡季（7/1–8/31、12/1–3/31）成人 30 元
-        <br>入口：北門（黃浦區福佑路 168 號，團體／散客皆可）、南門（黃浦區豫園老街 279 號，僅散客，九曲橋下橋口處）
-        <br>購票：南北門售票窗口，或「上海豫園」官方小程序線上購票</div>
+      <li class="event"><div class="time">09:00 起</div><div class="desc">人民公園</div><div class="note">就在新飯店附近，免費入場，晨間散步、看噴泉很舒服</div></li>
+      <li class="event"><div class="time">上午</div><div class="desc">上海博物館（人民廣場館）</div>
+        <div class="callout"><b>提醒：</b>開放時間 9:00–17:00，主要展廳免費，但建議<b>提前線上預約</b>（官方微信公眾號或官網），假日人多時常額滿或部分展廳關閉，出發前再確認一下比較保險。<br><br><b>關於豫園：</b>已確認豫園本體每週一休園（10/19 為週一），加上你們 10/15、10/16 已經去過豫園老街商圈，這天就不特別安排回去了，改逛人民廣場周邊這兩個還沒去過的點。</div>
+      </li>
+      <li class="event"><div class="time">14:00 – 17:00</div><div class="desc">Justin 加碼行程：陸家嘴散步</div>
+        <div class="callout"><b>行李寄放在飯店：</b>Anne / Monica 16:15 出發，Justin 20:05 才飛，行李可以放心寄放在飯店（多數飯店退房後仍可免費寄放），輕裝去逛。<br><br><b>路線：</b>14:00 從飯店搭地鐵 2 號線到陸家嘴（約 15–20 分鐘）→ 14:30 陸家嘴濱江大道散步，從浦東這側回看外灘，跟 10/15 看到的角度完全不同 → 想的話可以上上海中心大廈觀光層（118 樓，中國最高樓，建議提前線上訂票）→ 約 16:00 搭地鐵原路返回飯店（約 20–25 分鐘），取回寄放的行李。<br><br><b>前往機場：</b>因為行李要先回飯店拿，這段沒辦法直接從陸家嘴接駁到機場（磁浮方向剛好相反）。建議取回行李後，約 16:30 直接叫車前往浦東機場（車程約 50–60 分鐘），17:30 前可抵達，離 20:05 航班仍相當充裕。</div>
       </li>
       <li class="event"><div class="time">16:15 / 18:15</div><div class="desc">Anne / Monica：SHA → TSA</div><div class="note">虹橋機場（SHA）離人民廣場飯店較近，約 30–40 分鐘車程，仍建議預留通關與安檢時間</div></li>
       <li class="event"><div class="time">20:05 / 22:00</div><div class="desc">Justin：PVG → TPE（BR721）</div><div class="note">浦東機場（PVG）車程較遠（約 50–60 分鐘以上，視交通狀況），建議下午提早出發，或先安排市區午後行程再前往機場</div></li>
@@ -498,24 +539,114 @@
     <div class="expense-table-wrap">
       <table class="expense-table">
         <thead>
-          <tr><th>日期</th><th>類型</th><th>簡易說明</th><th>費用（元）</th></tr>
+          <tr><th>日期</th><th>類型</th><th>簡易說明</th><th>費用（元）</th><th>付款人</th></tr>
         </thead>
         <tbody id="expenseBody">
-          <tr><td colspan="4" class="expense-empty">尚未載入資料，請設定好 Google 表單與 CSV 連結後重新整理。</td></tr>
+          <tr><td colspan="5" class="expense-empty">尚未載入資料，請設定好 Google 表單與 CSV 連結後重新整理。</td></tr>
         </tbody>
         <tfoot>
-          <tr><td colspan="3">總計</td><td id="expenseTotal">–</td></tr>
+          <tr><td colspan="4">總計</td><td id="expenseTotal">–</td></tr>
         </tfoot>
       </table>
     </div>
     <div class="expense-chart-wrap">
+      <div class="expense-chart-heading">依類型佔比</div>
       <svg id="expensePie" viewBox="0 0 200 200" width="200" height="200"></svg>
       <ul id="expenseLegend" class="expense-legend"></ul>
+
+      <div class="expense-chart-heading" style="margin-top:24px;">付款人累積費用</div>
+      <ul id="payerList" class="expense-legend payer-legend"></ul>
     </div>
   </div>
 </div>
 
 </div><!-- /page-budget -->
+
+<div class="page-panel" id="page-souvenir">
+
+<div class="section-title">建議上海購買的伴手禮</div>
+<div class="section-sub">勾選方塊記錄採購進度（僅存在你自己的裝置上，不會同步給其他人）</div>
+
+<div class="wrap">
+  <div class="souvenir-grid" id="souvenirGrid">
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="white-rabbit">
+      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍬</span>
+      <span class="souvenir-name">大白兔奶糖</span>
+      <span class="souvenir-desc">經典牛奶糖，好吃平價，方便分送同事</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/White_Rabbit_Creamy_Candy" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="butterfly-pastry">
+      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🥐</span>
+      <span class="souvenir-name">蝴蝶酥</span>
+      <span class="souvenir-desc">老字號酥皮甜點（如國際飯店），送禮體面</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%9D%B4%E8%9D%B6%E9%85%A5+%E4%B8%8A%E6%B5%B7+%E4%BC%B4%E6%89%8B%E7%A6%AE" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="wuxiangdou">
+      <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🫘</span>
+      <span class="souvenir-name">五香豆／梨膏糖</span>
+      <span class="souvenir-desc">城隍廟老字號傳統零嘴，商圈就能買到</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E4%BA%94%E9%A6%99%E8%B1%86+%E6%A2%A8%E8%86%8F%E7%B3%96+%E8%B1%AB%E5%9C%92" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="xiaolongbao">
+      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🥟</span>
+      <span class="souvenir-name">南翔小籠包（速凍禮盒）</span>
+      <span class="souvenir-desc">帶得走的小籠包，記得確認能否隨身或托運帶上飛機</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Xiaolongbao" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="silk-scarf">
+      <span class="souvenir-icon" style="background:var(--purple-soft); font-size:32px;">🧣</span>
+      <span class="souvenir-name">絲綢圍巾／旗袍小物</span>
+      <span class="souvenir-desc">上海特色紡織品，南京東路、豫園都有店家</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Cheongsam" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="fridge-magnet">
+      <span class="souvenir-icon" style="background:var(--blue-soft); font-size:32px;">🧲</span>
+      <span class="souvenir-name">城市文創小物（冰箱貼／明信片）</span>
+      <span class="souvenir-desc">外灘、東方明珠圖案，輕便好帶又有紀念意義</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E4%B8%8A%E6%B5%B7+%E6%96%87%E5%89%B5+%E5%86%B0%E7%AE%B1%E8%B2%BC" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="tea">
+      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍵</span>
+      <span class="souvenir-name">老字號茶葉</span>
+      <span class="souvenir-desc">豫園、南京東路周邊茶莊，送長輩、主管都合適</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Chinese_tea" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="huangjiu">
+      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🍶</span>
+      <span class="souvenir-name">石庫門老酒／黃酒</span>
+      <span class="souvenir-desc">上海特色酒類，注意隨身／托運液體攜帶限制</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Huangjiu" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+  </div>
+  <div class="souvenir-note">品項與購買地點為既有知識推薦，未經即時查證，實際庫存、價格請以店家現場為準。</div>
+</div>
+
+</div><!-- /page-souvenir -->
 
 <footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。</footer>
 
@@ -580,12 +711,31 @@
           {lat:31.241431, lng:121.49082, label:"黃浦公園 · 17:00"},
           {lat:31.23472, lng:121.49066, label:"Yujintian 晚餐 · 17:45"},
           {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 19:30"}
+        ],
+        extraPoints: [
+          Object.assign({}, YUYUAN, {label:"豫園 · Justin 個人行程 12:00–15:00", color:"#4EA8DE"})
         ]
       },
-      "2": { color:"#00B8A9", route:false, points:[ WESTIN ] },
+      "2": {
+        color:"#00B8A9", route:false,
+        points:[ WESTIN, Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟夜市 · 19:00"}) ]
+      },
       "3": { color:"#FFC845", route:false, points:[ WESTIN ] },
-      "4": { color:"#8B5CF6", route:false, points:[ WESTIN, HOME_INN, HANTING ] },
-      "5": { color:"#FF6FA5", route:false, points:[ YUYUAN, HOME_INN, HANTING ] }
+      "4": {
+        color:"#8B5CF6", route:false,
+        points:[ WESTIN, HOME_INN, HANTING, {lat:31.2352, lng:121.4809, label:"南京東路步行街 · 19:00"} ]
+      },
+      "5": {
+        color:"#FF6FA5", route:false,
+        points:[
+          {lat:31.232226, lng:121.473219, label:"人民公園 · 09:00"},
+          {lat:31.2283307, lng:121.4755278, label:"上海博物館 · 上午"},
+          HOME_INN, HANTING
+        ],
+        extraPoints: [
+          {lat:31.233518, lng:121.505618, label:"陸家嘴／上海中心 · Justin 14:00–17:00", color:"#4EA8DE"}
+        ]
+      }
     };
 
     window.dayMaps = {};
@@ -611,14 +761,24 @@
         latlngs.push([p.lat, p.lng]);
       });
 
+      var allLatlngs = latlngs.slice();
+      (data.extraPoints || []).forEach(function(p){
+        var marker = L.circleMarker([p.lat, p.lng], {
+          radius: 8, color: '#fff', weight: 2,
+          fillColor: p.color || '#4EA8DE', fillOpacity: 1
+        }).addTo(map);
+        marker.bindPopup('<b>' + p.label + '</b>');
+        allLatlngs.push([p.lat, p.lng]);
+      });
+
       if (data.route && latlngs.length > 1){
         L.polyline(latlngs, { color: data.color, weight: 3, opacity: 0.6, dashArray: '6,6' }).addTo(map);
       }
 
-      if (latlngs.length > 1){
-        map.fitBounds(latlngs, { padding: [30,30] });
+      if (allLatlngs.length > 1){
+        map.fitBounds(allLatlngs, { padding: [30,30] });
       } else {
-        map.setView(latlngs[0], 15);
+        map.setView(allLatlngs[0], 15);
       }
 
       window.dayMaps[day] = map;
@@ -662,21 +822,23 @@
     }
 
     function render(rows){
-      // Expect header row: 時間戳記, 日期, 類型, 簡易說明, 費用 (Google Forms adds Timestamp as column 0)
+      // Expect header row: 時間戳記, 日期, 類型, 簡易說明, 費用, 付款人 (Google Forms adds Timestamp as column 0)
       var body = rows.slice(1);
       var tbody = document.getElementById('expenseBody');
       var totalEl = document.getElementById('expenseTotal');
 
       if (!body.length){
-        tbody.innerHTML = '<tr><td colspan="4" class="expense-empty">目前還沒有任何紀錄，點上方「新增一筆花費」開始填寫吧。</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="5" class="expense-empty">目前還沒有任何紀錄，點上方「新增一筆花費」開始填寫吧。</td></tr>';
         totalEl.textContent = '0';
         renderPie({});
+        renderPayers({});
         return;
       }
 
       var html = "";
       var total = 0;
       var byType = {};
+      var byPayer = {};
 
       body.forEach(function(r){
         var date = (r[1]||"").trim();
@@ -684,18 +846,42 @@
         var desc = (r[3]||"").trim();
         var amountRaw = (r[4]||"0").trim().replace(/[^0-9.\-]/g,"");
         var amount = parseFloat(amountRaw) || 0;
+        var payer = (r[5]||"未填寫").trim() || "未填寫";
         total += amount;
         byType[type] = (byType[type]||0) + amount;
-        html += '<tr><td>'+escapeHtml(date)+'</td><td>'+escapeHtml(type)+'</td><td>'+escapeHtml(desc)+'</td><td>'+amount.toLocaleString()+'</td></tr>';
+        byPayer[payer] = (byPayer[payer]||0) + amount;
+        html += '<tr><td>'+escapeHtml(date)+'</td><td>'+escapeHtml(type)+'</td><td>'+escapeHtml(desc)+'</td><td>'+amount.toLocaleString()+'</td><td>'+escapeHtml(payer)+'</td></tr>';
       });
 
       tbody.innerHTML = html;
       totalEl.textContent = total.toLocaleString();
       renderPie(byType, total);
+      renderPayers(byPayer);
     }
 
     function escapeHtml(s){
       return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+
+    function renderPayers(byPayer){
+      var list = document.getElementById('payerList');
+      list.innerHTML = "";
+      var names = Object.keys(byPayer);
+      if (!names.length){
+        list.innerHTML = '<li style="color:var(--text-dim)">尚無資料</li>';
+        return;
+      }
+      var maxVal = Math.max.apply(null, names.map(function(n){ return byPayer[n]; }));
+      names.sort(function(a,b){ return byPayer[b]-byPayer[a]; }).forEach(function(name, idx){
+        var color = FALLBACK_COLORS[idx % FALLBACK_COLORS.length];
+        var pctOfMax = maxVal ? (byPayer[name]/maxVal*100) : 0;
+        var li = document.createElement('li');
+        li.innerHTML = '<span class="swatch" style="background:'+color+'"></span>'
+          + '<span>'+ escapeHtml(name) +'</span>'
+          + '<span class="payer-bar-wrap"><span class="payer-bar" style="width:'+pctOfMax+'%; background:'+color+'"></span></span>'
+          + '<span class="pct">'+ byPayer[name].toLocaleString() +'</span>';
+        list.appendChild(li);
+      });
     }
 
     function renderPie(byType, total){
@@ -764,6 +950,27 @@
 
     document.getElementById('refreshExpenseBtn').addEventListener('click', load);
     load();
+  })();
+</script>
+
+<script>
+  (function(){
+    var cards = document.querySelectorAll('#souvenirGrid .souvenir-card');
+    cards.forEach(function(card){
+      var checkbox = card.querySelector('input[type="checkbox"]');
+      var id = checkbox.getAttribute('data-id');
+      var key = 'souvenir-' + id;
+      try{
+        if (localStorage.getItem(key) === '1'){
+          checkbox.checked = true;
+          card.classList.add('checked');
+        }
+      } catch(e){}
+      checkbox.addEventListener('change', function(){
+        card.classList.toggle('checked', checkbox.checked);
+        try{ localStorage.setItem(key, checkbox.checked ? '1' : '0'); } catch(e){}
+      });
+    });
   })();
 </script>
 
