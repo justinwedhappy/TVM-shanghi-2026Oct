@@ -6,34 +6,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 PMI TVM- Shang Hai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   :root{
-    --bg:#FFF8EF;
-    --card:#FFFFFF;
-    --card-alt:#FFF1E2;
-    --ink:#2B2438;
-    --text-dim:#8A81A0;
-    --line:#F3E4D2;
+    --bg:#F3E6CB;
+    --card:#FFFDF6;
+    --card-alt:#F0DFC0;
+    --ink:#2B1B12;
+    --text-dim:#8A7255;
+    --line:#E3CFA6;
 
-    --coral:#FF6B57;
-    --coral-soft:#FFE4DD;
-    --teal:#00B8A9;
-    --teal-soft:#D9F7F0;
-    --yellow:#FFC845;
-    --yellow-soft:#FFF3D2;
-    --purple:#8B5CF6;
-    --purple-soft:#EDE4FF;
-    --pink:#FF6FA5;
-    --pink-soft:#FFE2ED;
-    --blue:#4EA8DE;
-    --blue-soft:#E0F1FC;
+    --coral:#B3382C;
+    --coral-soft:#F3D9CE;
+    --teal:#2F6F52;
+    --teal-soft:#D9E8DC;
+    --yellow:#C9962B;
+    --yellow-soft:#F2E2B8;
+    --purple:#6B3F52;
+    --purple-soft:#E8D9DE;
+    --pink:#B85C6B;
+    --pink-soft:#F2DEDF;
+    --blue:#3A5A73;
+    --blue-soft:#DCE6EA;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    background:var(--bg);
+    background-color:var(--bg);
+    background-image:
+      linear-gradient(180deg, rgba(243,230,203,0.4), rgba(243,230,203,0.4)),
+      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='48'%20height='48'%3E%3Cpath%20d='M24%200L48%2024L24%2048L0%2024Z'%20fill='none'%20stroke='%23B3382C'%20stroke-opacity='0.07'%20stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat:repeat;
     color:var(--ink);
     font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
     font-weight:400;
@@ -57,7 +61,7 @@
     overflow:hidden;
   }
   .hero .eyebrow{
-    font-family:"Baloo 2",sans-serif;
+    font-family:"Noto Sans SC",sans-serif;
     display:inline-block;
     color:var(--coral);
     background:var(--coral-soft);
@@ -69,8 +73,8 @@
     margin-bottom:22px;
   }
   .hero h1{
-    font-family:"Noto Sans SC",sans-serif;
-    font-weight:900;
+    font-family:"Noto Serif SC",serif;
+    font-weight:700;
     font-size:34px;
     color:var(--ink);
     margin-bottom:12px;
@@ -83,14 +87,15 @@
     display:inline-block;
   }
   .hero p.sub{color:var(--text-dim); font-size:15px; font-weight:500;}
-  .confetti{display:flex; justify-content:center; gap:10px; margin-top:32px;}
-  .confetti i{display:block; width:10px; height:10px; border-radius:50%;}
+  .confetti{display:flex; align-items:center; justify-content:center; gap:10px; margin-top:32px;}
+  .confetti::before, .confetti::after{content:""; width:56px; height:1px; background:linear-gradient(90deg, transparent, var(--yellow), transparent);}
+  .confetti i{display:block; width:8px; height:8px; border-radius:50%; transform:rotate(45deg);}
   .confetti i:nth-child(1){background:var(--coral);}
-  .confetti i:nth-child(2){background:var(--yellow); width:14px; height:14px; margin-top:-2px;}
+  .confetti i:nth-child(2){background:var(--yellow); width:11px; height:11px; margin-top:-2px;}
   .confetti i:nth-child(3){background:var(--teal);}
-  .confetti i:nth-child(4){background:var(--purple); width:8px; height:8px; margin-top:2px;}
-  .confetti i:nth-child(5){background:var(--pink); width:12px; height:12px;}
-  .confetti i:nth-child(6){background:var(--blue); width:9px; height:9px; margin-top:2px;}
+  .confetti i:nth-child(4){background:var(--purple); width:7px; height:7px; margin-top:2px;}
+  .confetti i:nth-child(5){background:var(--pink); width:9px; height:9px;}
+  .confetti i:nth-child(6){background:var(--blue); width:7px; height:7px; margin-top:2px;}
   .confetti i:nth-child(7){background:var(--coral); width:7px; height:7px; margin-top:3px;}
 
   /* MAIN PAGE TABS */
@@ -101,7 +106,7 @@
     font-family:"Noto Sans SC",sans-serif; font-size:15px; font-weight:800; color:var(--text-dim);
     background:var(--card); border:2px solid var(--line); border-radius:24px;
     padding:12px 32px; cursor:pointer; transition:all .15s ease;
-    box-shadow:0 4px 14px rgba(43,36,56,0.05);
+    box-shadow:0 4px 14px rgba(43,27,18,0.05);
   }
   .maintab-btn:hover{color:var(--ink); border-color:var(--coral);}
   .maintab-btn.active{background:var(--coral); border-color:var(--coral); color:#fff;}
@@ -113,17 +118,18 @@
 
   /* FLIGHT STRIP */
   .flights{display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 24px; margin-top:8px;}
-  .flight-col{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
+  .flight-col{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
   .flight-col:nth-child(1){border-top:4px solid var(--coral);}
   .flight-col:nth-child(2){border-top:4px solid var(--teal);}
-  .flight-col h3{font-family:"Baloo 2",sans-serif; font-size:15px; color:var(--ink); letter-spacing:0.04em; margin-bottom:16px; font-weight:700;}
+  .flight-col h3{font-family:"Noto Serif SC",serif; font-size:15px; color:var(--ink); letter-spacing:0.04em; margin-bottom:16px; font-weight:700;}
   .flight-row{display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); padding:8px 0; border-top:1px dashed var(--line);}
   .flight-row:first-of-type{border-top:none;}
   .flight-row b{color:var(--ink); font-weight:600;}
   .flight-code{color:var(--coral); font-size:11px; font-weight:700; letter-spacing:0.05em;}
 
   /* OVERVIEW TABLE */
-  .section-title{font-family:"Noto Sans SC",sans-serif; font-size:27px; font-weight:900; color:var(--ink); padding: 60px 24px 6px; text-align:center;}
+  .section-title{font-family:"Noto Serif SC",serif; font-size:27px; font-weight:700; color:var(--ink); padding: 60px 24px 6px; text-align:center; position:relative;}
+  .section-title::before{content:"◆"; display:block; font-size:10px; color:var(--yellow); margin-bottom:12px;}
   .section-sub{text-align:center; color:var(--text-dim); font-size:13px; font-weight:500; padding-bottom:32px;}
   .overview{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; padding:0 24px;}
   .ov-card{
@@ -131,14 +137,14 @@
     padding:16px 12px; cursor:pointer; text-align:left;
     transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
   }
-  .ov-card:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(43,36,56,0.10);}
+  .ov-card:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(43,27,18,0.10);}
   .ov-card:nth-child(1){--accent:var(--coral); --accent-soft:var(--coral-soft);}
   .ov-card:nth-child(2){--accent:var(--teal); --accent-soft:var(--teal-soft);}
   .ov-card:nth-child(3){--accent:var(--yellow); --accent-soft:var(--yellow-soft);}
   .ov-card:nth-child(4){--accent:var(--purple); --accent-soft:var(--purple-soft);}
   .ov-card:nth-child(5){--accent:var(--pink); --accent-soft:var(--pink-soft);}
   .ov-card.active{border-color:var(--accent); background:var(--accent-soft);}
-  .ov-card .ov-date{font-family:"Baloo 2",sans-serif; font-size:22px; color:var(--accent); font-weight:800; line-height:1;}
+  .ov-card .ov-date{font-family:"Noto Serif SC",serif; font-size:22px; color:var(--accent); font-weight:700; line-height:1;}
   .ov-card .ov-wd{font-size:10px; color:var(--text-dim); font-weight:700; letter-spacing:0.06em; margin:6px 0 10px;}
   .ov-card .ov-headline{font-size:12.5px; color:var(--ink); font-weight:700; margin-bottom:6px;}
   .ov-card .ov-note{font-size:11px; color:var(--text-dim);}
@@ -163,13 +169,13 @@
   /* DAY PANEL */
   .day-panel{display:none; padding: 32px 0 8px;}
   .day-panel.active{display:block;}
-  .day-panel{background:var(--card); border-radius:20px; padding:32px 28px; box-shadow:0 6px 24px rgba(43,36,56,0.06);}
+  .day-panel{background:var(--card); border-radius:20px; padding:32px 28px; box-shadow:0 6px 24px rgba(43,27,18,0.06);}
   .day-panel:nth-of-type(1){border-top:5px solid var(--coral);}
   .day-panel:nth-of-type(2){border-top:5px solid var(--teal);}
   .day-panel:nth-of-type(3){border-top:5px solid var(--yellow);}
   .day-panel:nth-of-type(4){border-top:5px solid var(--purple);}
   .day-panel:nth-of-type(5){border-top:5px solid var(--pink);}
-  .day-title{font-family:"Noto Sans SC",sans-serif; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:10px;}
+  .day-title{font-family:"Noto Serif SC",serif; font-size:22px; font-weight:700; color:var(--ink); margin-bottom:10px;}
   .day-tag{display:inline-block; font-size:11.5px; font-weight:700; color:var(--teal); background:var(--teal-soft); border-radius:14px; padding:4px 12px; margin:0 8px 18px 0; letter-spacing:0.02em;}
   .day-tag.rose{color:var(--coral); background:var(--coral-soft);}
   .events{list-style:none; margin-top:10px;}
@@ -180,22 +186,55 @@
   .event .desc{font-size:14.5px; color:var(--ink); font-weight:500;}
   .event .note{font-size:12.5px; color:var(--text-dim); margin-top:3px;}
 
+  /* SPLIT TIMELINE: personal (differing) events left, shared events right */
+  .timeline-legend{display:flex; gap:18px; margin-top:14px; font-size:12px; color:var(--text-dim); font-weight:500;}
+  .timeline-legend span{display:inline-flex; align-items:center; gap:6px;}
+  .timeline-legend i{width:9px; height:9px; border-radius:50%; display:inline-block; border:2px solid; background:var(--card);}
+  .timeline-legend .lg-personal i{border-color:var(--coral);}
+  .timeline-legend .lg-am i{border-color:var(--blue);}
+  .timeline-legend .lg-shared i{border-color:var(--teal);}
+  .timeline-split{position:relative; margin-top:18px;}
+  .timeline-split::before{content:""; position:absolute; left:50%; top:4px; bottom:4px; width:2px; background:var(--line); transform:translateX(-1px);}
+  .tl-row{position:relative; box-sizing:border-box; padding-bottom:24px; display:flex;}
+  .tl-row.personal{width:50%; justify-content:flex-end; padding-right:32px;}
+  .tl-row.shared{width:50%; margin-left:50%; justify-content:flex-start; padding-left:32px;}
+  .tl-dot{position:absolute; top:3px; width:12px; height:12px; border-radius:50%; background:var(--card); border:2px solid var(--teal); z-index:1;}
+  .tl-row.personal .tl-dot{right:-7px; border-color:var(--coral);}
+  .tl-row.personal.who-am .tl-dot{border-color:var(--blue);}
+  .tl-row.shared .tl-dot{left:-7px; border-color:var(--teal);}
+  .tl-bubble{max-width:100%; text-align:left;}
+  .tl-tag{display:inline-block; font-size:10.5px; font-weight:700; padding:2px 9px; border-radius:10px; margin-bottom:5px; background:var(--coral-soft); color:var(--coral);}
+  .tl-row.personal.who-am .tl-tag{background:var(--blue-soft); color:var(--blue);}
+  .tl-time{font-size:12.5px; font-weight:700; margin-bottom:3px;}
+  .tl-row.shared .tl-time{color:var(--teal);}
+  .tl-row.personal .tl-time{color:var(--coral);}
+  .tl-row.personal.who-am .tl-time{color:var(--blue);}
+  .tl-desc{font-size:14.5px; color:var(--ink); font-weight:500;}
+  .tl-note{font-size:12.5px; color:var(--text-dim); margin-top:3px;}
+  .tl-bubble .callout{text-align:left;}
+
+  @media (max-width:640px){
+    .timeline-split::before{left:15px; transform:none;}
+    .tl-row.personal, .tl-row.shared{width:100%; margin-left:0; justify-content:flex-start; padding-left:34px; padding-right:0;}
+    .tl-row.personal .tl-dot, .tl-row.shared .tl-dot{left:9px; right:auto;}
+  }
+
   .callout{margin:18px 0 4px; padding:16px 18px; background:var(--yellow-soft); border-radius:14px; font-size:13px; color:#6B5A22; line-height:1.7;}
   .callout b{color:#A9761A; font-weight:700;}
 
   .day-map-wrap{margin-top:24px;}
   .day-map-label{font-size:12px; font-weight:700; color:var(--text-dim); letter-spacing:0.05em; margin-bottom:8px;}
-  .day-map{height:260px; border-radius:16px; overflow:hidden; box-shadow:0 6px 18px rgba(43,36,56,0.08); background:var(--card-alt); z-index:0;}
+  .day-map{height:260px; border-radius:16px; overflow:hidden; box-shadow:0 6px 18px rgba(43,27,18,0.08); background:var(--card-alt); z-index:0;}
   .day-map-note{font-size:11.5px; color:var(--text-dim); margin-top:8px; line-height:1.6;}
   .leaflet-popup-content{font-family:"Noto Sans SC",sans-serif; font-size:12.5px;}
 
   /* HOTELS */
   .hotels{display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:0 24px;}
-  .hotel-card{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
+  .hotel-card{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
   .hotel-card:nth-child(1){border-top:5px solid var(--blue);}
   .hotel-card:nth-child(2){border-top:5px solid var(--purple);}
   .hotel-card .dates{font-size:11px; color:var(--text-dim); font-weight:700; letter-spacing:0.08em; margin-bottom:8px;}
-  .hotel-card h4{font-family:"Noto Sans SC",sans-serif; font-size:17px; color:var(--ink); margin-bottom:4px; font-weight:800;}
+  .hotel-card h4{font-family:"Noto Serif SC",serif; font-size:17px; color:var(--ink); margin-bottom:4px; font-weight:700;}
   .hotel-card .link{font-size:12px; display:inline-block; margin-bottom:14px;}
   .hotel-card h5{font-size:12px; color:var(--ink); margin:16px 0 8px; letter-spacing:0.02em; font-weight:800;}
   .hotel-card ul{list-style:none; font-size:13px; color:var(--text-dim);}
@@ -220,7 +259,7 @@
   .expense-status{font-size:12px; color:var(--text-dim); font-weight:500;}
 
   .expense-layout{display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:start;}
-  .expense-table-wrap{background:var(--card); border-radius:18px; overflow:hidden; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
+  .expense-table-wrap{background:var(--card); border-radius:18px; overflow:hidden; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
   .expense-table{width:100%; border-collapse:collapse; font-size:13px;}
   .expense-table th{
     text-align:left; font-weight:800; color:var(--ink); font-size:11.5px; letter-spacing:0.03em;
@@ -235,7 +274,7 @@
     font-size:14px; padding:14px 16px;
   }
 
-  .expense-chart-wrap{background:var(--card); border-radius:18px; padding:22px; text-align:center; box-shadow:0 6px 20px rgba(43,36,56,0.06);}
+  .expense-chart-wrap{background:var(--card); border-radius:18px; padding:22px; text-align:center; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
   .expense-chart-heading{font-size:12px; font-weight:800; color:var(--ink); text-align:left; margin-bottom:10px;}
   .expense-legend{list-style:none; margin-top:16px; text-align:left; font-size:12.5px; color:var(--text-dim); font-weight:500;}
   .expense-legend li{display:flex; align-items:center; gap:8px; padding:5px 0;}
@@ -251,13 +290,15 @@
   .souvenir-card{
     position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:8px;
     background:var(--card); border:2px solid var(--line); border-radius:18px; padding:18px 18px 20px;
-    cursor:pointer; transition:all .15s ease; box-shadow:0 4px 14px rgba(43,36,56,0.05);
+    cursor:pointer; transition:all .15s ease; box-shadow:0 4px 14px rgba(43,27,18,0.05);
   }
-  .souvenir-card:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(43,36,56,0.10);}
+  .souvenir-card:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(43,27,18,0.10);}
   .souvenir-card input{position:absolute; opacity:0; pointer-events:none;}
   .souvenir-icon{font-size:26px; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
   .souvenir-name{font-weight:800; font-size:14px; color:var(--ink); transition:color .15s ease;}
   .souvenir-desc{font-size:12px; color:var(--text-dim); line-height:1.55;}
+  .souvenir-meta{font-size:11.5px; color:var(--text-dim); line-height:1.6; margin-top:2px;}
+  .souvenir-meta b{color:var(--ink); font-weight:700;}
   .souvenir-more{font-size:11.5px; font-weight:700; color:var(--coral); border-bottom:none; margin-top:2px;}
   .souvenir-more:hover{text-decoration:underline;}
   .souvenir-checkmark{
@@ -275,9 +316,9 @@
   .preflight-item{
     position:relative; display:block; background:var(--card); border:2px solid var(--line);
     border-radius:16px; padding:18px 20px 18px 54px; cursor:pointer; transition:all .15s ease;
-    box-shadow:0 4px 14px rgba(43,36,56,0.05);
+    box-shadow:0 4px 14px rgba(43,27,18,0.05);
   }
-  .preflight-item:hover{box-shadow:0 8px 20px rgba(43,36,56,0.10);}
+  .preflight-item:hover{box-shadow:0 8px 20px rgba(43,27,18,0.10);}
   .preflight-item input{position:absolute; opacity:0; pointer-events:none;}
   .preflight-checkmark{
     position:absolute; left:18px; top:19px; width:22px; height:22px; border-radius:50%;
@@ -291,6 +332,22 @@
   .preflight-meta{margin-top:10px; display:flex; flex-direction:column; gap:6px; font-size:12.5px; color:var(--text-dim); line-height:1.6;}
   .preflight-meta .meta-label{display:inline-block; min-width:66px; font-weight:700; color:var(--ink); margin-right:4px;}
   .preflight-meta a{font-weight:700;}
+  .preflight-group{
+    font-size:13px; font-weight:800; color:var(--ink); margin:30px 0 10px; padding-left:2px;
+    display:flex; align-items:center; gap:9px;
+  }
+  .preflight-group:first-child{margin-top:0;}
+  .preflight-group::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--teal); flex:0 0 auto;}
+  .preflight-group.who-justin::before{background:var(--coral);}
+  .preflight-group.who-am::before{background:var(--blue);}
+
+  /* STAY + FLIGHT DAY REFERENCE (in 行前確認) */
+  .sf-list{display:flex; flex-direction:column; gap:10px; margin-bottom:36px;}
+  .sf-card{background:var(--card); border:2px solid var(--line); border-radius:14px; padding:14px 18px;}
+  .sf-card .sf-date{font-family:"Noto Serif SC",serif; font-weight:700; font-size:14.5px; color:var(--ink); margin-bottom:8px;}
+  .sf-row{display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:var(--text-dim); margin-top:5px;}
+  .sf-row .sf-label{font-weight:700; color:var(--ink); flex:0 0 auto; min-width:44px;}
+  .sf-row a{font-weight:700;}
 
   @media (max-width:640px){
     .preflight-item{padding-left:46px;}
@@ -340,7 +397,44 @@
 <div class="section-sub">出發前建議完成的線上申請與預約，勾選追蹤進度（僅存在你自己的裝置上，不會同步給其他人）</div>
 
 <div class="wrap">
+
+  <div class="preflight-group">住宿與航班一覽</div>
+  <div class="sf-list">
+
+    <div class="sf-card">
+      <div class="sf-date">10/15（四）</div>
+      <div class="sf-row"><span class="sf-label">住宿</span>入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></div>
+      <div class="sf-row"><span class="tl-tag">Justin</span>抵達 TSA 08:00 → PVG 10:00（BR2400）</div>
+      <div class="sf-row"><span class="tl-tag" style="background:var(--blue-soft); color:var(--blue);">Anne / Monica</span>抵達 TSA 12:30 → SHA 14:15（CI201）</div>
+    </div>
+
+    <div class="sf-card">
+      <div class="sf-date">10/16（五）</div>
+      <div class="sf-row"><span class="sf-label">住宿</span>The Westin Bund Center, Shanghai</div>
+    </div>
+
+    <div class="sf-card">
+      <div class="sf-date">10/17（六）</div>
+      <div class="sf-row"><span class="sf-label">住宿</span>The Westin Bund Center, Shanghai</div>
+    </div>
+
+    <div class="sf-card">
+      <div class="sf-date">10/18（日）</div>
+      <div class="sf-row"><span class="sf-label">住宿</span>The Westin Bund Center, Shanghai 退房 → 轉入住 <a href="https://www.agoda.com/zh-tw/hanting-express-shanghai-people-s-square-metro-station/hotel/shanghai-cn.html" target="_blank" rel="noopener">漢庭上海人民廣場地鐵站酒店</a></div>
+    </div>
+
+    <div class="sf-card">
+      <div class="sf-date">10/19（一）</div>
+      <div class="sf-row"><span class="sf-label">住宿</span>漢庭上海人民廣場地鐵站酒店（退房）</div>
+      <div class="sf-row"><span class="tl-tag" style="background:var(--blue-soft); color:var(--blue);">Anne / Monica</span>離開 SHA 16:15 → TSA 18:15（CI202）</div>
+      <div class="sf-row"><span class="tl-tag">Justin</span>離開 SHA 19:40 → TSA 21:45（BR771）</div>
+    </div>
+
+  </div>
+
   <div class="preflight-list" id="preflightList">
+
+    <div class="preflight-group">大家都要完成</div>
 
     <label class="preflight-item">
       <input type="checkbox" data-id="taibaozheng">
@@ -350,39 +444,6 @@
         <div><span class="meta-label">建議時間</span>出發前至少 4 週開始檢查／申辦</div>
         <div><span class="meta-label">說明</span>台灣旅客入境中國大陸須持有效台胞證，請確認有效期限涵蓋此行程（10/15–10/19），過期或即將到期需重新申請、換發</div>
         <div><span class="meta-label">連結</span><a href="https://hmtravel.mac.gov.tw/MHCP_WEB_C/registerp" target="_blank" rel="noopener" onclick="event.stopPropagation()">陸委會網路申辦系統 ↗</a></div>
-      </div>
-    </label>
-
-    <label class="preflight-item">
-      <input type="checkbox" data-id="checkin-justin">
-      <span class="preflight-checkmark">✓</span>
-      <span class="preflight-title">Justin 航班線上預辦登機（BR2400／BR771）</span>
-      <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
-        <div><span class="meta-label">說明</span>10/15 去程 BR2400（TSA→PVG）、10/19 回程 BR771（SHA→TSA），皆為長榮航空班機，建議提前完成線上報到節省機場時間</div>
-        <div><span class="meta-label">連結</span><a href="https://www.evaair.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">長榮航空 ↗</a></div>
-      </div>
-    </label>
-
-    <label class="preflight-item">
-      <input type="checkbox" data-id="checkin-anne-monica">
-      <span class="preflight-checkmark">✓</span>
-      <span class="preflight-title">Anne / Monica 航班線上報到（CI201／CI202）</span>
-      <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
-        <div><span class="meta-label">說明</span>10/15 去程 CI201（TSA 12:30→SHA 14:15）、10/19 回程 CI202（SHA 16:15→TSA 18:15），皆為中華航空班機，建議提前完成線上報到</div>
-        <div><span class="meta-label">連結</span><a href="https://www.china-airlines.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">中華航空 ↗</a></div>
-      </div>
-    </label>
-
-    <label class="preflight-item">
-      <input type="checkbox" data-id="museum-booking">
-      <span class="preflight-checkmark">✓</span>
-      <span class="preflight-title">上海博物館（人民廣場館）預約</span>
-      <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>建議至少提前 3–7 天線上預約，假日容易額滿</div>
-        <div><span class="meta-label">說明</span>10/19 上午行程，主要展廳免費但需先預約入館名額，部分展廳可能整修中</div>
-        <div><span class="meta-label">連結</span><a href="https://www.shanghaimuseum.net" target="_blank" rel="noopener" onclick="event.stopPropagation()">上海博物館官網 ↗</a>（未經即時查證，也可透過官方微信公眾號「上海博物馆」預約）</div>
       </div>
     </label>
 
@@ -403,7 +464,7 @@
       <span class="preflight-title">上海中心大廈觀光層 門票</span>
       <div class="preflight-meta">
         <div><span class="meta-label">建議時間</span>建議提前 1–3 天線上訂票，假日排隊時間較長</div>
-        <div><span class="meta-label">說明</span>Justin 10/19 下午陸家嘴行程，如安排登頂觀景台建議先訂票</div>
+        <div><span class="meta-label">說明</span>10/16 晚上 TVM 結束後，全員一起過外灘觀光隧道去陸家嘴看夜景，建議先訂好票</div>
         <div><span class="meta-label">連結</span><a href="https://www.shanghaitower.com.cn" target="_blank" rel="noopener" onclick="event.stopPropagation()">上海中心大廈官網 ↗</a>（未經即時查證，也可透過大眾點評／攜程訂票比價）</div>
       </div>
     </label>
@@ -430,6 +491,34 @@
       </div>
     </label>
 
+    <div class="preflight-group who-justin">Justin 專屬</div>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="checkin-justin">
+      <span class="preflight-checkmark">✓</span>
+      <span class="tl-tag">Justin</span>
+      <span class="preflight-title">航班線上預辦登機（BR2400／BR771）</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
+        <div><span class="meta-label">說明</span>10/15 去程 BR2400（TSA→PVG）、10/19 回程 BR771（SHA→TSA），皆為長榮航空班機，建議提前完成線上報到節省機場時間</div>
+        <div><span class="meta-label">連結</span><a href="https://www.evaair.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">長榮航空 ↗</a></div>
+      </div>
+    </label>
+
+    <div class="preflight-group who-am">Anne / Monica 專屬</div>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="checkin-anne-monica">
+      <span class="preflight-checkmark">✓</span>
+      <span class="tl-tag" style="background:var(--blue-soft); color:var(--blue);">Anne / Monica</span>
+      <span class="preflight-title">航班線上報到（CI201／CI202）</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
+        <div><span class="meta-label">說明</span>10/15 去程 CI201（TSA 12:30→SHA 14:15）、10/19 回程 CI202（SHA 16:15→TSA 18:15），皆為中華航空班機，建議提前完成線上報到</div>
+        <div><span class="meta-label">連結</span><a href="https://www.china-airlines.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">中華航空 ↗</a></div>
+      </div>
+    </label>
+
   </div>
   <div class="souvenir-note">以上時間、規定與連結多為既有知識提供，部分未經即時查證，可能已異動或有誤，強烈建議出發前於官方管道再次確認。</div>
 </div>
@@ -445,14 +534,14 @@
   <div class="ov-card" data-day="1">
     <div class="ov-date">15</div>
     <div class="ov-wd">THU · 四</div>
-    <div class="ov-headline">抵達・外灘＋夜遊船</div>
-    <div class="ov-note">江景晚餐／十六鋪夜遊船</div>
+    <div class="ov-headline">抵達・外灘＋夜遊船＋豫園老街</div>
+    <div class="ov-note">江景晚餐／夜遊船／豫園老街</div>
   </div>
   <div class="ov-card" data-day="2">
     <div class="ov-date">16</div>
     <div class="ov-wd">FRI · 五</div>
-    <div class="ov-headline">TVM 第一天</div>
-    <div class="ov-note">09:00–18:00</div>
+    <div class="ov-headline">TVM・夜遊上海中心</div>
+    <div class="ov-note">過江看外灘夜景</div>
   </div>
   <div class="ov-card" data-day="3">
     <div class="ov-date">17</div>
@@ -464,13 +553,13 @@
     <div class="ov-date">18</div>
     <div class="ov-wd">SUN · 日</div>
     <div class="ov-headline">TVM 最終天</div>
-    <div class="ov-note">結束後轉住人民廣場</div>
+    <div class="ov-note">提早退房／晚上輕鬆足浴</div>
   </div>
   <div class="ov-card" data-day="5">
     <div class="ov-date">19</div>
     <div class="ov-wd">MON · 一</div>
-    <div class="ov-headline">人民公園・博物館・賦歸</div>
-    <div class="ov-note">豫園週一休園／分兩機場離境</div>
+    <div class="ov-headline">老弄堂早餐・人民公園</div>
+    <div class="ov-note">佳家湯包／午後一起赴虹橋機場</div>
   </div>
 </div>
 
@@ -487,20 +576,101 @@
   <div class="day-panel" data-day="1">
     <div class="day-title">抵達上海・外灘一路向南</div>
     <span class="day-tag">入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></span>
-    <ul class="events">
-      <li class="event"><div class="time">08:00 / 10:00</div><div class="desc">Justin：TSA → PVG（BR2400）</div></li>
-      <li class="event"><div class="time">12:30 / 14:15</div><div class="desc">Anne / Monica：TSA → SHA</div></li>
-      <li class="event"><div class="time">下午</div><div class="desc">辦理入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></div><div class="note">Justin 抵達較早，可先寄放行李</div></li>
-      <li class="event"><div class="time">12:00 – 15:00</div><div class="desc">Justin 個人行程：豫園</div>
-        <div class="callout"><b>把握機會：</b>10/15 是週四，豫園本體正常開放（10/19 週一才休園），這是這趟行程唯一能真正入園參觀的時段，建議直接買票進園，而不是只逛外圍老街。開放至 16:30（16:00 停止入園），時間上很充裕。<br><br><b>行李提醒：</b>Westin 要到下午才能入住，Justin 若隨身有大件行李，可先請飯店協助寄放（多數飯店入住前都能寄放行李），輕裝去逛會方便很多。</div>
-      </li>
-      <li class="event"><div class="time">16:00</div><div class="desc">外灘建築群漫步（萬國建築博覽群）</div><div class="note">沿中山東一路由北向南走，全程不需回頭</div></li>
-      <li class="event"><div class="time">17:00</div><div class="desc">黃浦公園</div><div class="note">外灘最北端，可稍作休息拍照</div></li>
-      <li class="event"><div class="time">17:45</div><div class="desc">晚餐：Yujintian 魚金天（外灘六號 3 樓）</div><div class="note">本幫菜配外灘江景，從黃浦公園步行幾分鐘即達，不需繞路</div></li>
-      <li class="event"><div class="time">19:30</div><div class="desc">十六鋪碼頭・黃浦江夜遊船（普通艙／短程航線）</div>
-        <div class="callout"><b>訂票建議：</b>選普通艙、短程航線（約 40–60 分鐘），票價約人民幣 100–150 元／人，即可控制在預算內，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。<br><br>晚餐＋遊船兩項預估每人約人民幣 200–300 元，建議晚餐點菜偏家常一些，把預算留給遊船體驗。</div>
-      </li>
-    </ul>
+    <div class="timeline-legend">
+      <span class="lg-personal"><i></i>Justin</span>
+      <span class="lg-am"><i></i>Anne / Monica</span>
+      <span class="lg-shared"><i></i>共同行程</span>
+    </div>
+    <div class="timeline-split">
+      <div class="tl-row personal">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Justin</span>
+          <div class="tl-time">08:00 / 10:00</div>
+          <div class="tl-desc">TSA → PVG（BR2400）</div>
+        </div>
+      </div>
+      <div class="tl-row personal">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Justin</span>
+          <div class="tl-time">12:00 前</div>
+          <div class="tl-desc">完成辦理入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></div>
+        </div>
+      </div>
+      <div class="tl-row personal">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Justin</span>
+          <div class="tl-time">12:00 – 15:00</div>
+          <div class="tl-desc">個人行程：豫園</div>
+        </div>
+      </div>
+      <div class="tl-row personal who-am">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Anne / Monica</span>
+          <div class="tl-time">12:30 / 14:15</div>
+          <div class="tl-desc">TSA → SHA</div>
+        </div>
+      </div>
+      <div class="tl-row personal who-am">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Anne / Monica</span>
+          <div class="tl-time">16:00 前</div>
+          <div class="tl-desc">完成入住 <a href="https://www.marriott.com/en-us/hotels/shawi-the-westin-bund-center-shanghai/overview/" target="_blank" rel="noopener">The Westin Bund Center, Shanghai</a></div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">16:30</div>
+          <div class="tl-desc">會合，前往外灘建築群漫步（萬國建築博覽群）</div>
+          <div class="tl-note">沿中山東一路由北向南走，全程不需回頭</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">17:15</div>
+          <div class="tl-desc">黃浦公園</div>
+          <div class="tl-note">外灘最北端，可稍作休息拍照</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">18:00</div>
+          <div class="tl-desc">晚餐：Yujintian 魚金天（外灘六號 3 樓）</div>
+          <div class="tl-note">本幫菜配外灘江景，從黃浦公園步行幾分鐘即達，不需繞路</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">19:30</div>
+          <div class="tl-desc">十六鋪碼頭・黃浦江夜遊船（普通艙／短程航線）</div>
+          <div class="callout"><b>訂票建議：</b>選普通艙、短程航線（約 40–60 分鐘），票價約人民幣 100–150 元／人，即可控制在預算內，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。<br><br>晚餐＋遊船兩項預估每人約人民幣 200–300 元，建議晚餐點菜偏家常一些，把預算留給遊船體驗。</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">20:30 – 21:45</div>
+          <div class="tl-desc">豫園老街／城隍廟 逛逛</div>
+          <div class="tl-note">下船後從十六鋪碼頭走路約 10 分鐘就到，不用繞路，晚上點燈很有氣氛，適合吃小吃、逛紀念品</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">22:00 前</div>
+          <div class="tl-desc">返回 Westin Bund Center</div>
+          <div class="tl-note">今晚會晚一點回飯店，明天 TVM 09:00 才開始，時間上還算充裕</div>
+        </div>
+      </div>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-1" class="day-map"></div>
@@ -508,13 +678,43 @@
   </div>
 
   <div class="day-panel" data-day="2">
-    <div class="day-title">TVM 第一天</div>
+    <div class="day-title">TVM 第一天・夜遊上海中心</div>
     <span class="day-tag rose">全日行程</span>
-    <ul class="events">
-      <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
-      <li class="event"><div class="time">19:00</div><div class="desc">豫園老街／城隍廟夜市 逛逛</div><div class="note">從 Westin 步行約 15–18 分鐘可達，晚上燈籠點燈很有氣氛，適合吃小吃、逛紀念品</div></li>
-      <li class="event"><div class="time">22:00 前</div><div class="desc">返回 Westin Bund Center</div></li>
-    </ul>
+    <div class="timeline-legend">
+      <span class="lg-shared"><i></i>共同行程</span>
+    </div>
+    <div class="timeline-split">
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">09:00 – 18:00</div>
+          <div class="tl-desc">TVM</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">18:30</div>
+          <div class="tl-desc">外灘觀光隧道 過江</div>
+          <div class="tl-note">從 Westin 步行約 5–10 分鐘到隧道口，隧道本身有燈光秀，過江約 5 分鐘，比搭地鐵繞過去快很多</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">19:00 – 20:30</div>
+          <div class="tl-desc">上海中心大廈觀光層</div>
+          <div class="tl-note">開放至 21:30，晚上從高處回看外灘夜景，跟 10/15 在外灘看建築的視角完全不同，建議提前線上訂票</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">21:00 前</div>
+          <div class="tl-desc">原路過江返回 Westin Bund Center</div>
+        </div>
+      </div>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-2" class="day-map"></div>
@@ -525,10 +725,25 @@
   <div class="day-panel" data-day="3">
     <div class="day-title">TVM 第二天・團體晚餐</div>
     <span class="day-tag rose">全日行程</span>
-    <ul class="events">
-      <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
-      <li class="event"><div class="time">18:00</div><div class="desc">Saturday Group Dinner</div></li>
-    </ul>
+    <div class="timeline-legend">
+      <span class="lg-shared"><i></i>共同行程</span>
+    </div>
+    <div class="timeline-split">
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">09:00 – 18:00</div>
+          <div class="tl-desc">TVM</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">18:00</div>
+          <div class="tl-desc">Saturday Group Dinner</div>
+        </div>
+      </div>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-3" class="day-map"></div>
@@ -537,120 +752,180 @@
   </div>
 
   <div class="day-panel" data-day="4">
-    <div class="day-title">TVM 最終天・換飯店</div>
+    <div class="day-title">TVM 最終天・提早退房換飯店</div>
     <span class="day-tag rose">全日行程</span>
     <span class="day-tag">轉住人民廣場周邊</span>
-    <ul class="events">
-      <li class="event"><div class="time">09:00 – 18:00</div><div class="desc">TVM</div></li>
-      <li class="event"><div class="time">TVM 結束後</div><div class="desc">The Westin Bund Center 退房，轉入住 Home Inn（南京東路外灘中心店）／ Hanting（人民廣場地鐵站店）</div></li>
-      <li class="event"><div class="time">19:00</div><div class="desc">南京東路步行街 逛逛</div><div class="note">兩間備選新飯店都在步行街附近（Home Inn 約 5–8 分鐘、Hanting 約 10–15 分鐘或一站地鐵），先辦好入住再輕裝出門會比較順</div></li>
-      <li class="event"><div class="time">22:00 前</div><div class="desc">返回新飯店</div></li>
-    </ul>
+    <div class="timeline-legend">
+      <span class="lg-shared"><i></i>共同行程</span>
+    </div>
+    <div class="timeline-split">
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">08:30</div>
+          <div class="tl-desc">The Westin Bund Center 退房</div>
+          <div class="tl-note">提早退房，行李建議寄放在飯店櫃檯（多數飯店退房後仍可代為保管），TVM 結束後再回來取</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">09:00 – 18:00</div>
+          <div class="tl-desc">TVM</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">18:30</div>
+          <div class="tl-desc">搭乘計程車，前往轉入住漢庭上海人民廣場地鐵站酒店</div>
+          <div class="tl-note">先回 Westin 取回寄放的行李，再叫車過去，不用扛著行李跑一整天</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">19:00 – 19:30</div>
+          <div class="tl-desc">漢庭上海人民廣場地鐵站酒店 辦理入住</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">19:30 – 20:30</div>
+          <div class="tl-desc">飯店附近簡單晚餐：黃河路美食街</div>
+          <div class="tl-note">從漢庭上海人民廣場地鐵站酒店步行約 5–8 分鐘，早上已經很忙，晚上不安排走遠，推薦<b>小楊生煎（黃河路店）</b>——招牌生煎包，便宜、快、不用等太久，吃完直接散步回飯店</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">20:30 – 21:30</div>
+          <div class="tl-desc">足浴按摩（選擇性）</div>
+          <div class="tl-note">人民廣場周邊足浴店很多，坐著放鬆一小時，比再出門逛街輕鬆很多</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">21:30 後</div>
+          <div class="tl-desc">回飯店早點休息</div>
+          <div class="tl-note">10/19 一早又是滿滿行程，這天晚上早點睡比較好</div>
+        </div>
+      </div>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-4" class="day-map"></div>
-      <div class="day-map-note">兩間備選飯店都標在圖上，實際入住以你們最終選定的為準。</div>
+      <div class="day-map-note">飯店已確定為 漢庭上海人民廣場地鐵站酒店。</div>
     </div>
   </div>
 
   <div class="day-panel" data-day="5">
-    <div class="day-title">人民公園・上海博物館・賦歸</div>
+    <div class="day-title">老弄堂早餐・人民公園・佳家湯包・賦歸</div>
     <span class="day-tag rose">豫園本體休園</span>
     <span class="day-tag">最後一天</span>
-    <ul class="events">
-      <li class="event"><div class="time">09:00 起</div><div class="desc">人民公園</div><div class="note">就在新飯店附近，免費入場，晨間散步、看噴泉很舒服</div></li>
-      <li class="event"><div class="time">上午</div><div class="desc">上海博物館（人民廣場館）</div>
-        <div class="callout"><b>提醒：</b>開放時間 9:00–17:00，主要展廳免費，但建議<b>提前線上預約</b>（官方微信公眾號或官網），假日人多時常額滿或部分展廳關閉，出發前再確認一下比較保險。<br><br><b>關於豫園：</b>已確認豫園本體每週一休園（10/19 為週一），加上你們 10/15、10/16 已經去過豫園老街商圈，這天就不特別安排回去了，改逛人民廣場周邊這兩個還沒去過的點。</div>
-      </li>
-      <li class="event"><div class="time">14:00 – 17:00</div><div class="desc">Justin 加碼行程：陸家嘴散步</div>
-        <div class="callout"><b>行李寄放在飯店：</b>Anne / Monica 16:15 出發，Justin 19:40 才飛，行李可以放心寄放在飯店（多數飯店退房後仍可免費寄放），輕裝去逛。<br><br><b>路線：</b>14:00 從飯店搭地鐵 2 號線到陸家嘴（約 15–20 分鐘）→ 14:30 陸家嘴濱江大道散步，從浦東這側回看外灘，跟 10/15 看到的角度完全不同 → 想的話可以上上海中心大廈觀光層（118 樓，中國最高樓，建議提前線上訂票）→ 約 16:00 搭地鐵原路返回飯店（約 20–25 分鐘），取回寄放的行李。<br><br><b>前往機場：</b>Justin 現在改從虹橋機場（SHA）出發，跟 Anne / Monica 同一個機場，離人民廣場飯店近很多。建議取回行李後，約 16:30–17:00 叫車前往虹橋機場（車程約 25–35 分鐘），17:30 前即可抵達，離 19:40 航班還有 2 小時以上緩衝，相當寬裕。</div>
-      </li>
-      <li class="event"><div class="time">16:15 / 18:15</div><div class="desc">Anne / Monica：SHA → TSA</div><div class="note">虹橋機場（SHA）離人民廣場飯店較近，約 30–40 分鐘車程，仍建議預留通關與安檢時間</div></li>
-      <li class="event"><div class="time">19:40 / 21:45</div><div class="desc">Justin：SHA → TSA（BR771）</div><div class="note">出發機場改成虹橋（SHA），跟 Anne / Monica 同一個機場，離人民廣場飯店較近（約 25–35 分鐘車程），比原本要去浦東機場輕鬆不少</div></li>
-    </ul>
+    <div class="timeline-legend">
+      <span class="lg-personal"><i></i>Justin</span>
+      <span class="lg-am"><i></i>Anne / Monica</span>
+      <span class="lg-shared"><i></i>共同行程</span>
+    </div>
+    <div class="timeline-split">
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">08:30</div>
+          <div class="tl-desc">飯店早餐（選擇性）</div>
+          <div class="tl-note">要不要吃飯店早餐都可以，看大家想不想留肚子給外面的早餐</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">08:45 – 09:30</div>
+          <div class="tl-desc">第一輪早餐：鹹豆漿、油條</div>
+          <div class="tl-note">順便漫步老弄堂</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">09:30 – 10:15</div>
+          <div class="tl-desc">國際飯店買蝴蝶酥，與《繁花》取景老建築合照</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">10:15 – 11:15</div>
+          <div class="tl-desc">人民公園散步</div>
+          <div class="tl-note">看老上海人晨練、欣賞沐恩堂</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">11:15 – 12:30</div>
+          <div class="tl-desc">佳家湯包（早午餐）</div>
+          <div class="tl-note">回味上海最後的鮮美</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">12:45</div>
+          <div class="tl-desc">步行回漢庭酒店取行李</div>
+        </div>
+      </div>
+      <div class="tl-row personal who-am">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Anne / Monica</span>
+          <div class="tl-time">13:30 前</div>
+          <div class="tl-desc">搭乘計程車前往虹橋機場</div>
+        </div>
+      </div>
+      <div class="tl-row personal">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Justin</span>
+          <div class="tl-time">13:30 – 16:30</div>
+          <div class="tl-desc">飯店附近景點自由活動</div>
+          <div class="callout"><b>推薦景點：</b>上海城市規劃展覽館（人民廣場，免費入場，步行約 10 分鐘），5 層樓的城市模型跟互動展覽很值得一看，而且是少數週一仍開放的博物館，建議 13:30–14:30 這段去。<br><br><b>南京東路步行街（14:30–16:00）可以鎖定這幾個點：</b><br>・<b>上海市第一食品商店</b>（南京東路 720 號）：整層樓都是上海零嘴、糖果、蜜餞，伴手禮一次買齊很方便<br>・<b>上海市第一百貨商店</b>（南京東路 830 號）：1936 年開業的老字號百貨，逛老建築本身就很有味道，同樣有零食樓層、也有退稅櫃檯<br>・<b>沈大成</b>（南京東路 636 號）：百年老字號糕點店，鮮肉月餅、蛋黃肉鬆青團都是招牌，常常大排長龍，喜歡的話可以現場買現吃<br><br>逛完直接回飯店整理行李，準備出發。</div>
+        </div>
+      </div>
+      <div class="tl-row personal who-am">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Anne / Monica</span>
+          <div class="tl-time">16:15 / 18:15</div>
+          <div class="tl-desc">SHA → TSA（CI202）</div>
+        </div>
+      </div>
+      <div class="tl-row personal">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Justin</span>
+          <div class="tl-time">16:30</div>
+          <div class="tl-desc">離開飯店，前往虹橋機場報到</div>
+        </div>
+      </div>
+      <div class="tl-row personal">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <span class="tl-tag">Justin</span>
+          <div class="tl-time">19:40 / 21:45</div>
+          <div class="tl-desc">SHA → TSA（BR771）</div>
+        </div>
+      </div>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-5" class="day-map"></div>
-      <div class="day-map-note">機場位置較遠未標示於圖上，實際離境交通請參考上方航班提醒。</div>
+      <div class="day-map-note">早上行程都在人民廣場步行範圍內；下午 Anne / Monica 搭車先走，Justin 在附近多留幾小時，各自前往虹橋機場。</div>
     </div>
   </div>
 
-</div>
-
-<div class="section-title">兩間備選飯店比較</div>
-<div class="section-sub">10/18 – 10/19 一晚・Home Inn 南京東路外灘中心店　vs　Hanting 人民廣場地鐵站店</div>
-
-<div class="hotels">
-  <div class="hotel-card">
-    <div class="dates">HOME INN STYLE</div>
-    <h4>上海南京東路外灘中心店</h4>
-    <a class="link" href="https://www.homeinns.com/" target="_blank" rel="noopener">如家酒店集團官網 ↗</a>
-    <h5>優點</h5>
-    <ul class="pro">
-      <li>價格經濟，適合出差最後一晚</li>
-      <li>仍在南京東路商圈，鄰近外灘、步行街</li>
-      <li>與 10/15 住宿商圈重疊，動線熟悉</li>
-    </ul>
-    <h5>缺點</h5>
-    <ul class="con">
-      <li>房型較小、設施簡單，無泳池／健身房</li>
-      <li>隔音與裝潢為經濟型連鎖水準</li>
-      <li>英語服務相對有限</li>
-    </ul>
-    <h5>鄰近景點</h5>
-    <ul class="spots">
-      <li>南京東路步行街</li>
-      <li>外灘、黃浦公園</li>
-      <li>外灘源（Rockbund）</li>
-    </ul>
-  </div>
-
-  <div class="hotel-card">
-    <div class="dates">HANTING HOTEL</div>
-    <h4>上海人民廣場地鐵站店</h4>
-    <a class="link" href="https://www.agoda.com/zh-tw/hanting-express-shanghai-people-s-square-metro-station/hotel/shanghai-cn.html" target="_blank" rel="noopener">Agoda 訂房頁面 ↗</a>
-    <h5>優點</h5>
-    <ul class="pro">
-      <li>緊鄰人民廣場站，1／2／8 號線交會，轉乘機場最方便</li>
-      <li>離豫園（10 號線或計程車約 15–20 分鐘）較近，適合 10/19 早上安排</li>
-      <li>價格經濟</li>
-    </ul>
-    <h5>缺點</h5>
-    <ul class="con">
-      <li>房型與設施同為經濟型連鎖水準</li>
-      <li>周邊為鬧區，早晚可能較嘈雜</li>
-      <li>早餐／禮賓服務較簡單</li>
-    </ul>
-    <h5>鄰近景點</h5>
-    <ul class="spots">
-      <li>人民廣場、人民公園</li>
-      <li>上海博物館、上海大劇院</li>
-      <li>南京東路步行街（步行可達）</li>
-      <li><a href="https://www.yugarden.com.cn/" target="_blank" rel="noopener">豫園</a>（地鐵可達，但每週一休園）</li>
-    </ul>
-  </div>
-</div>
-
-<div class="link-note">部分連結（如家、漢庭、豫園官網）為既有記憶提供，未經即時網路查證，建議使用前再次確認網址正確性。</div>
-
-<div class="section-title">航班資訊</div>
-<div class="section-sub">Justin ／ Anne · Monica 抵達與離開時間</div>
-
-<div class="flights">
-  <div class="flight-col">
-    <h3>JUSTIN</h3>
-    <div class="flight-row"><span>抵達 10/15（四）</span><b>TSA 08:00 → PVG 10:00</b></div>
-    <div class="flight-row"><span class="flight-code">BR2400</span><span></span></div>
-    <div class="flight-row"><span>離開 10/19（一）</span><b>SHA 19:40 → TSA 21:45</b></div>
-    <div class="flight-row"><span class="flight-code">BR771</span><span></span></div>
-  </div>
-  <div class="flight-col">
-    <h3>ANNE / MONICA</h3>
-    <div class="flight-row"><span>抵達 10/15（四）</span><b>TSA 12:30 → SHA 14:15</b></div>
-    <div class="flight-row"><span class="flight-code">CI201</span><span></span></div>
-    <div class="flight-row"><span>離開 10/19（一）</span><b>SHA 16:15 → TSA 18:15</b></div>
-    <div class="flight-row"><span class="flight-code">CI202</span><span></span></div>
-  </div>
 </div>
 
 </div><!-- /page-overview -->
@@ -707,6 +982,7 @@
       <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍬</span>
       <span class="souvenir-name">大白兔奶糖</span>
       <span class="souvenir-desc">經典牛奶糖，好吃平價，方便分送同事</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路血拼時段）<br><b>地點／距離：</b>上海市第一食品商店，漢庭飯店步行約 8–10 分鐘</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/White_Rabbit_Creamy_Candy" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
@@ -716,6 +992,7 @@
       <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🥐</span>
       <span class="souvenir-name">蝴蝶酥</span>
       <span class="souvenir-desc">老字號酥皮甜點（如國際飯店），送禮體面</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 09:30–10:15（行程已排定）<br><b>地點／距離：</b>國際飯店，漢庭飯店步行約 3–5 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E8%9D%B4%E8%9D%B6%E9%85%A5+%E4%B8%8A%E6%B5%B7+%E4%BC%B4%E6%89%8B%E7%A6%AE" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
@@ -725,25 +1002,28 @@
       <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🫘</span>
       <span class="souvenir-name">五香豆／梨膏糖</span>
       <span class="souvenir-desc">城隍廟老字號傳統零嘴，商圈就能買到</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/15 晚上 20:30–21:45（豫園老街，行程已排定）<br><b>地點／距離：</b>豫園老街，威斯丁飯店步行約 15–18 分鐘（或夜遊船下船後步行約 10 分鐘）</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E4%BA%94%E9%A6%99%E8%B1%86+%E6%A2%A8%E8%86%8F%E7%B3%96+%E8%B1%AB%E5%9C%92" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="xiaolongbao">
-      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🥟</span>
-      <span class="souvenir-name">南翔小籠包（速凍禮盒）</span>
-      <span class="souvenir-desc">帶得走的小籠包，記得確認能否隨身或托運帶上飛機</span>
-      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Xiaolongbao" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <input type="checkbox" data-id="shaowansheng">
+      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🌰</span>
+      <span class="souvenir-name">邵萬生蜜餞／炒貨禮盒</span>
+      <span class="souvenir-desc">百年南北貨老字號，蜜餞、堅果炒貨很適合送禮，常溫保存不用擔心退冰</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）<br><b>地點／距離：</b>邵萬生（南京東路 414 號），漢庭飯店步行約 12–15 分鐘</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E9%82%B5%E8%90%AC%E7%94%9F+%E5%8D%97%E8%B2%A8+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="silk-scarf">
-      <span class="souvenir-icon" style="background:var(--purple-soft); font-size:32px;">🧣</span>
-      <span class="souvenir-name">絲綢圍巾／旗袍小物</span>
-      <span class="souvenir-desc">上海特色紡織品，南京東路、豫園都有店家</span>
-      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Cheongsam" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <input type="checkbox" data-id="yuyuan-craft">
+      <span class="souvenir-icon" style="background:var(--purple-soft); font-size:32px;">🏺</span>
+      <span class="souvenir-name">豫園老街工藝品</span>
+      <span class="souvenir-desc">紫砂壺、剪紙、檀香扇等老街常見的傳統小工藝，輕巧好帶，適合當紀念擺飾</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/15 晚上（豫園老街，已排定）<br><b>地點／距離：</b>豫園老街，威斯丁飯店步行約 15–18 分鐘</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%B1%AB%E5%9C%92%E8%80%81%E8%A1%97+%E5%B7%A5%E8%97%9D%E5%93%81+%E7%B4%AB%E7%A0%82%E5%A3%BA" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
@@ -752,6 +1032,7 @@
       <span class="souvenir-icon" style="background:var(--blue-soft); font-size:32px;">🧲</span>
       <span class="souvenir-name">城市文創小物（冰箱貼／明信片）</span>
       <span class="souvenir-desc">外灘、東方明珠圖案，輕便好帶又有紀念意義</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 13:30–14:30 順便買（上海城市規劃展覽館紀念品店）<br><b>地點／距離：</b>漢庭飯店步行約 10 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E4%B8%8A%E6%B5%B7+%E6%96%87%E5%89%B5+%E5%86%B0%E7%AE%B1%E8%B2%BC" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
@@ -761,6 +1042,7 @@
       <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍵</span>
       <span class="souvenir-name">老字號茶葉</span>
       <span class="souvenir-desc">豫園、南京東路周邊茶莊，送長輩、主管都合適</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/15 晚上（豫園老街茶莊）<br><b>地點／距離：</b>威斯丁飯店步行約 15–18 分鐘</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Chinese_tea" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
@@ -770,6 +1052,7 @@
       <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🍶</span>
       <span class="souvenir-name">石庫門老酒／黃酒</span>
       <span class="souvenir-desc">上海特色酒類，注意隨身／托運液體攜帶限制</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午再買，避免玻璃瓶多扛好幾天<br><b>地點／距離：</b>上海市第一食品商店，漢庭飯店步行約 8–10 分鐘</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Huangjiu" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
@@ -836,8 +1119,7 @@
 <script>
   (function(){
     var WESTIN = {lat:31.2323623, lng:121.4870096, label:"The Westin Bund Center, Shanghai"};
-    var HOME_INN = {lat:31.23966, lng:121.48126, label:"Home Inn 南京東路外灘中心店（備選）"};
-    var HANTING = {lat:31.2358752, lng:121.4701341, label:"Hanting 人民廣場地鐵站店（備選）"};
+    var HANTING = {lat:31.2358752, lng:121.4701341, label:"漢庭上海人民廣場地鐵站酒店"};
     var YUYUAN = {lat:31.2263942, lng:121.4919337, label:"豫園老街／城隍廟商圈"};
 
     var dayMapsData = {
@@ -849,30 +1131,40 @@
           {lat:31.239181, lng:121.489649, label:"萬國建築博覽群 · 16:00"},
           {lat:31.241431, lng:121.49082, label:"黃浦公園 · 17:00"},
           {lat:31.23472, lng:121.49066, label:"Yujintian 晚餐 · 17:45"},
-          {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 19:30"}
+          {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 19:30"},
+          Object.assign({}, YUYUAN, {label:"豫園老街 · 20:30–21:45"})
         ],
         extraPoints: [
-          Object.assign({}, YUYUAN, {label:"豫園 · Justin 個人行程 12:00–15:00", color:"#4EA8DE"})
+          {lat:31.2263942, lng:121.4919337, label:"豫園（本體）· Justin 個人行程 12:00–15:00", color:"#4EA8DE"}
         ]
       },
       "2": {
-        color:"#00B8A9", route:false,
-        points:[ WESTIN, Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟夜市 · 19:00"}) ]
+        color:"#00B8A9", route:true,
+        points:[
+          Object.assign({}, WESTIN, {label:"Westin 飯店 · 18:30 出發"}),
+          {lat:31.238733, lng:121.490528, label:"外灘觀光隧道 · 過江"},
+          {lat:31.233518, lng:121.505618, label:"上海中心大廈觀光層 · 19:00–20:30"}
+        ]
       },
       "3": { color:"#FFC845", route:false, points:[ WESTIN ] },
       "4": {
         color:"#8B5CF6", route:false,
-        points:[ WESTIN, HOME_INN, HANTING, {lat:31.2352, lng:121.4809, label:"南京東路步行街 · 19:00"} ]
+        points:[ WESTIN, HANTING, {lat:31.2352, lng:121.4809, label:"南京東路步行街 · 19:00"} ]
       },
       "5": {
-        color:"#FF6FA5", route:false,
+        color:"#FF6FA5", route:true,
         points:[
-          {lat:31.232226, lng:121.473219, label:"人民公園 · 09:00"},
-          {lat:31.2283307, lng:121.4755278, label:"上海博物館 · 上午"},
-          HOME_INN, HANTING
+          Object.assign({}, HANTING, {label:"漢庭酒店 · 08:30 早餐（選擇性）"}),
+          {lat:31.233668, lng:121.4716114, label:"國際飯店 · 09:30 買蝴蝶酥"},
+          {lat:31.232226, lng:121.473219, label:"人民公園 · 10:15"},
+          {lat:31.233275, lng:121.475868, label:"沐恩堂 · 10:15–11:15"},
+          {lat:31.234577, lng:121.470821, label:"佳家湯包 · 11:15–12:30"},
+          Object.assign({}, HANTING, {label:"漢庭酒店 · 12:45 取行李"})
         ],
         extraPoints: [
-          {lat:31.233518, lng:121.505618, label:"陸家嘴／上海中心 · Justin 14:00–17:00", color:"#4EA8DE"}
+          {lat:31.2314133, lng:121.4754033, label:"上海城市規劃展覽館 · Justin 13:30–14:30", color:"#4EA8DE"},
+          {lat:31.235325, lng:121.476781, label:"上海市第一食品商店 · 伴手禮", color:"#4EA8DE"},
+          {lat:31.23576, lng:121.478316, label:"沈大成 · 傳統糕點", color:"#4EA8DE"}
         ]
       }
     };
@@ -1136,4 +1428,3 @@
 
 </body>
 </html>
-
