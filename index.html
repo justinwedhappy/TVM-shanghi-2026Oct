@@ -349,6 +349,13 @@
   .sf-row .sf-label{font-weight:700; color:var(--ink); flex:0 0 auto; min-width:44px;}
   .sf-row a{font-weight:700;}
 
+  .weather-card{background:var(--card); border:2px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:36px;}
+  .weather-card .weather-sub{font-size:11.5px; color:var(--text-dim); margin-bottom:10px;}
+  .weather-card ul{list-style:none; font-size:12.5px; color:var(--text-dim); line-height:1.7;}
+  .weather-card ul li{padding:3px 0 3px 18px; position:relative;}
+  .weather-card ul li::before{content:"•"; position:absolute; left:2px; color:var(--teal);}
+  .weather-card ul li b{color:var(--ink);}
+
   @media (max-width:640px){
     .preflight-item{padding-left:46px;}
   }
@@ -379,7 +386,7 @@
   <div class="eyebrow">SHANGHAI · 上海出差同行</div>
   <h1>PMI TVM- Shang Hai <span>- 2026/10/15-10/19</span></h1>
   <p class="sub">2026 年 10 月 15 日（四）— 10 月 19 日（一）</p>
-  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v1.4 · 最後更新 2026/09/20</p>
+  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.0 · 最後更新 2026/09/20</p>
   <div class="confetti">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
@@ -433,6 +440,19 @@
 
   </div>
 
+  <div class="preflight-group">氣候與建議穿著</div>
+  <div class="weather-card">
+    <div class="weather-sub">出發前 7–10 天再查一次實際預報比較準；目前主要氣象網站最多只能預測到 10 天內，10/15–10/19 這麼遠的日子還沒有可靠的逐日預報，以下是上海 10 月中旬的歷史氣候平均值，僅供先抓個底、準備行李參考。</div>
+    <ul>
+      <li><b>氣溫概況：</b>高溫約 22–24°C，低溫約 15–17°C，早晚溫差可達 7–8 度；已脫離颱風季主要影響，但仍偶有秋雨</li>
+      <li><b>上衣：</b>長袖 T 恤或薄長袖衫就夠，白天不需要太厚的外套</li>
+      <li><b>晚上加一件薄外套：</b>外灘漫步、黃浦江夜遊船這類晚上戶外行程，江面風大、體感更涼</li>
+      <li><b>鞋子：</b>行程步行不少（外灘、豫園老街、南京東路步行街），建議穿平常走習慣、舒適的平底鞋</li>
+      <li><b>備一把折疊雨傘：</b>十月中旬偶有秋雨，戶外行程建議行李裡放一把小雨傘防萬一</li>
+      <li><b>防曬小物：</b>白天戶外行程也不少，可以帶太陽眼鏡、帽子，水壺容量帶大一點</li>
+    </ul>
+  </div>
+
   <div class="preflight-list" id="preflightList">
 
     <div class="preflight-group">大家都要完成</div>
@@ -455,7 +475,7 @@
       <div class="preflight-meta">
         <div><span class="meta-label">建議時間</span>建議提前 3–5 天線上訂票，避開現場排隊</div>
         <div><span class="meta-label">說明</span>10/16 十六鋪碼頭，TVM 結束時間固定，選普通艙、短程航線即可控制在預算內</div>
-        <div><span class="meta-label">連結</span>無單一官方售票網站，建議透過攜程、飛豬或大眾點評等平台比較後訂票</div>
+        <div><span class="meta-label">連結</span><a href="https://tw.trip.com/travel-guide/attraction/shanghai/huangpu-river-cruise-98472" target="_blank" rel="noopener" onclick="event.stopPropagation()">Trip.com 購票頁面 ↗</a>（進去後請選日期／票種，確認該票是否可退再下單）</div>
       </div>
     </label>
 
@@ -523,6 +543,18 @@
         <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
         <div><span class="meta-label">說明</span>10/15 去程 BR2400（TSA→PVG）、10/19 回程 BR771（SHA→TSA），皆為長榮航空班機，建議提前完成線上報到節省機場時間</div>
         <div><span class="meta-label">連結</span><a href="https://www.evaair.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">長榮航空 ↗</a></div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="yugarden-ticket">
+      <span class="preflight-checkmark">✓</span>
+      <span class="tl-tag">Justin</span>
+      <span class="preflight-title">豫園門票</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>10/15 個人行程前先買好，省去現場排隊</div>
+        <div><span class="meta-label">說明</span>10/15 是週四，豫園本體正常開放，把握這趟唯一能入園的機會</div>
+        <div><span class="meta-label">連結</span><a href="https://tw.trip.com/travel-guide/attraction/shanghai/yu-garden-75615" target="_blank" rel="noopener" onclick="event.stopPropagation()">Trip.com 購票頁面 ↗</a></div>
       </div>
     </label>
 
@@ -606,7 +638,7 @@
     <div class="ov-date">16</div>
     <div class="ov-wd">FRI · 五</div>
     <div class="ov-headline">TVM・黃浦江夜遊船</div>
-    <div class="ov-note">19:30 十六鋪碼頭</div>
+    <div class="ov-note">18:30 十六鋪碼頭</div>
   </div>
   <div class="ov-card" data-day="3">
     <div class="ov-date">17</div>
@@ -669,6 +701,7 @@
           <span class="tl-tag">Justin</span>
           <div class="tl-time">12:00 – 15:00</div>
           <div class="tl-desc">個人行程：豫園</div>
+          <div class="tl-note">門票可線上先買：<a href="https://tw.trip.com/travel-guide/attraction/shanghai/yu-garden-75615" target="_blank" rel="noopener">Trip.com 購票頁面 ↗</a></div>
         </div>
       </div>
       <div class="tl-row personal who-am">
@@ -754,17 +787,34 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">09:00 – 18:00</div>
+          <div class="tl-time">09:00 – 17:00</div>
           <div class="tl-desc">TVM</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:30</div>
+          <div class="tl-time">17:30</div>
+          <div class="tl-desc">沿外灘步行前往十六鋪碼頭</div>
+          <div class="tl-note">TVM 剛結束，留 30 分鐘緩衝時間。從 Westin 走外灘濱江步道往南，約 10–12 分鐘、800 公尺，夜景本身就值得慢慢走；下雨或想省腳力時可叫車，車程約 5–8 分鐘</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">18:30</div>
           <div class="tl-desc">十六鋪碼頭・黃浦江夜遊船（普通艙／短程航線）</div>
-          <div class="callout"><b>訂票建議：</b>TVM 09:00–18:00 結束時間固定，晚上時間確定，適合搭配有固定開船時刻的夜遊船，不用擔心錯過場次。選普通艙、短程航線（約 40–60 分鐘），票價約人民幣 100–150 元／人，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。</div>
+          <div class="callout"><b>最佳搭船時間：</b>10 月中旬上海日落約 17:20–17:30，18:30 登船剛好接近黃昏，航程 40–60 分鐘之間會經歷「天還有點藍光 → 兩岸華燈全亮」的過渡，是公認拍照跟體驗最好的時段，比純全黑夜間出發更有層次。</div>
+          <div class="callout"><b>訂票建議：</b>TVM 09:00–17:00 結束時間固定，晚上時間確定，適合搭配有固定開船時刻的夜遊船，不用擔心錯過場次。選普通艙、短程航線，票價約人民幣 100–150 元／人，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。</div>
           <div class="callout"><b>景點特色：</b>直接航行在江面上，近距離同時欣賞外灘老建築與陸家嘴摩天樓群的燈光，露天甲板可吹風拍照，臨場感跟氣氛比較浪漫、親水，缺點是要看天氣、船身可能會晃。跟昨天（10/15）的上海中心觀光層正好是兩種不同體驗，可以互相參考。</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">19:15 – 20:15</div>
+          <div class="tl-desc">晚餐</div>
+          <div class="tl-note">下船後推薦<b>浦江小吃廣場</b>（外灘 435 號，碼頭旁走路約 3–4 分鐘）——各式上海小吃、小份點心，份量彈性，如果中午吃得比較飽，這裡很適合隨意挑幾樣吃巧不吃飽；如果想坐下來好好吃一頓，外灘五號大樓（外灘中山東一路 5 號）裡有幾家評價不錯的餐廳，但價位偏高，屬於比較講究的選擇</div>
         </div>
       </div>
       <div class="tl-row shared">
@@ -792,7 +842,7 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">09:00 – 18:00</div>
+          <div class="tl-time">09:00 – 17:00</div>
           <div class="tl-desc">TVM</div>
         </div>
       </div>
@@ -839,7 +889,7 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">09:00 – 18:00</div>
+          <div class="tl-time">09:00 – 17:00</div>
           <div class="tl-desc">TVM</div>
         </div>
       </div>
@@ -1146,13 +1196,23 @@
       <span class="souvenir-checkmark">✓</span>
     </label>
 
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="meibao">
+      <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🩹</span>
+      <span class="souvenir-name">美寶濕潤燒傷膏</span>
+      <span class="souvenir-desc">老字號燙傷藥膏，居家常備良品，很多人指定要買，適合自用或送人</span>
+      <span class="souvenir-meta"><b>建議時機：</b>住在威斯丁期間（10/15–10/18）隨時可去，離飯店超近<br><b>地點／距離：</b>老百姓大藥房（延安東路店，延安東路 282 號），威斯丁飯店步行約 2 分鐘</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E7%BE%8E%E5%AF%B6%E6%BF%95%E6%BD%A4%E7%87%92%E5%82%B7%E8%86%8F" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
   </div>
   <div class="souvenir-note">品項與購買地點為既有知識推薦，未經即時查證，實際庫存、價格請以店家現場為準。</div>
 </div>
 
 </div><!-- /page-souvenir -->
 
-<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v1.4 · 最後更新 2026/09/20</footer>
+<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.0 · 最後更新 2026/09/20</footer>
 
 <script>
   (function(){
@@ -1229,7 +1289,7 @@
       },
       "2": {
         color:"#00B8A9", route:true,
-        points:[ WESTIN, {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 19:30"} ]
+        points:[ WESTIN, {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 18:30"} ]
       },
       "3": {
         color:"#FFC845", route:false, points:[ WESTIN ],
