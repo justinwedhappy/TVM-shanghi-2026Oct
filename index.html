@@ -388,7 +388,7 @@
   <div class="eyebrow">SHANGHAI · 上海出差同行</div>
   <h1>PMI TVM- Shang Hai <span>- 2026/10/15-10/19</span></h1>
   <p class="sub">2026 年 10 月 15 日（四）— 10 月 19 日（一）</p>
-  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.3 · 最後更新 2026/09/20</p>
+  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.4 · 最後更新 2026/09/20</p>
   <div class="confetti">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
@@ -1311,7 +1311,7 @@
 
 </div><!-- /page-souvenir -->
 
-<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.3 · 最後更新 2026/09/20</footer>
+<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.4 · 最後更新 2026/09/20</footer>
 
 <script>
   (function(){
@@ -1426,9 +1426,10 @@
 
       var data = dayMapsData[day];
       var map = L.map(el, { zoomControl:true, scrollWheelZoom:false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors'
+        subdomains: 'abcd',
+        attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; OpenStreetMap contributors'
       }).addTo(map);
 
       var latlngs = [];
