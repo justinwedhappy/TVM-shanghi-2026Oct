@@ -5,8 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 PMI TVM- Shang Hai</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
@@ -39,7 +37,7 @@
       url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='48'%20height='48'%3E%3Cpath%20d='M24%200L48%2024L24%2048L0%2024Z'%20fill='none'%20stroke='%23B3382C'%20stroke-opacity='0.07'%20stroke-width='1'/%3E%3C/svg%3E");
     background-repeat:repeat;
     color:var(--ink);
-    font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
     font-weight:400;
     line-height:1.65;
     padding: 0 0 80px;
@@ -61,7 +59,7 @@
     overflow:hidden;
   }
   .hero .eyebrow{
-    font-family:"Noto Sans SC",sans-serif;
+    font-family:"PingFang SC","Microsoft YaHei",sans-serif;
     display:inline-block;
     color:var(--coral);
     background:var(--coral-soft);
@@ -73,7 +71,7 @@
     margin-bottom:22px;
   }
   .hero h1{
-    font-family:"Noto Serif SC",serif;
+    font-family:"Songti SC","STSong","SimSun",serif;
     font-weight:700;
     font-size:34px;
     color:var(--ink);
@@ -103,7 +101,7 @@
     display:flex; justify-content:center; gap:12px; padding:0 24px 8px; flex-wrap:wrap;
   }
   .maintab-btn{
-    font-family:"Noto Sans SC",sans-serif; font-size:15px; font-weight:800; color:var(--text-dim);
+    font-family:"PingFang SC","Microsoft YaHei",sans-serif; font-size:15px; font-weight:800; color:var(--text-dim);
     background:var(--card); border:2px solid var(--line); border-radius:24px;
     padding:12px 32px; cursor:pointer; transition:all .15s ease;
     box-shadow:0 4px 14px rgba(43,27,18,0.05);
@@ -121,41 +119,39 @@
   .flight-col{background:var(--card); border-radius:18px; padding:26px 24px; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
   .flight-col:nth-child(1){border-top:4px solid var(--coral);}
   .flight-col:nth-child(2){border-top:4px solid var(--teal);}
-  .flight-col h3{font-family:"Noto Serif SC",serif; font-size:15px; color:var(--ink); letter-spacing:0.04em; margin-bottom:16px; font-weight:700;}
+  .flight-col h3{font-family:"Songti SC","STSong","SimSun",serif; font-size:15px; color:var(--ink); letter-spacing:0.04em; margin-bottom:16px; font-weight:700;}
   .flight-row{display:flex; justify-content:space-between; font-size:13px; color:var(--text-dim); padding:8px 0; border-top:1px dashed var(--line);}
   .flight-row:first-of-type{border-top:none;}
   .flight-row b{color:var(--ink); font-weight:600;}
   .flight-code{color:var(--coral); font-size:11px; font-weight:700; letter-spacing:0.05em;}
 
   /* OVERVIEW TABLE */
-  .section-title{font-family:"Noto Serif SC",serif; font-size:27px; font-weight:700; color:var(--ink); padding: 60px 24px 6px; text-align:center; position:relative;}
+  .section-title{font-family:"Songti SC","STSong","SimSun",serif; font-size:27px; font-weight:700; color:var(--ink); padding: 60px 24px 6px; text-align:center; position:relative;}
   .section-title::before{content:"◆"; display:block; font-size:10px; color:var(--yellow); margin-bottom:12px;}
   .section-sub{text-align:center; color:var(--text-dim); font-size:13px; font-weight:500; padding-bottom:32px;}
-  .overview{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; padding:0 24px;}
+  .overview{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; padding:0 24px; margin-bottom:36px;}
   .ov-card{
     background:var(--card); border:2px solid var(--line); border-radius:16px;
-    padding:16px 12px; cursor:pointer; text-align:left;
+    padding:16px 12px; cursor:pointer; text-align:left; position:relative; overflow:hidden;
     transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
   }
+  .ov-card::before{content:""; position:absolute; top:0; left:0; right:0; height:5px; background:var(--accent);}
   .ov-card:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(43,27,18,0.10);}
   .ov-card:nth-child(1){--accent:var(--coral); --accent-soft:var(--coral-soft);}
   .ov-card:nth-child(2){--accent:var(--teal); --accent-soft:var(--teal-soft);}
   .ov-card:nth-child(3){--accent:var(--yellow); --accent-soft:var(--yellow-soft);}
   .ov-card:nth-child(4){--accent:var(--purple); --accent-soft:var(--purple-soft);}
   .ov-card:nth-child(5){--accent:var(--pink); --accent-soft:var(--pink-soft);}
-  .ov-card.active{border-color:var(--accent); background:var(--accent-soft);}
-  .ov-card .ov-date{font-family:"Noto Serif SC",serif; font-size:22px; color:var(--accent); font-weight:700; line-height:1;}
+  .ov-card.active{border-color:var(--accent); background:var(--accent-soft); box-shadow:0 8px 20px rgba(43,27,18,0.08);}
+  .ov-card .ov-date{font-family:"Songti SC","STSong","SimSun",serif; font-size:22px; color:var(--accent); font-weight:700; line-height:1;}
   .ov-card .ov-wd{font-size:10px; color:var(--text-dim); font-weight:700; letter-spacing:0.06em; margin:6px 0 10px;}
   .ov-card .ov-headline{font-size:12.5px; color:var(--ink); font-weight:700; margin-bottom:6px;}
   .ov-card .ov-note{font-size:11px; color:var(--text-dim);}
 
-  /* TABS */
-  .tabbar{
-    display:flex; gap:10px; padding:36px 24px 0; flex-wrap:wrap;
-    margin-top:8px;
-  }
+  /* TABS (hidden — overview cards above are now the only day-switcher, to avoid duplicate controls) */
+  .tabbar{ display:none; }
   .tab-btn{
-    font-family:"Noto Sans SC",sans-serif; font-size:13px; color:var(--text-dim); font-weight:700;
+    font-family:"PingFang SC","Microsoft YaHei",sans-serif; font-size:13px; color:var(--text-dim); font-weight:700;
     background:var(--card); border:2px solid var(--line); border-radius:20px;
     padding:9px 20px; cursor:pointer; transition:all .15s ease;
   }
@@ -175,7 +171,7 @@
   .day-panel:nth-of-type(3){border-top:5px solid var(--yellow);}
   .day-panel:nth-of-type(4){border-top:5px solid var(--purple);}
   .day-panel:nth-of-type(5){border-top:5px solid var(--pink);}
-  .day-title{font-family:"Noto Serif SC",serif; font-size:22px; font-weight:700; color:var(--ink); margin-bottom:10px;}
+  .day-title{font-family:"Songti SC","STSong","SimSun",serif; font-size:22px; font-weight:700; color:var(--ink); margin-bottom:10px;}
   .day-tag{display:inline-block; font-size:11.5px; font-weight:700; color:var(--teal); background:var(--teal-soft); border-radius:14px; padding:4px 12px; margin:0 8px 18px 0; letter-spacing:0.02em;}
   .day-tag.rose{color:var(--coral); background:var(--coral-soft);}
   .events{list-style:none; margin-top:10px;}
@@ -226,7 +222,7 @@
   .day-map-label{font-size:12px; font-weight:700; color:var(--text-dim); letter-spacing:0.05em; margin-bottom:8px;}
   .day-map{height:260px; border-radius:16px; overflow:hidden; box-shadow:0 6px 18px rgba(43,27,18,0.08); background:var(--card-alt); z-index:0;}
   .day-map-note{font-size:11.5px; color:var(--text-dim); margin-top:8px; line-height:1.6;}
-  .leaflet-popup-content{font-family:"Noto Sans SC",sans-serif; font-size:12.5px;}
+  .leaflet-popup-content{font-family:"PingFang SC","Microsoft YaHei",sans-serif; font-size:12.5px;}
 
   /* HOTELS */
   .hotels{display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:0 24px;}
@@ -234,7 +230,7 @@
   .hotel-card:nth-child(1){border-top:5px solid var(--blue);}
   .hotel-card:nth-child(2){border-top:5px solid var(--purple);}
   .hotel-card .dates{font-size:11px; color:var(--text-dim); font-weight:700; letter-spacing:0.08em; margin-bottom:8px;}
-  .hotel-card h4{font-family:"Noto Serif SC",serif; font-size:17px; color:var(--ink); margin-bottom:4px; font-weight:700;}
+  .hotel-card h4{font-family:"Songti SC","STSong","SimSun",serif; font-size:17px; color:var(--ink); margin-bottom:4px; font-weight:700;}
   .hotel-card .link{font-size:12px; display:inline-block; margin-bottom:14px;}
   .hotel-card h5{font-size:12px; color:var(--ink); margin:16px 0 8px; letter-spacing:0.02em; font-weight:800;}
   .hotel-card ul{list-style:none; font-size:13px; color:var(--text-dim);}
@@ -250,7 +246,7 @@
   /* EXPENSES */
   .expense-actions{display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding-bottom:22px;}
   .expense-btn{
-    font-family:"Noto Sans SC",sans-serif; font-size:13px; font-weight:700; border-radius:20px; padding:10px 22px;
+    font-family:"PingFang SC","Microsoft YaHei",sans-serif; font-size:13px; font-weight:700; border-radius:20px; padding:10px 22px;
     border:2px solid var(--line); background:var(--card); color:var(--text-dim); cursor:pointer;
     transition:all .15s ease;
   }
@@ -259,8 +255,8 @@
   .expense-status{font-size:12px; color:var(--text-dim); font-weight:500;}
 
   .expense-layout{display:grid; grid-template-columns:1.6fr 1fr; gap:24px; align-items:start;}
-  .expense-table-wrap{background:var(--card); border-radius:18px; overflow:hidden; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
-  .expense-table{width:100%; border-collapse:collapse; font-size:13px;}
+  .expense-table-wrap{background:var(--card); border-radius:18px; overflow-x:auto; box-shadow:0 6px 20px rgba(43,27,18,0.06);}
+  .expense-table{width:100%; min-width:520px; border-collapse:collapse; font-size:13px;}
   .expense-table th{
     text-align:left; font-weight:800; color:var(--ink); font-size:11.5px; letter-spacing:0.03em;
     padding:14px 16px; background:var(--card-alt);
@@ -299,6 +295,10 @@
   .souvenir-desc{font-size:12px; color:var(--text-dim); line-height:1.55;}
   .souvenir-meta{font-size:11.5px; color:var(--text-dim); line-height:1.6; margin-top:2px;}
   .souvenir-meta b{color:var(--ink); font-weight:700;}
+  .souvenir-purpose{display:inline-flex; gap:5px; margin-top:4px;}
+  .souvenir-purpose span{font-size:10px; font-weight:700; padding:2px 8px; border-radius:9px;}
+  .souvenir-purpose .p-keep{background:var(--purple-soft); color:var(--purple);}
+  .souvenir-purpose .p-share{background:var(--teal-soft); color:var(--teal);}
   .souvenir-more{font-size:11.5px; font-weight:700; color:var(--coral); border-bottom:none; margin-top:2px;}
   .souvenir-more:hover{text-decoration:underline;}
   .souvenir-checkmark{
@@ -346,7 +346,7 @@
   /* STAY + FLIGHT DAY REFERENCE (in 行前確認) */
   .sf-list{display:flex; flex-direction:column; gap:10px; margin-bottom:36px;}
   .sf-card{background:var(--card); border:2px solid var(--line); border-radius:14px; padding:14px 18px;}
-  .sf-card .sf-date{font-family:"Noto Serif SC",serif; font-weight:700; font-size:14.5px; color:var(--ink); margin-bottom:8px;}
+  .sf-card .sf-date{font-family:"Songti SC","STSong","SimSun",serif; font-weight:700; font-size:14.5px; color:var(--ink); margin-bottom:8px;}
   .sf-row{display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:var(--text-dim); margin-top:5px;}
   .sf-row .sf-label{font-weight:700; color:var(--ink); flex:0 0 auto; min-width:44px;}
   .sf-row a{font-weight:700;}
@@ -376,9 +376,19 @@
     .hero h1{font-size:24px;}
     .flights{grid-template-columns:1fr;}
     .hotels{grid-template-columns:1fr;}
-    .overview{grid-template-columns:repeat(2,1fr);}
+    .overview{grid-template-columns:repeat(2,1fr); margin-bottom:24px;}
     .section-title{font-size:22px;}
     .day-panel{padding:26px 20px;}
+    .maintab-btn{padding:10px 20px; font-size:13px;}
+    .day-map{height:220px;}
+    .wrap{padding:0 16px;}
+    .sf-card{padding:12px 14px;}
+    .weather-card{padding:14px 16px;}
+  }
+
+  @media (min-width:1100px){
+    .wrap{max-width:960px;}
+    .day-panel{padding:40px 44px;}
   }
 </style>
 </head>
@@ -388,7 +398,7 @@
   <div class="eyebrow">SHANGHAI · 上海出差同行</div>
   <h1>PMI TVM- Shang Hai <span>- 2026/10/15-10/19</span></h1>
   <p class="sub">2026 年 10 月 15 日（四）— 10 月 19 日（一）</p>
-  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.4 · 最後更新 2026/09/20</p>
+  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.8 · 最後更新 2026/09/20</p>
   <div class="confetti">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
@@ -605,7 +615,7 @@
       <span class="preflight-title">上網與 VPN／備用地圖 準備</span>
       <div class="preflight-meta">
         <div><span class="meta-label">建議時間</span>出發前先下載安裝，抵達大陸後多數國際服務無法直接使用</div>
-        <div><span class="meta-label">說明</span>Google 系服務（含這份行程表用到的地圖）、LINE、Instagram 等在中國大陸境內預設無法使用，建議先準備好可用的 VPN App，並可下載高德地圖／百度地圖作為備用</div>
+        <div><span class="meta-label">說明</span>Google 系服務（含這份行程表用到的地圖）、LINE、Instagram 等在中國大陸境內預設無法使用，建議先準備好可用的 VPN App。<b>地圖優先建議下載「高德地圖（Amap）」</b>作為備用——介面可切換英文、內建叫車功能、公車地鐵導航清楚，對外國遊客較友善。iPhone 使用者可以先試試 Apple 內建地圖（在中國大陸可直接使用，不需 VPN），不夠用再切高德。</div>
         <div><span class="meta-label">連結</span>VPN 服務眾多且規定常變動，請依個人需求自行選擇，此處不特別推薦特定服務</div>
       </div>
     </label>
@@ -1199,6 +1209,7 @@
       <input type="checkbox" data-id="white-rabbit">
       <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍬</span>
       <span class="souvenir-name">大白兔奶糖</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">經典牛奶糖，好吃平價，方便分送同事</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路血拼時段）<br><b>地點／距離：</b>上海市第一食品商店，漢庭飯店步行約 8–10 分鐘</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/White_Rabbit_Creamy_Candy" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1209,6 +1220,7 @@
       <input type="checkbox" data-id="butterfly-pastry">
       <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🥐</span>
       <span class="souvenir-name">蝴蝶酥</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">老字號酥皮甜點（如國際飯店），送禮體面</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 09:30–10:15（行程已排定）<br><b>地點／距離：</b>國際飯店，漢庭飯店步行約 3–5 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E8%9D%B4%E8%9D%B6%E9%85%A5+%E4%B8%8A%E6%B5%B7+%E4%BC%B4%E6%89%8B%E7%A6%AE" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1219,6 +1231,7 @@
       <input type="checkbox" data-id="wuxiangdou">
       <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🫘</span>
       <span class="souvenir-name">五香豆／梨膏糖</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">城隍廟老字號傳統零嘴，商圈就能買到</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/15 晚上 20:30–21:45（豫園老街，行程已排定）<br><b>地點／距離：</b>豫園老街，威斯丁飯店步行約 15–18 分鐘（或夜遊船下船後步行約 10 分鐘）</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E4%BA%94%E9%A6%99%E8%B1%86+%E6%A2%A8%E8%86%8F%E7%B3%96+%E8%B1%AB%E5%9C%92" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1229,6 +1242,7 @@
       <input type="checkbox" data-id="shaowansheng">
       <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🌰</span>
       <span class="souvenir-name">邵萬生蜜餞／炒貨禮盒</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">百年南北貨老字號，蜜餞、堅果炒貨很適合送禮，常溫保存不用擔心退冰</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）<br><b>地點／距離：</b>邵萬生（南京東路 414 號），漢庭飯店步行約 12–15 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E9%82%B5%E8%90%AC%E7%94%9F+%E5%8D%97%E8%B2%A8+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1239,6 +1253,7 @@
       <input type="checkbox" data-id="yuyuan-craft">
       <span class="souvenir-icon" style="background:var(--purple-soft); font-size:32px;">🏺</span>
       <span class="souvenir-name">豫園老街工藝品</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
       <span class="souvenir-desc">紫砂壺、剪紙、檀香扇等老街常見的傳統小工藝，輕巧好帶，適合當紀念擺飾</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/15 晚上（豫園老街，已排定）<br><b>地點／距離：</b>豫園老街，威斯丁飯店步行約 15–18 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E8%B1%AB%E5%9C%92%E8%80%81%E8%A1%97+%E5%B7%A5%E8%97%9D%E5%93%81+%E7%B4%AB%E7%A0%82%E5%A3%BA" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1249,6 +1264,7 @@
       <input type="checkbox" data-id="fridge-magnet">
       <span class="souvenir-icon" style="background:var(--blue-soft); font-size:32px;">🧲</span>
       <span class="souvenir-name">城市文創小物（冰箱貼／明信片）</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
       <span class="souvenir-desc">外灘、東方明珠圖案，輕便好帶又有紀念意義</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 13:30–14:30 順便買（上海城市規劃展覽館紀念品店）<br><b>地點／距離：</b>漢庭飯店步行約 10 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E4%B8%8A%E6%B5%B7+%E6%96%87%E5%89%B5+%E5%86%B0%E7%AE%B1%E8%B2%BC" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1259,6 +1275,7 @@
       <input type="checkbox" data-id="tea">
       <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍵</span>
       <span class="souvenir-name">老字號茶葉</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">豫園、南京東路周邊茶莊，送長輩、主管都合適</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/15 晚上（豫園老街茶莊）<br><b>地點／距離：</b>威斯丁飯店步行約 15–18 分鐘</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Chinese_tea" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1269,6 +1286,7 @@
       <input type="checkbox" data-id="huangjiu">
       <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🍶</span>
       <span class="souvenir-name">石庫門老酒／黃酒</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">上海特色酒類，注意隨身／托運液體攜帶限制</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 下午再買，避免玻璃瓶多扛好幾天<br><b>地點／距離：</b>上海市第一食品商店，漢庭飯店步行約 8–10 分鐘</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Huangjiu" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1279,6 +1297,7 @@
       <input type="checkbox" data-id="white-rabbit-spinoff">
       <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🧴</span>
       <span class="souvenir-name">大白兔周邊商品</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
       <span class="souvenir-desc">奶茶粉、護手霜、香氛蠟燭等大白兔聯名衍生商品，年輕族群很喜歡，不怕融化退冰</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）順便買<br><b>地點／距離：</b>上海市第一食品商店或南京東路周邊快閃店，漢庭飯店步行約 8–10 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E5%A4%A7%E7%99%BD%E5%85%94+%E5%91%A8%E9%82%8A%E5%95%86%E5%93%81+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1289,6 +1308,7 @@
       <input type="checkbox" data-id="vive">
       <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">💄</span>
       <span class="souvenir-name">雙妹（VIVE）復古美妝小物</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">1898 年創立的上海老字號美妝品牌，復古包裝的面霜、香皂很有老上海味道，適合送女性長輩或同事</span>
       <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）順便買<br><b>地點／距離：</b>恒基名人購物中心（南京東路 300 號），漢庭飯店步行約 12–15 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E9%9B%99%E5%A6%B9+VIVE+%E4%B8%8A%E6%B5%B7+%E5%8C%96%E5%A6%9D%E5%93%81" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1299,6 +1319,7 @@
       <input type="checkbox" data-id="meibao">
       <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🩹</span>
       <span class="souvenir-name">美寶濕潤燒傷膏</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
       <span class="souvenir-desc">老字號燙傷藥膏，居家常備良品，很多人指定要買，適合自用或送人</span>
       <span class="souvenir-meta"><b>建議時機：</b>住在威斯丁期間（10/15–10/18）隨時可去，離飯店超近<br><b>地點／距離：</b>老百姓大藥房（延安東路店，延安東路 282 號），威斯丁飯店步行約 2 分鐘</span>
       <a class="souvenir-more" href="https://www.google.com/search?q=%E7%BE%8E%E5%AF%B6%E6%BF%95%E6%BD%A4%E7%87%92%E5%82%B7%E8%86%8F" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
@@ -1311,7 +1332,7 @@
 
 </div><!-- /page-souvenir -->
 
-<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.4 · 最後更新 2026/09/20</footer>
+<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.8 · 最後更新 2026/09/20</footer>
 
 <script>
   (function(){
@@ -1353,7 +1374,8 @@
     overviewCards.forEach(function(c){
       c.addEventListener('click', function(){
         showDay(c.dataset.day);
-        document.getElementById('tabbar').scrollIntoView({behavior:'smooth', block:'start'});
+        var activePanel = document.querySelector('.day-panel.active');
+        if (activePanel) activePanel.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
     tabBtns.forEach(function(b){
