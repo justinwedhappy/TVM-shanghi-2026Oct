@@ -340,6 +340,8 @@
   .preflight-group::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--teal); flex:0 0 auto;}
   .preflight-group.who-justin::before{background:var(--coral);}
   .preflight-group.who-am::before{background:var(--blue);}
+  .preflight-group.required::before{background:var(--coral);}
+  .preflight-group.optional::before{background:var(--text-dim);}
 
   /* STAY + FLIGHT DAY REFERENCE (in 行前確認) */
   .sf-list{display:flex; flex-direction:column; gap:10px; margin-bottom:36px;}
@@ -386,7 +388,7 @@
   <div class="eyebrow">SHANGHAI · 上海出差同行</div>
   <h1>PMI TVM- Shang Hai <span>- 2026/10/15-10/19</span></h1>
   <p class="sub">2026 年 10 月 15 日（四）— 10 月 19 日（一）</p>
-  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.0 · 最後更新 2026/09/20</p>
+  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v2.3 · 最後更新 2026/09/20</p>
   <div class="confetti">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
@@ -454,6 +456,102 @@
   </div>
 
   <div class="preflight-list" id="preflightList">
+
+    <div class="preflight-group required">出發準備・必須</div>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="passport">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">護照正本（隨身攜帶）</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>去大陸主要靠台胞證通關，但護照仍建議隨身帶著備用（例如緊急狀況、轉機等），連同台胞證一起放隨身包，別放托運行李</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="roaming">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">手機漫遊或上網卡／eSIM</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>出發前 3–7 天辦好，或在機場臨櫃辦漫遊</div>
+        <div><span class="meta-label">說明</span>國際漫遊、當地實體 SIM 卡、或 eSIM 三選一，確保抵達就有網路可用（VPN、地圖、行動支付都需要網路）</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="bank-notify">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">通知信用卡銀行即將出國刷卡</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>避免在當地刷卡時被銀行誤判為異常盜刷而凍卡，出發前打給發卡銀行或用 App 登記一下即可</div>
+      </div>
+    </label>
+
+    <div class="preflight-group optional">出發準備・選擇性</div>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="currency">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">換匯（準備少量人民幣現金）</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>雖然這趟主要靠支付寶／微信支付，但路邊攤、小店偶爾只收現金或境外卡綁定的行動支付刷不過，建議換一點小額人民幣現金備用，不用換太多</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="adapter">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">萬用轉接頭／延長線</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>中國插座跟台灣同為兩孔扁插（Type A），多數手機／筆電充電器本身支援 100–240V，通常不需要轉接頭；如果有需要三孔圓插（Type I）的裝置，或想多孔同時充電，可以帶一個萬用轉接頭／延長線備用</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="medicine">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">隨身藥品</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>腸胃藥、感冒藥、個人慢性病藥等常備藥品，行程走路量不小、飲食也不同，帶著比較安心</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="insurance">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">旅遊平安險</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>出發前線上投保即可，機場現場也能辦但選擇較少</div>
+        <div><span class="meta-label">說明</span>視個人需求決定要不要保，含醫療、行李延誤等保障</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="doc-backup">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">證件電子檔備份</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>護照、台胞證拍照存雲端或寄一份到自己信箱，萬一證件遺失能加快補辦流程</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="powerbank">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">行動電源</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>登機規定須隨身攜帶、不可托運，容量通常需在 160Wh 以下（一般消費型行動電源多在此範圍內，但建議出發前再次確認容量標示）</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="eco-bag">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">環保購物袋</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>部分商店、超市塑膠袋要另外收費，帶一個輕便購物袋逛街、買伴手禮時可以用</div>
+      </div>
+    </label>
 
     <div class="preflight-group">大家都要完成</div>
 
@@ -987,6 +1085,7 @@
           <div class="tl-time">11:15 – 12:30</div>
           <div class="tl-desc">佳家湯包（早午餐）</div>
           <div class="tl-note">回味上海最後的鮮美</div>
+          <div class="callout"><b>營業時間：</b>約 07:00–20:30（黃河路 127 號店）。<br><br><b>排隊提醒：</b>現點現蒸，速度較慢，中午核心用餐時間（12:00 後）常需排隊 20 分鐘以上；11:15 到算是卡在人潮衝上來之前，不用太提早去排。餡料每日限量，熱門口味（尤其蟹粉）中午容易賣完，建議一到店就先點，別逛太久再點。<br><br><b>必點：</b>蟹粉鮮肉湯包（招牌）、鮮肉湯包（經典基本款，約 18 元／籠）、蛋黃鮮肉湯包、蝦仁鮮肉湯包，配湯可以點紫菜蛋皮湯或鴨血湯。多為<b>掃碼點餐</b>，記得手機行動支付要先準備好。人均約 42 元。<br><br><b>3–4 人點餐建議：</b>蟹粉鮮肉湯包 1 籠＋鮮肉湯包 1 籠＋蛋黃鮮肉湯包 1 籠（共 3 籠，36 個，平均每人 9–12 個），加一份紫菜蛋皮湯或鴨血湯解膩。前面已經吃過老弄堂早餐，這個量剛好不會太撐，吃不夠可以再加點蝦仁鮮肉，現點現蒸很方便。</div>
         </div>
       </div>
       <div class="tl-row shared">
@@ -1212,7 +1311,7 @@
 
 </div><!-- /page-souvenir -->
 
-<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.0 · 最後更新 2026/09/20</footer>
+<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v2.3 · 最後更新 2026/09/20</footer>
 
 <script>
   (function(){
