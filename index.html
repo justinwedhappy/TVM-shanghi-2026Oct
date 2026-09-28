@@ -299,6 +299,11 @@
   .souvenir-purpose span{font-size:10px; font-weight:700; padding:2px 8px; border-radius:9px;}
   .souvenir-purpose .p-keep{background:var(--purple-soft); color:var(--purple);}
   .souvenir-purpose .p-share{background:var(--teal-soft); color:var(--teal);}
+  .souvenir-purpose .p-eat{background:var(--coral-soft); color:var(--coral);}
+  .souvenir-group-title{font-family:"Songti SC","STSong","SimSun",serif; font-size:17px; font-weight:700; color:var(--ink); display:flex; align-items:center; gap:9px; padding:0 24px; margin:38px 0 12px;}
+  .souvenir-group-title:first-child{margin-top:8px;}
+  .souvenir-group-title::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--coral); flex:0 0 auto;}
+  .souvenir-group-note{margin:0 24px 16px; font-size:12.5px;}
   .souvenir-more{font-size:11.5px; font-weight:700; color:var(--coral); border-bottom:none; margin-top:2px;}
   .souvenir-more:hover{text-decoration:underline;}
   .souvenir-checkmark{
@@ -398,7 +403,7 @@
   <div class="eyebrow">SHANGHAI · 上海出差同行</div>
   <h1>PMI TVM- Shang Hai <span>- 2026/10/15-10/19</span></h1>
   <p class="sub">2026 年 10 月 15 日（四）— 10 月 19 日（一）</p>
-  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v3.9 · 最後更新 2026/09/20</p>
+  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v4.2 · 最後更新 2026/09/20</p>
   <div class="confetti">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
@@ -815,20 +820,20 @@
   <div class="ov-card" data-day="2">
     <div class="ov-date">16</div>
     <div class="ov-wd">FRI · 五</div>
-    <div class="ov-headline">TVM・黃浦江夜遊船</div>
-    <div class="ov-note">18:30 十六鋪碼頭</div>
+    <div class="ov-headline">TVM・夜遊船＋豫園老街</div>
+    <div class="ov-note">18:30 登船／20:10 豫園採買</div>
   </div>
   <div class="ov-card" data-day="3">
     <div class="ov-date">17</div>
     <div class="ov-wd">SAT · 六</div>
     <div class="ov-headline">TVM・團體晚餐</div>
-    <div class="ov-note">18:00 Group Dinner／選擇性豫園老街</div>
+    <div class="ov-note">18:00 Group Dinner／選擇性補買豫園</div>
   </div>
   <div class="ov-card" data-day="4">
     <div class="ov-date">18</div>
     <div class="ov-wd">SUN · 日</div>
     <div class="ov-headline">TVM 最終天</div>
-    <div class="ov-note">提早退房／晚上輕鬆足浴</div>
+    <div class="ov-note">提早退房／晚上逛南京東路</div>
   </div>
   <div class="ov-card" data-day="5">
     <div class="ov-date">19</div>
@@ -956,7 +961,7 @@
   </div>
 
   <div class="day-panel" data-day="2">
-    <div class="day-title">TVM 第一天・黃浦江夜遊船</div>
+    <div class="day-title">TVM 第一天・夜遊船＋豫園老街</div>
     <span class="day-tag rose">全日行程</span>
     <div class="timeline-legend">
       <span class="lg-shared"><i></i>共同行程</span>
@@ -990,15 +995,39 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:15 – 20:15</div>
+          <div class="tl-time">19:15 – 19:55</div>
           <div class="tl-desc">晚餐</div>
-          <div class="tl-note">下船後推薦<b>浦江小吃廣場</b>（外灘 435 號，碼頭旁走路約 3–4 分鐘）——各式上海小吃、小份點心，份量彈性，如果中午吃得比較飽，這裡很適合隨意挑幾樣吃巧不吃飽；如果想坐下來好好吃一頓，外灘五號大樓（外灘中山東一路 5 號）裡有幾家評價不錯的餐廳，但價位偏高，屬於比較講究的選擇</div>
+          <div class="tl-note">下船後推薦<b>浦江小吃廣場</b>（外灘 435 號，碼頭旁走路約 3–4 分鐘）——各式上海小吃、小份點心，份量彈性，中午吃得比較飽的話很適合隨意挑幾樣吃巧不吃飽。這晚只留約 40 分鐘，建議吃輕一點、快一點；想坐下來好好吃一頓（如外灘五號大樓）會壓縮後面逛豫園的時間</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">21:00 前</div>
+          <div class="tl-time">20:00 – 20:10</div>
+          <div class="tl-desc">步行前往豫園</div>
+          <div class="tl-note">從浦江小吃廣場走過去約 8 分鐘</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">20:10 – 21:30</div>
+          <div class="tl-desc">豫園老街／城隍廟 逛街、採買伴手禮</div>
+          <div class="callout">營業至 22:00，晚上點燈很漂亮，也是買紀念品、零嘴的好地方。這個時段時間確定、<b>三個人都在</b>，可以一次處理「豫園組」伴手禮：<br>・五香豆／梨膏糖、老字號茶葉、工藝品、搪瓷杯（老街攤位）<br>・老牌雪花膏「摩登紅人」（文昌路 63 號，城隍廟商圈）<br>・大白兔奶糖（豫園各店也有賣）<br><br>10/17 晚上 Group Dinner 後保留為<b>選擇性補買</b>，這晚沒買齊的可以再看看。各項細節詳見「伴手禮」頁籤。</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">21:30 – 21:45</div>
+          <div class="tl-desc">步行回 Westin</div>
+          <div class="tl-note">約 15 分鐘；途中會經過<b>老百姓大藥房</b>（延安東路 282 號，離威斯丁約 2 分鐘），可順路買美寶濕潤燒傷膏（查不到營業時間，當天看情況）</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">22:00 前</div>
           <div class="tl-desc">返回 Westin Bund Center</div>
         </div>
       </div>
@@ -1035,9 +1064,9 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">20:00 起（選擇性）</div>
-          <div class="tl-desc">豫園老街／城隍廟商圈 逛逛</div>
-          <div class="callout"><b>選擇性行程：</b>逛老街沒有固定場次限制，就算 Group Dinner 拖晚一點，晚到一點也沒關係，比夜遊船更能承受時間不確定。豫園商城營業約至 22:00（各店家實際收攤時間會有落差），晚上點燈很有氣氛，適合吃小吃、逛紀念品，逛多久、要不要去都可以當天視情況決定。</div>
+          <div class="tl-time">20:00 起（選擇性・補買）</div>
+          <div class="tl-desc">豫園老街／城隍廟商圈 再逛逛</div>
+          <div class="callout"><b>選擇性行程：</b>10/16 晚上已經安排過一次豫園採買，這晚是<b>補買、想再逛</b>的機會。逛老街沒有固定場次限制，就算 Group Dinner 拖晚一點，晚到一點也沒關係。豫園商城營業約至 22:00（各店家實際收攤時間會有落差），要不要去、逛多久都可以當天視情況決定，累了直接回飯店休息也可以。</div>
         </div>
       </div>
     </div>
@@ -1049,7 +1078,7 @@
   </div>
 
   <div class="day-panel" data-day="4">
-    <div class="day-title">TVM 最終天・提早退房換飯店</div>
+    <div class="day-title">TVM 最終天・換飯店＋南京東路採買</div>
     <span class="day-tag rose">全日行程</span>
     <span class="day-tag">轉住人民廣場周邊</span>
     <div class="timeline-legend">
@@ -1074,40 +1103,56 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">18:30</div>
+          <div class="tl-time">17:30</div>
           <div class="tl-desc">搭乘計程車，前往轉入住漢庭上海人民廣場地鐵站酒店</div>
-          <div class="tl-note">先回 Westin 取回寄放的行李，再叫車過去，不用扛著行李跑一整天</div>
+          <div class="tl-note">TVM 17:00 結束後留 30 分鐘緩衝。先回 Westin 取回寄放的行李，再叫車過去，不用扛著行李跑一整天</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:00 – 19:30</div>
-          <div class="tl-desc">漢庭上海人民廣場地鐵站酒店 辦理入住</div>
+          <div class="tl-time">18:00 – 18:30</div>
+          <div class="tl-desc">漢庭上海人民廣場地鐵站酒店 辦理入住、放行李</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:30 – 20:30</div>
-          <div class="tl-desc">飯店附近簡單晚餐：黃河路美食街</div>
-          <div class="tl-note">從漢庭上海人民廣場地鐵站酒店步行約 5–8 分鐘，早上已經很忙，晚上不安排走遠，推薦<b>小楊生煎（黃河路店）</b>——招牌生煎包，便宜、快、不用等太久，吃完直接散步回飯店<br><br>想吃講究一點的話，<b>蘇浙匯</b>（南京西路 288 號，評價 4.5）步行約 5–6 分鐘，正宗本幫／江浙菜，環境比路邊小吃更適合坐下來好好吃一頓</div>
+          <div class="tl-time">18:30 – 19:15</div>
+          <div class="tl-desc">飯店附近快速晚餐：黃河路美食街</div>
+          <div class="tl-note">從漢庭步行約 5–8 分鐘。晚上還要逛街，建議選快速的<b>小楊生煎（黃河路店）</b>——招牌生煎包，便宜、快、不用等太久<br><br>想吃講究一點的<b>蘇浙匯</b>（南京西路 288 號，評價 4.5）步行約 5–6 分鐘，但會比較費時，選它的話逛街時間會被壓縮，建議只挑最想買的幾家</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">20:30 – 21:30</div>
-          <div class="tl-desc">足浴按摩（選擇性）</div>
-          <div class="tl-note">人民廣場周邊足浴店很多，坐著放鬆一小時，比再出門逛街輕鬆很多</div>
+          <div class="tl-time">19:15 – 19:30</div>
+          <div class="tl-desc">搭地鐵 2 號線到南京東路站</div>
+          <div class="tl-note">人民廣場 → 南京東路只要 1 站，出站就是恒基名人購物中心；漢庭走到人民廣場站很近</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">21:30 後</div>
+          <div class="tl-time">19:30 – 21:45</div>
+          <div class="tl-desc">南京東路步行街逛街，採買伴手禮</div>
+          <div class="callout"><b>逛街順序（由東往西）：</b><br>①<b>雙妹 VIVE</b>（恒基名人購物中心，南京東路 300 號，營業至 22:00）：復古美妝，時間不夠可以先跳過<br>②<b>邵萬生</b>（414 號，營業至 21:30）：蜜餞、炒貨禮盒<br>③<b>沈大成</b>（636 號，營業至 21:30）：傳統糕團，晚上常排隊，建議先去排<br>④<b>第一食品商店</b>（720 號，營業至 22:00）：大白兔奶糖（含周邊）、石庫門黃酒<br>⑤<b>泰康食品</b>（768 號，營業至 22:00）：辣醬油、萬年青餅乾；門口的鮮肉月餅剛好順路，排隊太長就放棄<br><br>邵萬生、沈大成 21:30 就打烊，所以先從最東邊逛起、優先處理最早關門的，最後從泰康走回漢庭約 8 分鐘。各項怎麼買、要不要買，詳見「伴手禮」頁籤；10/19 下午 Justin 還有補買的機會。</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">21:45 – 22:00</div>
+          <div class="tl-desc">步行回漢庭</div>
+          <div class="tl-note">從泰康食品走回漢庭約 8 分鐘</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">22:00 後</div>
           <div class="tl-desc">回飯店早點休息</div>
-          <div class="tl-note">10/19 一早又是滿滿行程，這天晚上早點睡比較好</div>
+          <div class="tl-note">10/19 早上 08:00 就要出發，這晚早點睡比較好</div>
         </div>
       </div>
     </div>
@@ -1149,6 +1194,7 @@
         <div class="tl-bubble">
           <div class="tl-time">08:45 – 09:30</div>
           <div class="tl-desc">國際飯店買蝴蝶酥，與《繁花》取景老建築合照</div>
+          <div class="tl-note">⚠️ 西餅屋 08:00 開門，但天天大排長龍，排隊常需 1 小時以上；可請一位夥伴 08:00 先去排，詳見「伴手禮」頁籤</div>
         </div>
       </div>
       <div class="tl-row shared">
@@ -1222,7 +1268,7 @@
           <span class="tl-tag">Justin</span>
           <div class="tl-time">13:30 – 16:30</div>
           <div class="tl-desc">飯店附近景點自由活動</div>
-          <div class="callout"><b>推薦景點：</b>上海城市規劃展覽館（人民廣場，免費入場，步行約 10 分鐘），5 層樓的城市模型跟互動展覽很值得一看，而且是少數週一仍開放的博物館，建議 13:30–14:30 這段去。<br><br><b>南京東路步行街（14:30–16:30）可以鎖定這幾個點：</b><br>・<b>上海市第一食品商店</b>（南京東路 720 號）：整層樓都是上海零嘴、糖果、蜜餞，伴手禮一次買齊很方便<br>・<b>上海市第一百貨商店</b>（南京東路 830 號）：1936 年開業的老字號百貨，逛老建築本身就很有味道，同樣有零食樓層、也有退稅櫃檯<br>・<b>沈大成</b>（南京東路 636 號）：百年老字號糕點店，鮮肉月餅、蛋黃肉鬆青團都是招牌，常常大排長龍，喜歡的話可以現場買現吃</div>
+          <div class="callout"><b>推薦景點：</b>上海城市規劃展覽館（人民廣場，免費入場，步行約 10 分鐘），5 層樓的城市模型跟互動展覽很值得一看，而且是少數週一仍開放的博物館，建議 13:30–14:30 這段去。<br><br><b>南京東路步行街（14:30–16:30）：</b>10/18 晚上已經安排全員逛過這一帶，這段當作<b>補買漏掉品項</b>的機會，也可以直接改成休息。想再逛的話可以鎖定這幾個點（由西往東）：<br>・<b>上海市第一百貨商店</b>（南京東路 830 號）：1936 年開業的老字號百貨，逛老建築本身就很有味道，同樣有零食樓層、也有退稅櫃檯<br>・<b>泰康食品</b>（南京東路 768 號，營業至 22:00）：辣醬油、萬年青餅乾，門口的鮮肉月餅常有人排隊，可以現買現吃<br>・<b>上海市第一食品商店</b>（南京東路 720 號）：整層樓都是上海零嘴、糖果、蜜餞，伴手禮一次買齊很方便<br>・<b>沈大成</b>（南京東路 636 號）：老字號糕團店（Trip.com 資料稱已有 149 年歷史），雙釀團最出名，常常大排長龍，喜歡的話可以現場買現吃<br><br>各項伴手禮怎麼買，詳見「伴手禮」頁籤。</div>
         </div>
       </div>
       <div class="tl-row personal who-am">
@@ -1310,76 +1356,49 @@
 </div><!-- /page-budget -->
 
 <div class="page-panel" id="page-souvenir">
-
 <div class="section-title">建議上海購買的伴手禮</div>
-<div class="section-sub">勾選方塊記錄採購進度（僅存在你自己的裝置上，不會同步給其他人）</div>
+<div class="section-sub">依建議購買的時間先後排列；勾選方塊記錄採購進度（僅存在你自己的裝置上，不會同步給其他人）</div>
 
 <div class="wrap">
-  <div class="souvenir-grid" id="souvenirGrid">
+  <div class="souvenir-group-title">10/15 – 10/18・住在威斯丁期間，隨時可去</div>
+  <div class="souvenir-grid">
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="white-rabbit">
-      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍬</span>
-      <span class="souvenir-name">大白兔奶糖</span>
-      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">經典牛奶糖，好吃平價，方便分送同事</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路血拼時段）<br><b>地點／距離：</b>上海市第一食品商店，漢庭飯店步行約 8–10 分鐘</span>
-      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/White_Rabbit_Creamy_Candy" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <input type="checkbox" data-id="meibao">
+      <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🩹</span>
+      <span class="souvenir-name">美寶濕潤燒傷膏</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
+      <span class="souvenir-desc">老字號燙傷藥膏，居家常備良品，很多人指定要買，適合自用或送人</span>
+      <span class="souvenir-meta"><b>建議時機：</b>住在威斯丁期間（10/15–10/18）隨時可去，離飯店超近<br><b>地點／距離：</b>老百姓大藥房（延安東路店，延安東路 282 號），威斯丁步行約 2 分鐘<br><b>順路機會：</b>10/16 晚上從豫園走回威斯丁會經過；查不到營業時間，建議當天看情況，買不到也可以改天</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E7%BE%8E%E5%AF%B6%E6%BF%95%E6%BD%A4%E7%87%92%E5%82%B7%E8%86%8F" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
-    <label class="souvenir-card">
-      <input type="checkbox" data-id="butterfly-pastry">
-      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🥐</span>
-      <span class="souvenir-name">蝴蝶酥</span>
-      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">老字號酥皮甜點（如國際飯店），送禮體面</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 09:30–10:15（行程已排定）<br><b>地點／距離：</b>國際飯店，漢庭飯店步行約 3–5 分鐘</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%9D%B4%E8%9D%B6%E9%85%A5+%E4%B8%8A%E6%B5%B7+%E4%BC%B4%E6%89%8B%E7%A6%AE" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
-      <span class="souvenir-checkmark">✓</span>
-    </label>
+  </div>
+
+  <div class="souvenir-group-title">10/16 晚上 20:10–21:30・豫園老街／城隍廟（三人一起）</div>
+  <div class="callout souvenir-group-note">10/16 夜遊船 + 晚餐後，從十六鋪碼頭步行約 8 分鐘就到豫園商城（營業至 22:00）。這個時段時間確定、<b>三人都在</b>。10/17 Group Dinner 後保留為<b>選擇性補買</b>；Justin 10/15 逛豫園（12:00–15:00）時也可以先買。</div>
+  <div class="souvenir-grid">
 
     <label class="souvenir-card">
       <input type="checkbox" data-id="wuxiangdou">
       <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🫘</span>
       <span class="souvenir-name">五香豆／梨膏糖</span>
       <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">城隍廟老字號傳統零嘴，商圈就能買到</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/17 晚上 20:00 起（豫園老街，選擇性行程，視 Group Dinner 結束時間而定）<br><b>地點／距離：</b>豫園老街，威斯丁飯店步行約 15–18 分鐘<br><b>備案：</b>若當天沒去成，10/19 下午南京東路的老字號百貨也可能找得到類似零嘴</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E4%BA%94%E9%A6%99%E8%B1%86+%E6%A2%A8%E8%86%8F%E7%B3%96+%E8%B1%AB%E5%9C%92" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-desc">城隍廟老字號攤位的傳統零嘴，咸中帶甜，是上海人的童年味道，小包裝好分送</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/16 晚上 20:10–21:30（豫園老街，三人一起）<br><b>地點／距離：</b>城隍廟老字號攤位，從十六鋪碼頭步行約 8 分鐘，走回威斯丁約 15 分鐘<br><b>備案：</b>10/17 晚上豫園（選擇性）可補買；再不行，10/18 晚上南京東路的南貨老字號（如邵萬生）也許找得到類似零嘴</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E4%BA%94%E9%A6%99%E8%B1%86%20%E6%A2%A8%E8%86%8F%E7%B3%96%20%E8%B1%AB%E5%9C%92" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="shaowansheng">
-      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🌰</span>
-      <span class="souvenir-name">邵萬生蜜餞／炒貨禮盒</span>
+      <input type="checkbox" data-id="snow-cream">
+      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🌸</span>
+      <span class="souvenir-name">老牌雪花膏（摩登紅人）</span>
       <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">百年南北貨老字號，蜜餞、堅果炒貨很適合送禮，常溫保存不用擔心退冰</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）<br><b>地點／距離：</b>邵萬生（南京東路 414 號），漢庭飯店步行約 12–15 分鐘</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E9%82%B5%E8%90%AC%E7%94%9F+%E5%8D%97%E8%B2%A8+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
-      <span class="souvenir-checkmark">✓</span>
-    </label>
-
-    <label class="souvenir-card">
-      <input type="checkbox" data-id="yuyuan-craft">
-      <span class="souvenir-icon" style="background:var(--purple-soft); font-size:32px;">🏺</span>
-      <span class="souvenir-name">豫園老街工藝品</span>
-      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
-      <span class="souvenir-desc">紫砂壺、剪紙、檀香扇等老街常見的傳統小工藝，輕巧好帶，適合當紀念擺飾</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/17 晚上（豫園老街，選擇性行程，視 Group Dinner 結束時間而定）<br><b>地點／距離：</b>豫園老街，威斯丁飯店步行約 15–18 分鐘<br><b>備案：</b>這項比較獨特，若當天沒去成就沒有明確替代地點，想要的話建議當晚優先安排</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%B1%AB%E5%9C%92%E8%80%81%E8%A1%97+%E5%B7%A5%E8%97%9D%E5%93%81+%E7%B4%AB%E7%A0%82%E5%A3%BA" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
-      <span class="souvenir-checkmark">✓</span>
-    </label>
-
-    <label class="souvenir-card">
-      <input type="checkbox" data-id="fridge-magnet">
-      <span class="souvenir-icon" style="background:var(--blue-soft); font-size:32px;">🧲</span>
-      <span class="souvenir-name">城市文創小物（冰箱貼／明信片）</span>
-      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
-      <span class="souvenir-desc">外灘、東方明珠圖案，輕便好帶又有紀念意義</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 13:30–14:30 順便買（上海城市規劃展覽館紀念品店）<br><b>地點／距離：</b>漢庭飯店步行約 10 分鐘</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E4%B8%8A%E6%B5%B7+%E6%96%87%E5%89%B5+%E5%86%B0%E7%AE%B1%E8%B2%BC" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-desc">復古鐵罐包裝的老牌雪花膏，送禮體面，適合送女性長輩或同事（參考 Trip.com 上海手信推薦）</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/16 晚上 20:10–21:30（豫園老街，三人一起）<br><b>地點／距離：</b>摩登紅人（文昌路 63 號，城隍廟商圈），從十六鋪碼頭步行約 8 分鐘，走回威斯丁約 15 分鐘。地圖資料僅 1 則評論，建議到現場確認店名<br><b>備案：</b>10/17 晚上豫園（選擇性）可補買；再不行，類似定位的老牌美妝「雙妹 VIVE」可在 10/18 晚上南京東路買</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E6%91%A9%E7%99%BB%E7%B4%85%E4%BA%BA%20%E9%9B%AA%E8%8A%B1%E8%86%8F%20%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
@@ -1389,19 +1408,80 @@
       <span class="souvenir-name">老字號茶葉</span>
       <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
       <span class="souvenir-desc">豫園、南京東路周邊茶莊，送長輩、主管都合適</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/17 晚上（豫園老街茶莊，選擇性行程，視 Group Dinner 結束時間而定）<br><b>地點／距離：</b>威斯丁飯店步行約 15–18 分鐘<br><b>備案：</b>若沒去成，10/19 下午南京東路周邊也有茶葉店可以找找</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/16 晚上（豫園老街茶莊，三人一起）<br><b>地點／距離：</b>從十六鋪碼頭步行約 8 分鐘，走回威斯丁約 15 分鐘<br><b>備案：</b>10/17 晚上豫園（選擇性）可補買；再不行，10/18 晚上南京東路周邊也有茶葉店可以找找</span>
       <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Chinese_tea" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="huangjiu">
-      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🍶</span>
-      <span class="souvenir-name">石庫門老酒／黃酒</span>
-      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">上海特色酒類，注意隨身／托運液體攜帶限制</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午再買，避免玻璃瓶多扛好幾天<br><b>地點／距離：</b>上海市第一食品商店，漢庭飯店步行約 8–10 分鐘</span>
-      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Huangjiu" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <input type="checkbox" data-id="yuyuan-craft">
+      <span class="souvenir-icon" style="background:var(--purple-soft); font-size:32px;">🏺</span>
+      <span class="souvenir-name">豫園老街工藝品</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
+      <span class="souvenir-desc">紫砂壺、剪紙、檀香扇等老街常見的傳統小工藝，輕巧好帶，適合當紀念擺飾</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/16 晚上（豫園老街，三人一起）<br><b>地點／距離：</b>豫園老街，從十六鋪碼頭步行約 8 分鐘，走回威斯丁約 15 分鐘<br><b>備案：</b>這項比較獨特，沒有明確替代地點，想要的話 10/16 就先買，10/17 晚上（選擇性）可補逛</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%B1%AB%E5%9C%92%E8%80%81%E8%A1%97%20%E5%B7%A5%E8%97%9D%E5%93%81%20%E7%B4%AB%E7%A0%82%E5%A3%BA" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="enamel-mug">
+      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">☕</span>
+      <span class="souvenir-name">老字號搪瓷杯／搪瓷缸</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
+      <span class="souvenir-desc">復古風格的搪瓷杯，圖案懷舊、日常也能用，擺著當裝飾也很有味道，算是「用的＋紀念的」兩用款</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/16 晚上（豫園老街）或 10/18 晚上（南京東路老字號百貨）碰碰運氣<br><b>地點／距離：</b>沒有確定門市，豫園老街的紀念品攤位、老字號百貨的家用品櫃位都可以問問看</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E6%90%AA%E7%93%B7%E6%9D%AF%20%E4%B8%8A%E6%B5%B7%20%E4%BC%B4%E6%89%8B%E7%A6%AE" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+  </div>
+
+  <div class="souvenir-group-title">10/18 晚上 19:30–21:45・南京東路（三人一起）</div>
+  <div class="callout souvenir-group-note">10/18 晚上三個人都在漢庭附近，是<b>全員一起採買</b>的時段。19:15 從人民廣場搭地鐵 2 號線 1 站到南京東路，<b>由東往西</b>逛回來：雙妹 → 邵萬生 → 沈大成 → 第一食品 → 泰康。邵萬生、沈大成 <b>21:30 打烊</b>，其餘營業至 22:00，所以先處理最早關門的；最後從泰康走回漢庭約 8 分鐘。時間不夠就先跳過雙妹，10/19 下午 Justin 還有補買的機會。</div>
+  <div class="souvenir-grid">
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="vive">
+      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">💄</span>
+      <span class="souvenir-name">雙妹（VIVE）復古美妝小物</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
+      <span class="souvenir-desc">1898 年創立的上海老字號美妝品牌，復古包裝的面霜、香皂很有老上海味道，適合送女性長輩或同事</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 1 站（時間不夠可跳過）<br><b>地點／距離：</b>恒基名人購物中心（南京東路 300 號，營業至 22:00），地鐵 2 號線南京東路站出站即達<br><b>備案：</b>沒逛到的話，10/19 下午 Justin 可補買（漢庭步行約 15–18 分鐘）</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E9%9B%99%E5%A6%B9%20VIVE%20%E4%B8%8A%E6%B5%B7%20%E5%8C%96%E5%A6%9D%E5%93%81" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="shaowansheng">
+      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🌰</span>
+      <span class="souvenir-name">邵萬生蜜餞／炒貨禮盒</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
+      <span class="souvenir-desc">百年南北貨老字號，蜜餞、堅果炒貨很適合送禮，常溫保存不用擔心退冰</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 2 站（21:30 打烊，要早點到）<br><b>地點／距離：</b>邵萬生（南京東路 414 號），雙妹往西走約 3 分鐘</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E9%82%B5%E8%90%AC%E7%94%9F%20%E5%8D%97%E8%B2%A8%20%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="shen-dacheng">
+      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">🍡</span>
+      <span class="souvenir-name">沈大成傳統糕糰</span>
+      <span class="souvenir-purpose"><span class="p-eat">現場享用</span></span>
+      <span class="souvenir-desc">老字號傳統糕團店（Trip.com 資料稱已有 149 年歷史），雙釀團最出名，晚上常大排長龍。糯米類點心通常當天吃最好，帶回台灣前建議先確認保存期限</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 3 站（21:30 打烊，建議先排隊再逛別家）<br><b>地點／距離：</b>沈大成（南京東路 636 號），邵萬生往西走約 5 分鐘<br><b>備案：</b>排隊太長就放棄，改 10/19 下午 Justin 再看看</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E6%B2%88%E5%A4%A7%E6%88%90%20%E9%9B%99%E9%87%80%E5%9C%98%20%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="white-rabbit">
+      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🍬</span>
+      <span class="souvenir-name">大白兔奶糖</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
+      <span class="souvenir-desc">國禮級經典牛奶糖，好吃平價，有文創聯名版，方便分送同事。這個時段三個人都在，一起買最方便</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 4 站<br><b>地點／距離：</b>上海市第一食品商店（南京東路 720 號，營業至 22:00），沈大成往西約 2 分鐘；豫園各店也有賣，10/16 晚上逛豫園時也可以順便買</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/White_Rabbit_Creamy_Candy" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
@@ -1411,30 +1491,52 @@
       <span class="souvenir-name">大白兔周邊商品</span>
       <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
       <span class="souvenir-desc">奶茶粉、護手霜、香氛蠟燭等大白兔聯名衍生商品，年輕族群很喜歡，不怕融化退冰</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）順便買<br><b>地點／距離：</b>上海市第一食品商店或南京東路周邊快閃店，漢庭飯店步行約 8–10 分鐘</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E5%A4%A7%E7%99%BD%E5%85%94+%E5%91%A8%E9%82%8A%E5%95%86%E5%93%81+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 4 站，跟大白兔奶糖一起買<br><b>地點／距離：</b>上海市第一食品商店或南京東路周邊快閃店</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E5%A4%A7%E7%99%BD%E5%85%94%20%E5%91%A8%E9%82%8A%E5%95%86%E5%93%81%20%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="vive">
-      <span class="souvenir-icon" style="background:var(--pink-soft); font-size:32px;">💄</span>
-      <span class="souvenir-name">雙妹（VIVE）復古美妝小物</span>
+      <input type="checkbox" data-id="huangjiu">
+      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🍶</span>
+      <span class="souvenir-name">石庫門老酒／黃酒</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span><span class="p-share">分享同事</span></span>
+      <span class="souvenir-desc">上海特色酒類，玻璃瓶請放托運行李，注意隨身液體攜帶限制</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 4 站。買了先放漢庭，10/19 隨行李托運<br><b>地點／距離：</b>上海市第一食品商店</span>
+      <a class="souvenir-more" href="https://en.wikipedia.org/wiki/Huangjiu" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="chili-sauce">
+      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🌶️</span>
+      <span class="souvenir-name">辣醬油（泰康黃牌）</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span><span class="p-share">分享同事</span></span>
+      <span class="souvenir-desc">源自英式伍斯特醬，是老上海家常調味（參考 Trip.com 上海手信推薦）。屬液體，請放托運行李</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 5 站（最後一站）<br><b>地點／距離：</b>泰康食品（南京東路 768 號，營業至 22:00），第一食品往西約 2 分鐘，離漢庭步行約 7–8 分鐘；各大超市也買得到</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E6%B3%B0%E5%BA%B7%E9%BB%83%E7%89%8C%20%E8%BE%A3%E9%86%AC%E6%B2%B9" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="evergreen-biscuit">
+      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🍪</span>
+      <span class="souvenir-name">萬年青餅乾（三牛）</span>
       <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">1898 年創立的上海老字號美妝品牌，復古包裝的面霜、香皂很有老上海味道，適合送女性長輩或同事</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）順便買<br><b>地點／距離：</b>恒基名人購物中心（南京東路 300 號），漢庭飯店步行約 12–15 分鐘</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E9%9B%99%E5%A6%B9+VIVE+%E4%B8%8A%E6%B5%B7+%E5%8C%96%E5%A6%9D%E5%93%81" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-desc">蔥香酥脆，老上海人的童年回憶（參考 Trip.com 上海手信推薦），很適合當辦公室分享零食</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 5 站，跟辣醬油一起買<br><b>地點／距離：</b>泰康食品有賣（有評論提到）；邵萬生等南貨老字號、超市也可以找</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%90%AC%E5%B9%B4%E9%9D%92%E9%A4%85%E4%B9%BE%20%E4%B8%89%E7%89%9B" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
     <label class="souvenir-card">
-      <input type="checkbox" data-id="meibao">
-      <span class="souvenir-icon" style="background:var(--teal-soft); font-size:32px;">🩹</span>
-      <span class="souvenir-name">美寶濕潤燒傷膏</span>
-      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
-      <span class="souvenir-desc">老字號燙傷藥膏，居家常備良品，很多人指定要買，適合自用或送人</span>
-      <span class="souvenir-meta"><b>建議時機：</b>住在威斯丁期間（10/15–10/18）隨時可去，離飯店超近<br><b>地點／距離：</b>老百姓大藥房（延安東路店，延安東路 282 號），威斯丁飯店步行約 2 分鐘</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E7%BE%8E%E5%AF%B6%E6%BF%95%E6%BD%A4%E7%87%92%E5%82%B7%E8%86%8F" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <input type="checkbox" data-id="fresh-meat-mooncake">
+      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">🥮</span>
+      <span class="souvenir-name">鮮肉月餅（順路才買）</span>
+      <span class="souvenir-purpose"><span class="p-eat">現場享用</span></span>
+      <span class="souvenir-desc">酥皮鮮肉、汁多，泰康食品門口常有人排隊，建議現買趁熱吃，不適合帶回台灣。晚餐後可能已經吃飽，排隊太長就放棄</span>
+      <span class="souvenir-meta"><b>逛街順序：</b>第 5 站，泰康食品順路才買<br><b>不建議特地跑：</b>光明邨大酒家（淮海中路 588 號）的鮮肉月餅也很有名，但離漢庭約 1.7 公里、步行約 25 分鐘，不在路線上</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E6%B3%B0%E5%BA%B7%E9%A3%9F%E5%93%81%20%E9%AE%AE%E8%82%89%E6%9C%88%E9%A4%85%20%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
@@ -1443,30 +1545,54 @@
       <span class="souvenir-icon" style="background:var(--blue-soft); font-size:32px;">🖊️</span>
       <span class="souvenir-name">英雄鋼筆</span>
       <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
-      <span class="souvenir-desc">上海老字號文具品牌，鋼筆實用又有面子，送主管、同事開會用剛好，比較資深的同事可能還有印象</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午（南京東路）順路碰碰運氣<br><b>地點／距離：</b>沒查到就在行程附近、確定有賣的門市，建議在上海市第一百貨這類老字號百貨的文具櫃位找找看，或到現場問一下店員</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%8B%B1%E9%9B%84%E9%8B%BC%E7%AD%86+%E4%B8%8A%E6%B5%B7+%E9%96%80%E5%B8%82" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
-      <span class="souvenir-checkmark">✓</span>
-    </label>
-
-    <label class="souvenir-card">
-      <input type="checkbox" data-id="enamel-mug">
-      <span class="souvenir-icon" style="background:var(--coral-soft); font-size:32px;">☕</span>
-      <span class="souvenir-name">老字號搪瓷杯／搪瓷缸</span>
-      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
-      <span class="souvenir-desc">復古毛主席時代風格的搪瓷杯，圖案懷舊、日常也能用，擺著當裝飾也很有味道，算是「用的＋紀念的」兩用款</span>
-      <span class="souvenir-meta"><b>建議時機：</b>10/17 晚上（豫園老街，選擇性行程）或 10/19 下午（南京東路老字號百貨）碰碰運氣<br><b>地點／距離：</b>同樣沒有確定門市，豫園老街的紀念品攤位、老字號百貨的家用品櫃位都可以問問看</span>
-      <a class="souvenir-more" href="https://www.google.com/search?q=%E6%90%AA%E7%93%B7%E6%9D%AF+%E4%B8%8A%E6%B5%B7+%E4%BC%B4%E6%89%8B%E7%A6%AE" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-desc">上海老字號文具品牌，鋼筆實用又有面子，送主管、同事開會用剛好</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/18 晚上回程順路碰碰運氣（第一百貨在人民廣場端，營業至 22:00）<br><b>地點／距離：</b>沒查到確定有賣的門市，建議在上海市第一百貨（南京東路 830 號）的文具櫃位找找，或到現場問店員</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E8%8B%B1%E9%9B%84%E9%8B%BC%E7%AD%86%20%E4%B8%8A%E6%B5%B7%20%E9%96%80%E5%B8%82" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
       <span class="souvenir-checkmark">✓</span>
     </label>
 
   </div>
-  <div class="souvenir-note">品項與購買地點為既有知識推薦，未經即時網路查證，實際庫存、價格請以店家現場為準。</div>
+
+  <div class="souvenir-group-title">10/19 早上 08:45–09:30・國際飯店（三人一起）</div>
+  <div class="callout souvenir-group-note">西餅屋 08:00 開門，但<b>天天大排長龍</b>（有人早上 7 點就開始排），排隊常需 1 小時以上，天黑前常賣完；目前行程只留 45 分鐘，建議請一位夥伴 08:00 開門就先去排，其他人吃完老弄堂早餐再會合，或先有可能排超過 09:30 的心理準備。下雨天人會少一點。</div>
+  <div class="souvenir-grid">
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="butterfly-pastry">
+      <span class="souvenir-icon" style="background:var(--yellow-soft); font-size:32px;">🥐</span>
+      <span class="souvenir-name">蝴蝶酥（國際飯店西餅屋）</span>
+      <span class="souvenir-purpose"><span class="p-share">分享同事</span></span>
+      <span class="souvenir-desc">256 層酥皮，被譽為上海蝴蝶酥天花板（參考 Trip.com 上海手信推薦），送禮體面。很酥脆易碎，建議放隨身背包，不要壓在托運行李底部</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 早上 08:45–09:30（行程已排定）<br><b>地點／距離：</b>國際飯店西餅屋（南京西路 170 號，黃河路口，營業 08:00–20:00），漢庭步行約 3–5 分鐘</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E5%9C%8B%E9%9A%9B%E9%A3%AF%E5%BA%97%E8%A5%BF%E9%A4%85%E5%B1%8B%20%E8%9D%B4%E8%9D%B6%E9%85%A5" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+  </div>
+
+  <div class="souvenir-group-title">10/19 下午 13:30–14:30・城規館（Justin 個人行程）</div>
+  <div class="callout souvenir-group-note">Anne / Monica 13:30 已出發去機場，這個時段只有 Justin。南京東路的品項 10/18 晚上已安排全員逛過，14:30 之後的南京東路時間當作<b>補買漏掉品項</b>的機會，也可以直接改成休息。</div>
+  <div class="souvenir-grid">
+
+    <label class="souvenir-card">
+      <input type="checkbox" data-id="fridge-magnet">
+      <span class="souvenir-icon" style="background:var(--blue-soft); font-size:32px;">🧲</span>
+      <span class="souvenir-name">城市文創小物（冰箱貼／明信片）</span>
+      <span class="souvenir-purpose"><span class="p-keep">自留紀念</span></span>
+      <span class="souvenir-desc">外灘雪景球、東方明珠模型、冰箱貼、明信片，輕便好帶又有紀念意義</span>
+      <span class="souvenir-meta"><b>建議時機：</b>10/19 下午 13:30–14:30（上海城市規劃展覽館紀念品店順便買）<br><b>地點／距離：</b>漢庭步行約 10 分鐘。田子坊也有類似文創小店，但離人民廣場較遠、不在行程路線上，這趟不特別安排</span>
+      <a class="souvenir-more" href="https://www.google.com/search?q=%E4%B8%8A%E6%B5%B7%20%E6%96%87%E5%89%B5%20%E5%86%B0%E7%AE%B1%E8%B2%BC%20%E9%9B%AA%E6%99%AF%E7%90%83" target="_blank" rel="noopener" onclick="event.stopPropagation()">了解更多 ↗</a>
+      <span class="souvenir-checkmark">✓</span>
+    </label>
+
+  </div>
+
+  <div class="souvenir-note">部分品項（沈大成、辣醬油、雪花膏、萬年青餅乾、鮮肉月餅、蝴蝶酥細節）參考 Trip.com 上海手信推薦頁；店家位置與營業時間已用地圖資料核對，排隊狀況與商品庫存仍以現場為準。</div>
 </div>
 
 </div><!-- /page-souvenir -->
 
-<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v3.9 · 最後更新 2026/09/20</footer>
+<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v4.2 · 最後更新 2026/09/20</footer>
 
 <script>
   (function(){
@@ -1544,17 +1670,30 @@
       },
       "2": {
         color:"#00B8A9", route:true,
-        points:[ WESTIN, {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 18:30"} ]
+        points:[
+          WESTIN,
+          {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 18:30"},
+          Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟 · 20:10–21:30"}),
+          {lat:31.2312797, lng:121.4868817, label:"老百姓大藥房 · 順路買美寶（回程）"}
+        ]
       },
       "3": {
         color:"#FFC845", route:false, points:[ WESTIN ],
         extraPoints: [
-          Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟商圈 · 20:00 起（選擇性）", color:"#4EA8DE"})
+          Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟商圈 · 20:00 起（選擇性補買）", color:"#4EA8DE"})
         ]
       },
       "4": {
-        color:"#8B5CF6", route:false,
-        points:[ WESTIN, HANTING, {lat:31.2352, lng:121.4809, label:"南京東路步行街 · 19:00"} ]
+        color:"#8B5CF6", route:true,
+        points:[
+          Object.assign({}, WESTIN, {label:"The Westin Bund Center · 17:30 取行李出發"}),
+          Object.assign({}, HANTING, {label:"漢庭酒店 · 18:00 入住"}),
+          {lat:31.238076, lng:121.484147, label:"① 雙妹／恒基名人 · 19:30"},
+          {lat:31.236716, lng:121.48233, label:"② 邵萬生（至 21:30）"},
+          {lat:31.23576, lng:121.478316, label:"③ 沈大成（至 21:30）"},
+          {lat:31.235325, lng:121.476781, label:"④ 第一食品商店"},
+          {lat:31.235152, lng:121.475894, label:"⑤ 泰康食品"}
+        ]
       },
       "5": {
         color:"#FF6FA5", route:true,
@@ -1570,7 +1709,8 @@
         extraPoints: [
           {lat:31.2314133, lng:121.4754033, label:"上海城市規劃展覽館 · Justin 13:30–14:30", color:"#4EA8DE"},
           {lat:31.235325, lng:121.476781, label:"上海市第一食品商店 · 伴手禮", color:"#4EA8DE"},
-          {lat:31.23576, lng:121.478316, label:"沈大成 · 傳統糕點", color:"#4EA8DE"}
+          {lat:31.23576, lng:121.478316, label:"沈大成 · 傳統糕團", color:"#4EA8DE"},
+          {lat:31.235152, lng:121.475894, label:"泰康食品 · 辣醬油／萬年青餅乾", color:"#4EA8DE"}
         ]
       }
     };
@@ -1793,7 +1933,7 @@
 
 <script>
   (function(){
-    var cards = document.querySelectorAll('#souvenirGrid .souvenir-card');
+    var cards = document.querySelectorAll('#page-souvenir .souvenir-card');
     cards.forEach(function(card){
       var checkbox = card.querySelector('input[type="checkbox"]');
       var id = checkbox.getAttribute('data-id');
