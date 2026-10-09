@@ -361,6 +361,21 @@
   .weather-card ul li{padding:3px 0 3px 18px; position:relative;}
   .weather-card ul li::before{content:"•"; position:absolute; left:2px; color:var(--teal);}
   .weather-card ul li b{color:var(--ink);}
+  .wx-table-wrap{overflow-x:auto; margin:4px 0 12px;}
+  .wx-table{width:100%; min-width:560px; border-collapse:collapse; font-size:12px;}
+  .wx-table th{text-align:left; font-weight:800; color:var(--ink); font-size:11px; padding:8px 10px; background:var(--card-alt);}
+  .wx-table td{padding:8px 10px; border-bottom:1px solid var(--line); color:var(--text-dim); vertical-align:top; line-height:1.55;}
+  .wx-table td:first-child{color:var(--ink); font-weight:700; white-space:nowrap;}
+  .wx-table tr.wx-rain td:nth-child(2){color:var(--blue); font-weight:700;}
+  .wx-source{font-size:11.5px; color:var(--text-dim); line-height:1.65; margin:8px 0 12px;}
+  .wx-source a{font-weight:700;}
+  .plan-b{margin-top:22px; padding:16px 18px; background:var(--blue-soft); border-left:4px solid var(--blue); border-radius:14px; font-size:12.5px; line-height:1.75; color:var(--text-dim);}
+  .plan-b-title{font-family:"Songti SC","STSong","SimSun",serif; font-size:14.5px; font-weight:700; color:var(--blue); margin-bottom:6px;}
+  .plan-b b{color:var(--ink); font-weight:700;}
+  .plan-b ul{list-style:none; margin:6px 0 0;}
+  .plan-b li{position:relative; padding:3px 0 3px 16px;}
+  .plan-b li::before{content:"•"; position:absolute; left:2px; color:var(--blue);}
+  .plan-b .pb-sub{margin-top:10px; font-weight:700; color:var(--ink);}
 
   @media (max-width:640px){
     .preflight-item{padding-left:46px;}
@@ -402,7 +417,7 @@
   <div class="eyebrow">SHANGHAI · 上海出差同行</div>
   <h1>PMI TVM- Shang Hai <span>- 2026/10/15-10/19</span></h1>
   <p class="sub">2026 年 10 月 15 日（四）— 10 月 19 日（一）</p>
-  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v4.4 · 最後更新 2026/09/20</p>
+  <p class="sub" style="font-size:11px; margin-top:6px; opacity:0.7;">v4.9 · 最後更新 2026/10/09</p>
   <div class="confetti">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
@@ -418,7 +433,7 @@
 <div class="page-panel active" id="page-preflight">
 
 <div class="section-title">行前確認</div>
-<div class="section-sub">出發前建議完成的線上申請與預約，勾選追蹤進度（僅存在你自己的裝置上，不會同步給其他人）</div>
+<div class="section-sub">10/9 重新盤點：距離出發剩 6 天，請依下方倒數時程完成並勾選追蹤進度（僅存在你自己的裝置上，不會同步給其他人）</div>
 
 <div class="wrap">
 
@@ -458,18 +473,52 @@
 
   <div class="preflight-group">氣候與建議穿著</div>
   <div class="weather-card">
-    <div class="weather-sub">更新於 10 月初查詢：目前主要氣象網站的逐日預報仍只到 10/9 左右（約高溫 20–25°C），還沒涵蓋 10/15–10/19。中國氣象網資料顯示國慶假期前後有鋒面帶來降雨、氣溫稍降，之後逐漸回穩，但這波變化多久、會不會影響到 10 月中旬還不確定。建議出發前 3–5 天再查一次最準的逐日預報，以下仍先用歷史氣候平均值抓個底、準備行李參考。</div>
+    <div class="weather-sub">查詢時間 10/9 上午。10/15 是 7 天預報，10/16–10/19 仍是「8–15 天模式預報」，變動空間還很大：建議 <b>10/12–10/14</b> 再查一次，出發當天早上再確認一次。<b>和 10/8 的版本相比，這次整體變暖（高溫 25–30°C），下雨日從 10/16–10/17 變成 10/16 起一路到 10/19 早上，風也變小了。</b></div>
+    <div class="wx-table-wrap">
+      <table class="wx-table">
+        <thead>
+          <tr><th>日期</th><th>天氣</th><th>氣溫（低／高）</th><th>風</th><th>對行程的影響</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>10/15（四）</td><td>陰</td><td>19 / 25°C</td><td>3 級以下</td><td>沒有雨，外灘漫步、上海中心夜景照走；陰天能見度要看當晚雲層</td></tr>
+          <tr class="wx-rain"><td>10/16（五）</td><td>陰轉雨</td><td>20 / 25°C</td><td>東南風，3 級以下</td><td>TVM、Welcome Dinner 都在室內不受影響；晚上雨若轉大，選擇性的外灘散步就不去了</td></tr>
+          <tr class="wx-rain"><td>10/17（六）</td><td>雨轉多雲</td><td>20 / 27°C</td><td>西南風轉北風，3 級以下</td><td>白天雨、傍晚轉多雲，<b>夜遊船和豫園有機會放晴</b>，但預報還不穩，當天再決定</td></tr>
+          <tr class="wx-rain"><td>10/18（日）</td><td>雨轉陰</td><td>22 / 26°C</td><td>北風轉南風，3 級以下</td><td>TVM 全天在室內；傍晚轉陰，南京東路逛街可能不用撐傘，仍要備傘</td></tr>
+          <tr class="wx-rain"><td>10/19（一）</td><td>雨轉晴</td><td>23 / 30°C</td><td>南風轉東南風，3 級以下</td><td>早上可能還在下雨（歷史博物館、大劇院可躲雨），之後轉晴，悶熱高溫 30°C，下午的室內行程剛好</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wx-source"><b>資料來源：</b><a href="https://www.weather.com.cn/weather/101020100.shtml" target="_blank" rel="noopener">中國天氣網上海 7 天預報 ↗</a>（10/15）、<a href="https://www.weather.com.cn/weather15d/101020100.shtml" target="_blank" rel="noopener">8–15 天預報 ↗</a>（10/16–10/19），2026/10/09 擷取（中國氣象局公共氣象服務中心）。8–15 天是多個全球數值模式整合出來的客觀預報，<b>沒有經過預報員人工修正</b>，官方頁面也標註有一定不確定性。這個網站在上海境內不用 VPN 就能打開，到當地也可以直接用它查。<br><br>
+      <b>這次只查到一個來源，沒有交叉比對。</b>10/8 另一個網站的預報和這版差異很大，所以 10/16–10/19 都先當作「可能下雨」來準備。</div>
     <ul>
-      <li><b>氣溫概況：</b>高溫約 22–24°C，低溫約 15–17°C，早晚溫差可達 7–8 度；已脫離颱風季主要影響，但仍偶有秋雨</li>
-      <li><b>上衣：</b>長袖 T 恤或薄長袖衫就夠，白天不需要太厚的外套</li>
-      <li><b>晚上加一件薄外套：</b>外灘漫步、黃浦江夜遊船這類晚上戶外行程，江面風大、體感更涼</li>
-      <li><b>鞋子：</b>行程步行不少（外灘、豫園老街、南京東路步行街），建議穿平常走習慣、舒適的平底鞋</li>
-      <li><b>備一把折疊雨傘：</b>近期上海降雨偏多，十月中旬也偶有秋雨，戶外行程建議行李裡放一把小雨傘防萬一</li>
-      <li><b>防曬小物：</b>白天戶外行程也不少，可以帶太陽眼鏡、帽子，水壺容量帶大一點</li>
+      <li><b>氣溫概況：</b>預報高溫約 25–30°C、低溫約 19–23°C，比之前估的暖和很多，而且又濕又悶；10/19 最熱（30°C），白天穿短袖就夠</li>
+      <li><b>上衣：</b>短袖或薄長袖為主，帶一件薄外套就夠；室內冷氣可能很強，開會和晚宴也用得到</li>
+      <li><b>晚上多帶一件薄外套：</b>外灘散步、夜遊船在江面上，晚上會比白天涼一些。目前預報風不大（3 級以下），薄外套即可</li>
+      <li><b>一定要帶傘或輕便雨衣：</b>10/16–10/19 早上都可能下雨，其中 10/17 的夜遊船＋豫園老街是全程戶外，最需要雨具</li>
+      <li><b>鞋子：</b>步行很多（外灘、豫園老街、南京東路步行街），建議穿舒適、防滑、不怕濕的鞋，老街石板路遇雨可能比較滑</li>
+      <li><b>防曬小物：</b>10/15 陰天、10/19 雨後轉晴又悶熱，水壺容量帶大一點，太陽眼鏡、帽子視情況帶</li>
+      <li><b>雨天備案：</b>「五日總表」每一天的行程卡片下方都有「☔ 雨天備案」，其中 <b>10/17 最完整</b>，建議出發前先看一遍</li>
     </ul>
   </div>
 
   <div class="preflight-list" id="preflightList">
+
+    <div class="callout" style="margin:0 0 18px;">
+      <b>倒數時程（10/9 更新）</b><br><br>
+      <b>今天–10/11（週五–日）：必須先做完</b><br>
+      ・確認台胞證效期，三人護照、台胞證號碼存手機（實名制訂票要用）<br>
+      ・手機漫遊或 eSIM 辦好，並在台灣先測試能上網<br>
+      ・支付寶、微信支付綁好境外信用卡（簡訊驗證要在台灣有訊號時做）<br>
+      ・下載高德地圖、滴滴、VPN，在台灣先連線測試<br>
+      ・準備給上海夥伴的見面禮、名片、換少量人民幣現金<br><br>
+      <b>10/12–10/14：確認與預訂</b><br>
+      ・重查天氣（預報會比現在準很多），決定雨具與外套<br>
+      ・10/13–10/14 線上預辦登機（四段航班），截圖登機證與訂房憑證<br>
+      ・上海中心觀光層 10/14–10/15 看預報後再訂票；夜遊船 10/17 當天再決定<br>
+      ・10/14 前行李打包完成，行動電源放隨身包<br><br>
+      <b>10/15 出發當天早上</b><br>
+      ・護照、台胞證放隨身包，手機和行動電源充飽電，再看一次當天天氣
+    </div>
 
     <div class="preflight-group required">出發準備・必須</div>
 
@@ -487,7 +536,7 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">手機漫遊或上網卡／eSIM</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>出發前 3–7 天辦好，或在機場臨櫃辦漫遊</div>
+        <div><span class="meta-label">建議時間</span><b>最晚 10/12 前辦好</b>；eSIM 要在台灣先安裝並測試能啟用，機場臨櫃漫遊則在 10/15 當天辦</div>
         <div><span class="meta-label">說明</span>國際漫遊、當地實體 SIM 卡、或 eSIM 三選一，確保抵達就有網路可用（VPN、地圖、行動支付都需要網路）</div>
       </div>
     </label>
@@ -508,6 +557,7 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">換匯（準備少量人民幣現金）</span>
       <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>銀行臨櫃或網路換匯多半要先預約，<b>10/12 前下單</b></div>
         <div><span class="meta-label">說明</span>雖然這趟主要靠支付寶／微信支付，但路邊攤、小店偶爾只收現金或境外卡綁定的行動支付刷不過，建議換一點小額人民幣現金備用，不用換太多</div>
       </div>
     </label>
@@ -554,7 +604,7 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">行動電源</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">說明</span>登機規定須隨身攜帶、不可托運，容量通常需在 160Wh 以下（一般消費型行動電源多在此範圍內，但建議出發前再次確認容量標示）</div>
+        <div><span class="meta-label">說明</span>登機規定須隨身攜帶、不可托運，容量標示要清楚可見，100Wh（約 27,000mAh）以下一般可帶，超過要航空公司同意。航空公司對機上使用也可能有規定，出發前請再看一次所搭航班的公告</div>
       </div>
     </label>
 
@@ -616,6 +666,15 @@
       </div>
     </label>
 
+    <label class="preflight-item">
+      <input type="checkbox" data-id="pack-rain">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">雨具與薄外套</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>10/16–10/19 都可能下雨，夜晚江邊風大。帶折疊傘或輕便雨衣、防滑好走的鞋、一件薄外套</div>
+      </div>
+    </label>
+
     <div class="preflight-group who-am">行李打包・商務伴手禮與 App</div>
 
     <label class="preflight-item">
@@ -644,9 +703,67 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">台胞證（大陸簽注）</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>出發前至少 4 週開始檢查／申辦</div>
+        <div><span class="meta-label">建議時間</span><b>今天就確認</b>（剩 6 天）。如果效期不足或還沒辦，請馬上查詢陸委會系統和受理單位的辦理時間，越早越好</div>
         <div><span class="meta-label">說明</span>台灣旅客入境中國大陸須持有效台胞證，請確認有效期限涵蓋此行程（10/15–10/19），過期或即將到期需重新申請、換發</div>
         <div><span class="meta-label">連結</span><a href="https://hmtravel.mac.gov.tw/MHCP_WEB_C/registerp" target="_blank" rel="noopener" onclick="event.stopPropagation()">陸委會網路申辦系統 ↗</a></div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="realname-id">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">三人證件資料（實名制訂票用）</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>10/11 前整理好</div>
+        <div><span class="meta-label">說明</span>夜遊船與上海中心觀光層都是實名制，每張票綁一位乘客。三人的姓名、護照號碼、台胞證號碼存在手機備忘錄；訂票登記哪本證件，入場時就帶那本<b>正本</b></div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="arrival-card">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">入境大陸：入境卡與飯店地址</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>出發前先把資料準備好</div>
+        <div><span class="meta-label">說明</span>抵達時依航班和機場的指示填寫入境卡（紙本或線上，以現場公告為準），常見要填：姓名、台胞證號、航班號、住宿地址與電話、來訪目的。建議先把兩間飯店的<b>中文地址與電話</b>存手機：Westin（黃浦區河南中路 88 號）、漢庭（黃浦區黃河路 158 號）</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="weather-recheck">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">重查天氣（10/12–10/14，與出發當天早上）</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>10/16–10/19 目前都有下雨可能（10/9 預報：10/16 陰轉雨、10/17 雨轉多雲、10/18 雨轉陰、10/19 雨轉晴），預報會越來越準。決定帶什麼外套、要不要改夜遊船，都看這次的結果</div>
+        <div><span class="meta-label">連結</span><a href="https://www.weather.com.cn/weather15d/101020100.shtml" target="_blank" rel="noopener" onclick="event.stopPropagation()">中國天氣網上海預報 ↗</a></div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="biz-prep">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">名片與 Welcome Dinner 團服</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>10/16 Welcome Dinner 穿去馬尼拉的那套團服，記得放進行李，出發前確認三人都帶了、也都乾淨平整。名片帶足。下雨天備一雙好走的鞋</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="itinerary-offline">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">行程表離線備份</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>10/14 前</div>
+        <div><span class="meta-label">說明</span>這份行程表放在 GitHub Pages，在大陸有時連不上。請把網頁存成 PDF 或把每天行程截圖存在手機相簿，三人都存一份</div>
+      </div>
+    </label>
+
+    <label class="preflight-item">
+      <input type="checkbox" data-id="hotel-early">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">Westin 提早入住／寄放行李</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">說明</span>Justin 約中午、Anne／Monica 約下午到飯店，不一定能立刻入住。可先用訂房平台或飯店 App 留言請求提早入住，或請櫃檯先寄放行李；實際入住時間以訂房確認信為準</div>
       </div>
     </label>
 
@@ -655,8 +772,9 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">黃浦江夜遊船 訂票</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>建議提前 3–5 天線上訂票，避開現場排隊</div>
-        <div><span class="meta-label">說明</span>10/17 十六鋪碼頭，TVM 結束時間固定，選普通艙、短程航線即可控制在預算內</div>
+        <div><span class="meta-label">建議時間</span>不用太早訂。最晚「10/17 當天下午 17:15 前」買好即可；建議 10/17 午休或下午休息時看當天預報再決定</div>
+        <div><span class="meta-label">說明</span>10/17 十六鋪碼頭，選普通艙、短程航線即可控制在預算內。上海遊船自 2026/9/14 起改為<b>實名制</b>，每位乘客需用護照登記，請三人都備好護照資料</div>
+        <div><span class="meta-label">天氣提醒</span>10/9 最新預報 10/17「雨轉多雲」，傍晚有機會放晴、風也不大（見上方「氣候與建議穿著」），但仍不穩。不建議提早訂。10/14 前後看一次、當天再看一次；若要預訂，務必選「可免費取消」的票，或乾脆當天用手機買</div>
         <div><span class="meta-label">連結</span><a href="https://tw.trip.com/travel-guide/attraction/shanghai/huangpu-river-cruise-98472" target="_blank" rel="noopener" onclick="event.stopPropagation()">Trip.com 購票頁面 ↗</a>（進去後請選日期／票種，確認該票是否可退再下單）</div>
       </div>
     </label>
@@ -666,8 +784,8 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">上海中心大廈觀光層 門票</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>建議提前 1–3 天線上訂票，假日排隊時間較長</div>
-        <div><span class="meta-label">說明</span>10/15 晚餐後，全員一起過外灘觀光隧道去陸家嘴看夜景，建議先訂好票</div>
+        <div><span class="meta-label">建議時間</span>最晚可當天 19:00 前買，建議 10/14–10/15 看預報後再訂；選「兌換前可免費取消」的票最安心</div>
+        <div><span class="meta-label">說明</span>10/15 晚餐後，全員一起過外灘觀光隧道去陸家嘴看夜景，建議先訂好票。實名制：每張票綁一個人的證件，三人請各自登記護照，最後入場時間約 20:30</div>
         <div><span class="meta-label">連結</span><a href="https://www.klook.com/zh-TW/activity/4333-shanghai-tower-observation-deck-shanghai/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Klook 購票頁面 ↗</a>　<a href="https://www.shanghaitower.com.cn" target="_blank" rel="noopener" onclick="event.stopPropagation()">上海中心大廈官網 ↗</a>（官網未經即時查證，也可透過大眾點評／攜程比價）</div>
       </div>
     </label>
@@ -677,8 +795,8 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">支付寶／微信支付 境外用戶設定</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>出發前 1–2 週先下載並綁定境外信用卡</div>
-        <div><span class="meta-label">說明</span>中國大陸多數商家以行動支付為主，建議提前在手機安裝並完成身份／信用卡綁定，避免到當地才卡關</div>
+        <div><span class="meta-label">建議時間</span><b>這週內完成</b>。綁卡的簡訊驗證要在台灣有訊號時做，到了大陸才發現卡關很麻煩</div>
+        <div><span class="meta-label">說明</span>中國大陸多數商家以行動支付為主，建議提前在手機安裝並完成身份／信用卡綁定，避免到當地才卡關。兩個 App 都綁，其中一個失敗還有另一個備用；小額交易沒問題，住宿、大額消費可能有單筆限額（以 App 內顯示為準），所以仍建議帶一點人民幣現金和一張信用卡備用</div>
         <div><span class="meta-label">連結</span><a href="https://global.alipay.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">支付寶國際版 ↗</a>（微信支付請於微信 App 內的「錢包」設定）</div>
       </div>
     </label>
@@ -688,7 +806,7 @@
       <span class="preflight-checkmark">✓</span>
       <span class="preflight-title">上網與 VPN／備用地圖 準備</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>出發前先下載安裝，抵達大陸後多數國際服務無法直接使用</div>
+        <div><span class="meta-label">建議時間</span><b>10/11 前先下載安裝，並在台灣連線測試一次</b>；抵達大陸後多數國際服務無法直接使用，到了才裝很可能下載不到</div>
         <div><span class="meta-label">說明</span>Google 系服務（含這份行程表用到的地圖）、LINE、Instagram 等在中國大陸境內預設無法使用，建議先準備好可用的 VPN App。<b>地圖優先建議下載「高德地圖（Amap）」</b>作為備用——介面可切換英文、內建叫車功能、公車地鐵導航清楚，對外國遊客較友善。iPhone 使用者可以先試試 Apple 內建地圖（在中國大陸可直接使用，不需 VPN），不夠用再切高德。</div>
         <div><span class="meta-label">連結</span>VPN 服務眾多且規定常變動，請依個人需求自行選擇，此處不特別推薦特定服務</div>
       </div>
@@ -714,6 +832,17 @@
       </div>
     </label>
 
+    <label class="preflight-item">
+      <input type="checkbox" data-id="customs-return">
+      <span class="preflight-checkmark">✓</span>
+      <span class="preflight-title">回台灣前：海關與伴手禮規定</span>
+      <div class="preflight-meta">
+        <div><span class="meta-label">建議時間</span>10/18 採買前先看</div>
+        <div><span class="meta-label">說明</span>中國的豬肉製品（肉鬆、鮮肉月餅等含肉類）禁止帶入台灣，被查到會被重罰。黃酒、菸酒有免稅額度上限，人民幣現金超過 20,000 元要申報（數字請以官網為準）</div>
+        <div><span class="meta-label">連結</span><a href="https://www.customs.gov.tw" target="_blank" rel="noopener" onclick="event.stopPropagation()">財政部關務署 ↗</a></div>
+      </div>
+    </label>
+
     <div class="preflight-group who-justin">Justin 專屬</div>
 
     <label class="preflight-item">
@@ -722,7 +851,7 @@
       <span class="tl-tag">Justin</span>
       <span class="preflight-title">航班線上預辦登機（BR2400／BR771）</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
+        <div><span class="meta-label">建議時間</span>10/13–10/14 起可辦理，依航空公司規定為準</div>
         <div><span class="meta-label">說明</span>10/15 去程 BR2400（TSA→PVG）、10/19 回程 BR771（SHA→TSA），皆為長榮航空班機，建議提前完成線上報到節省機場時間</div>
         <div><span class="meta-label">連結</span><a href="https://www.evaair.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">長榮航空 ↗</a></div>
       </div>
@@ -770,7 +899,7 @@
       <span class="tl-tag" style="background:var(--blue-soft); color:var(--blue);">Anne / Monica</span>
       <span class="preflight-title">航班線上報到（CI201／CI202）</span>
       <div class="preflight-meta">
-        <div><span class="meta-label">建議時間</span>起飛前 24–48 小時開放，依航空公司規定為準</div>
+        <div><span class="meta-label">建議時間</span>10/13–10/14 起可辦理，依航空公司規定為準</div>
         <div><span class="meta-label">說明</span>10/15 去程 CI201（TSA 12:30→SHA 14:15）、10/19 回程 CI202（SHA 16:15→TSA 18:15），皆為中華航空班機，建議提前完成線上報到</div>
         <div><span class="meta-label">連結</span><a href="https://www.china-airlines.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">中華航空 ↗</a></div>
       </div>
@@ -814,7 +943,7 @@
     <div class="ov-date">15</div>
     <div class="ov-wd">THU · 四</div>
     <div class="ov-headline">抵達・外灘＋夜遊上海中心</div>
-    <div class="ov-note">江景晚餐／過江看夜景</div>
+    <div class="ov-note">老字號本幫菜／過江看夜景</div>
   </div>
   <div class="ov-card" data-day="2">
     <div class="ov-date">16</div>
@@ -826,13 +955,13 @@
     <div class="ov-date">17</div>
     <div class="ov-wd">SAT · 六</div>
     <div class="ov-headline">TVM・夜遊船＋豫園老街</div>
-    <div class="ov-note">18:30 登船／20:20 豫園採買</div>
+    <div class="ov-note">18:30 登船／南翔晚餐／豫園採買</div>
   </div>
   <div class="ov-card" data-day="4">
     <div class="ov-date">18</div>
     <div class="ov-wd">SUN · 日</div>
     <div class="ov-headline">TVM 最終天</div>
-    <div class="ov-note">提早退房／晚上逛南京東路</div>
+    <div class="ov-note">晚餐新雅／逛南京東路</div>
   </div>
   <div class="ov-card" data-day="5">
     <div class="ov-date">19</div>
@@ -922,25 +1051,25 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">18:00</div>
-          <div class="tl-desc">晚餐：Yujintian 魚金天（外灘六號 3 樓）</div>
-          <div class="tl-note">本幫菜配外灘江景，從黃浦公園步行幾分鐘即達，不需繞路</div>
+          <div class="tl-time">17:45 – 18:35</div>
+          <div class="tl-desc">晚餐：老正興菜館（福州路 556 號）</div>
+          <div class="tl-note">本幫菜老字號，有米其林指南收錄，我估人均約 120–170 元（未即時查證，請先看大眾點評）。從黃浦公園沿外灘往南走、轉福州路，約 20–25 分鐘；下雨或腳痠可叫車（約 8 分鐘）。用餐控制在 50 分鐘內，後面還要過隧道。<br><b>備案：</b>想要江景可改 Yujintian 魚金天（外灘六號 3 樓），但江景位只有 3 桌、務必先預約，菜單價格偏高，人均可能超過 180 元</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">18:45</div>
+          <div class="tl-time">19:00</div>
           <div class="tl-desc">外灘觀光隧道 過江</div>
-          <div class="tl-note">從 Yujintian 步行回 Westin 附近的隧道口約 5–10 分鐘，隧道本身有燈光秀，過江約 5 分鐘，比搭地鐵繞過去快很多</div>
+          <div class="tl-note">從老正興沿福州路走回外灘、再往北到隧道口約 15–20 分鐘，隧道本身有燈光秀，過江約 5 分鐘，比搭地鐵繞過去快很多</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:15 – 20:45</div>
+          <div class="tl-time">19:30 – 20:45</div>
           <div class="tl-desc">上海中心大廈觀光層</div>
-          <div class="tl-note">開放至 21:30，建議提前線上訂票</div>
+          <div class="tl-note">最晚入場約 20:30，實名制，請帶護照；票選兌換前可免費取消</div>
           <div class="callout"><b>景點特色：</b>居高臨下俯瞰整個上海天際線，外灘、陸家嘴同框盡收眼底，118 樓、約 546 公尺，中國第一高樓。室內有空調，不受天氣影響，走的是「全景壯闊」路線，缺點是要買票排隊搭高速電梯（估計約人民幣 180 元／人）。跟明天（10/16）的黃浦江夜遊船正好是兩種不同體驗，可以互相參考。</div>
         </div>
       </div>
@@ -952,6 +1081,14 @@
           <div class="tl-note">今晚會晚一點回飯店，明天 TVM 09:00 才開始，時間上還算充裕</div>
         </div>
       </div>
+    </div>
+    <div class="plan-b">
+      <div class="plan-b-title">☔ 雨天備案｜預報 10/15 陰天、沒有雨，這天風險最低，簡單備案即可</div>
+      <ul>
+        <li><b>Justin 逛豫園：</b>園內有迴廊、亭閣可以躲雨，帶傘照逛；雨大就縮短成 1.5–2 小時，剩下的時間回飯店休息。</li>
+        <li><b>16:30 外灘建築群漫步：</b>雨天縮短成黃浦公園一小段，提早到老正興（福州路 556 號，室內）用餐，必要時改叫車，等雨勢小再出門。</li>
+        <li><b>上海中心觀光層：</b>在室內，雨天照走；但雨大、雲層低時能見度會變差，這種情況不用硬上去。<b>買票時建議選可改期／可退的票種</b>，下單前先看清楚取消條款。</li>
+      </ul>
     </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
@@ -999,6 +1136,14 @@
         </div>
       </div>
     </div>
+    <div class="plan-b">
+      <div class="plan-b-title">☔ 雨天備案｜預報 10/16 陰轉雨，TVM 與晚宴都在室內</div>
+      <ul>
+        <li>TVM 和 Welcome Dinner 都在飯店內，<b>不受天氣影響</b>。</li>
+        <li><b>選擇性的外灘散步：</b>下雨就取消，直接回房休息。</li>
+        <li><b>想動一動又不想淋雨：</b>可以去<b>桃源鄉</b>（足浴／按摩，南京東路 505 號 4 樓，威斯丁走路約 10 分鐘，Google 評價 4.8，540 則）。查不到營業時間，有評論提到營業到比較晚，去之前建議先打 +86 21 6322 6883 確認並預約。有評論提醒：進大樓時一、二樓可能有人攔著推薦別家，直接說已經預約、從 505 號側門搭電梯到 4 樓即可。</li>
+      </ul>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-2" class="day-map"></div>
@@ -1034,29 +1179,29 @@
         <div class="tl-bubble">
           <div class="tl-time">18:30</div>
           <div class="tl-desc">十六鋪碼頭・黃浦江夜遊船（普通艙／短程航線）</div>
-          <div class="callout">選普通艙、短程航線（約 40–60 分鐘），票價約人民幣 100–150 元／人，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。<br><br><b>景點特色：</b>直接航行在江面上，近距離同時欣賞外灘老建築與陸家嘴摩天樓群的燈光，露天甲板可吹風拍照，臨場感跟氣氛比較浪漫、親水，缺點是要看天氣、船身可能會晃。跟 10/15 的上海中心觀光層正好是兩種不同體驗，可以互相參考。</div>
+          <div class="callout">選普通艙、短程航線（約 40–60 分鐘），票價約人民幣 100–150 元／人，避免加購 VIP／景觀艙座位。建議透過攜程、飛豬或大眾點評<b>提前線上訂票</b>，現場售票口評價反映不好找、旺季常常要排隊。<br><br><b>景點特色：</b>直接航行在江面上，近距離同時欣賞外灘老建築與陸家嘴摩天樓群的燈光，露天甲板可吹風拍照，臨場感跟氣氛比較浪漫、親水，缺點是要看天氣、船身可能會晃。跟 10/15 的上海中心觀光層正好是兩種不同體驗，可以互相參考。<br><br><b>天氣提醒：</b>10/9 最新預報 10/17 是「雨轉多雲」、風 3 級以下，傍晚有機會放晴，夜遊船是這天最受天氣影響的一段，但預報還不穩。建議 10/17 午休時看當天預報再決定，最晚 17:15 前買票。遊船為實名制，三人需各帶護照；若當天下雨，可改室內行程。</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:30 – 20:10</div>
-          <div class="tl-desc">晚餐</div>
-          <div class="tl-note">下船後推薦<b>浦江小吃廣場</b>（外灘 435 號，碼頭旁走路約 3–4 分鐘）——各式上海小吃、小份點心，份量彈性；想坐下來好好吃一頓（如外灘五號大樓）會壓縮後面逛豫園的時間</div>
-        </div>
-      </div>
-      <div class="tl-row shared">
-        <div class="tl-dot"></div>
-        <div class="tl-bubble">
-          <div class="tl-time">20:10 – 20:20</div>
+          <div class="tl-time">19:30 – 19:40</div>
           <div class="tl-desc">步行前往豫園</div>
-          <div class="tl-note">約 8 分鐘</div>
+          <div class="tl-note">從十六鋪碼頭走過去約 8 分鐘，先到豫園商城再排南翔</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">20:20 – 21:40</div>
+          <div class="tl-time">19:40 – 20:40</div>
+          <div class="tl-desc">晚餐：南翔饅頭店（豫園商城）二樓</div>
+          <div class="tl-note">下船後先走到豫園，在<b>二樓</b>用餐（一樓是外帶、要排長隊）：小籠包、蟹粉類點心，我估人均約 80–150 元（未查證）。不能預約、要現場排隊，營業時間我沒查到，請先看大眾點評確認。<br><b>備案：</b>排隊超過 20 分鐘或接近收攤，就改回碼頭旁的<b>浦江小吃廣場</b>（外灘 435 號，走路約 3–4 分鐘），份量彈性、吃得快</div>
+        </div>
+      </div>
+      <div class="tl-row shared">
+        <div class="tl-dot"></div>
+        <div class="tl-bubble">
+          <div class="tl-time">20:40 – 21:40</div>
           <div class="tl-desc">豫園老街／城隍廟 逛街、採買伴手禮</div>
           <div class="callout">營業至 22:00，晚上點燈很漂亮，也是買紀念品、零嘴的好地方。這個時段時間確定、<b>三個人都在</b>，可以一次處理「豫園組」伴手禮：<br>・五香豆／梨膏糖、老字號茶葉、工藝品、搪瓷杯（老街攤位）<br>・老牌雪花膏「摩登紅人」（文昌路 63 號，城隍廟商圈）<br>・大白兔奶糖（豫園各店也有賣）<br><br>各項細節詳見「伴手禮」頁籤。</div>
         </div>
@@ -1076,6 +1221,32 @@
           <div class="tl-desc">返回 Westin Bund Center</div>
         </div>
       </div>
+    </div>
+    <div class="plan-b">
+      <div class="plan-b-title">☔ 雨天備案｜預報 10/17 雨轉多雲，傍晚有機會放晴，但仍要準備雨天版</div>
+      <div class="pb-sub">怎麼決定</div>
+      <ul>
+        <li>17:30 TVM 結束時看一下天氣：<b>小雨</b>可以照原計畫（帶傘、穿薄外套，先看船公司當天有沒有停航公告）；<b>中到大雨、風大或船停航</b>就改走下面的室內版。</li>
+      </ul>
+      <div class="pb-sub">室內版行程</div>
+      <ul>
+        <li><b>18:00</b> 先回房整理，不用趕出門。</li>
+        <li><b>18:30–19:45 室內晚餐：</b>威斯丁 2 樓 Prego（不用出門），或叫車去<b>蘇浙匯</b>（南京西路 288 號，本幫／江浙菜，評價 4.5，車程約 10 分鐘，為估計值）。10/15 已經吃過老正興，這晚換個口味。</li>
+        <li><b>20:00–21:30 二選一：</b><br>
+          ① <b>足浴／按摩放鬆</b>：桃源鄉（資訊同 10/16 備案，先電話預約）。<br>
+          ② <b>南京東路商場先採買</b>：叫車過去，先逛邵萬生、沈大成（21:30 打烊）、第一食品商店，10/18 晚上就能逛得更輕鬆。</li>
+        <li><b>22:00 前</b>回飯店。</li>
+      </ul>
+      <div class="pb-sub">沒去豫園的話，伴手禮怎麼辦</div>
+      <ul>
+        <li>五香豆／梨膏糖、茶葉：10/18 晚上南京東路的老字號（如邵萬生）也許找得到類似品項。</li>
+        <li>工藝品、「摩登紅人」雪花膏比較難替代：可以讓 <b>Justin 10/19 下午 14:30–16:00 改去豫園老街</b>（取代南京東路時段，從漢庭叫車約 10 分鐘，記得 16:15 前回漢庭整理行李）。</li>
+      </ul>
+      <div class="pb-sub">夜遊船怎麼辦</div>
+      <ul>
+        <li>如果之後預報變成 10/17 下雨、但 10/16 轉乾，可以考慮 10/16 晚宴結束後（約 20:30）步行去十六鋪搭最後一班；Trip.com 頁面標示營業時間約到 21:30，實際末班要現場確認。這要看晚宴會不會準時結束，成功率不高，不建議特別期待。</li>
+        <li>其他晚上都已經排滿，所以如果遇雨，夜遊船比較可能是直接放棄，不用勉強。</li>
+      </ul>
     </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
@@ -1126,43 +1297,43 @@
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">18:40 – 19:10</div>
-          <div class="tl-desc">飯店附近快速晚餐：黃河路美食街</div>
-          <div class="tl-note">從漢庭步行約 5–8 分鐘。TVM 延後 30 分鐘結束，晚上行程比較趕，建議直接選快速的<b>小楊生煎（黃河路店）</b>——招牌生煎包，便宜、快、不用等太久，蘇浙匯這種坐下來吃的餐廳這天先跳過</div>
+          <div class="tl-time">18:50 – 20:00</div>
+          <div class="tl-desc">晚餐：新雅粵菜館（南京東路 719 號）</div>
+          <div class="tl-note">從漢庭步行約 9–10 分鐘，老字號粵菜，我估人均約 120–170 元（未即時查證，請先看大眾點評）。位置就在南京東路步行街西端，吃完直接從這裡開始逛，不用再搭車。用餐控制在 1 小時內。<br><b>備案：</b>如果進店要排太久，就改吃黃河路的<b>小楊生煎</b>（人均約 30 元，15 分鐘內解決），省下時間給逛街</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">19:10 – 19:20</div>
-          <div class="tl-desc">搭地鐵 2 號線到南京東路站</div>
-          <div class="tl-note">人民廣場 → 南京東路只要 1 站，出站就是恒基名人購物中心；漢庭走到人民廣場站很近</div>
-        </div>
-      </div>
-      <div class="tl-row shared">
-        <div class="tl-dot"></div>
-        <div class="tl-bubble">
-          <div class="tl-time">19:20 – 21:30</div>
+          <div class="tl-time">20:00 – 21:30</div>
           <div class="tl-desc">南京東路步行街逛街，採買伴手禮</div>
-          <div class="callout"><b>逛街順序（由東往西）：</b><br>①<b>雙妹 VIVE</b>（恒基名人購物中心，南京東路 300 號，營業至 22:00）：復古美妝，時間不夠可以先跳過<br>②<b>邵萬生</b>（414 號，營業至 21:30）：蜜餞、炒貨禮盒<br>③<b>沈大成</b>（636 號，營業至 21:30）：傳統糕團，晚上常排隊，建議先去排<br>④<b>第一食品商店</b>（720 號，營業至 22:00）：大白兔奶糖（含周邊）、石庫門黃酒<br>⑤<b>泰康食品</b>（768 號，營業至 22:00）：辣醬油、萬年青餅乾；門口的鮮肉月餅剛好順路，排隊太長就放棄<br><br>邵萬生、沈大成 21:30 就打烊，TVM 延後結束、時間比平常緊，所以先從最東邊逛起、優先處理最早關門的兩家，時間不夠就跳過雙妹。各項怎麼買、要不要買，詳見「伴手禮」頁籤；10/19 下午 Justin 還有補買的機會。</div>
+          <div class="callout"><b>逛街順序（由西往東，從新雅出來開始）：</b><br>①<b>泰康食品</b>（768 號，營業至 22:00）：辣醬油、萬年青餅乾；門口的鮮肉月餅排隊太長就放棄<br>②<b>第一食品商店</b>（720 號，營業至 22:00）：大白兔奶糖（含周邊）、石庫門黃酒<br>③<b>沈大成</b>（636 號，營業至 <b>21:30</b>）：傳統糕團，晚上常排隊，要留時間<br>④<b>邵萬生</b>（414 號，營業至 <b>21:30</b>）：蜜餞、炒貨禮盒<br>⑤<b>雙妹 VIVE</b>（恒基名人購物中心，南京東路 300 號，營業至 22:00）：復古美妝，時間不夠直接跳過<br><br>晚餐安排在逛街前，所以只剩約 90 分鐘。沈大成、邵萬生 21:30 打烊，建議 20:30 前到沈大成、21:00 前到邵萬生，最後從南京東路站搭地鐵回去。各項怎麼買、要不要買，詳見「伴手禮」頁籤；10/19 下午 Justin 還有補買的機會。</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">21:30 – 21:40</div>
-          <div class="tl-desc">步行回漢庭</div>
-          <div class="tl-note">從泰康食品走回漢庭約 8 分鐘</div>
+          <div class="tl-time">21:30 – 21:55</div>
+          <div class="tl-desc">搭地鐵 2 號線回人民廣場，步行回漢庭</div>
+          <div class="tl-note">南京東路站 → 人民廣場站 1 站，再走約 10 分鐘回漢庭；下雨或提著大包小包可直接叫車</div>
         </div>
       </div>
       <div class="tl-row shared">
         <div class="tl-dot"></div>
         <div class="tl-bubble">
-          <div class="tl-time">21:45 後</div>
+          <div class="tl-time">22:00 後</div>
           <div class="tl-desc">回飯店早點休息</div>
           <div class="tl-note">10/19 早上 08:00 就要出發，這晚早點睡比較好</div>
         </div>
       </div>
+    </div>
+    <div class="plan-b">
+      <div class="plan-b-title">☔ 雨天備案｜預報 10/18 雨轉陰，帶傘即可，路線不用改</div>
+      <ul>
+        <li><b>17:45 從威斯丁叫計程車去漢庭：</b>雨天傍晚尖峰很難叫車，建議提早 10 分鐘開始叫，或請飯店櫃檯代叫，行李也請門僮協助搬運。</li>
+        <li><b>南京東路採買：</b>五家店都有室內店面，下大雨時<b>先跳過最東邊的雙妹</b>（時間不夠本來就可以跳過），專心逛邵萬生、沈大成、第一食品、泰康。</li>
+        <li><b>回程：</b>不用走路，直接搭地鐵 2 號線回人民廣場（1 站）或叫車。</li>
+      </ul>
     </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
@@ -1313,6 +1484,15 @@
         </div>
       </div>
     </div>
+    <div class="plan-b">
+      <div class="plan-b-title">☔ 雨天備案｜預報 10/19 雨轉晴，早上先準備雨天版</div>
+      <ul>
+        <li><b>09:30–10:00 人民公園：</b>縮短成 10–15 分鐘，把時間留給室內的上海市歷史博物館（免費、免預約）；頂樓花園遇雨就不上去。</li>
+        <li><b>12:08–12:45 上海大劇院外觀：</b>雨天拍照不好玩，改去<b>上海城市規劃展覽館</b>（人民廣場，免費、免預約，入館要刷證件，記得帶台胞證；評論提到週一有開，頂樓有咖啡廳可以坐著等）。離佳家湯包走路約 8 分鐘、離漢庭約 10 分鐘。開放時間我查不到，建議前一天確認。</li>
+        <li><b>Justin 下午：</b>如果上午已經去過城規館，13:30–14:30 那段就改成多逛南京東路或回房休息。</li>
+        <li><b>叫車：</b>Anne / Monica 13:30、Justin 16:45 出發去虹橋機場，雨天叫車比較慢，建議提早 10–15 分鐘開始叫，不要壓線。</li>
+      </ul>
+    </div>
     <div class="day-map-wrap">
       <div class="day-map-label">📍 當日地圖</div>
       <div id="map-day-5" class="day-map"></div>
@@ -1385,7 +1565,7 @@
   </div>
 
   <div class="souvenir-group-title">10/17 晚上 20:20–21:40・豫園老街／城隍廟（三人一起）</div>
-  <div class="callout souvenir-group-note">10/17 夜遊船 + 晚餐後，從十六鋪碼頭步行約 8 分鐘就到豫園商城（營業至 22:00）。這個時段時間確定、<b>三人都在</b>。Justin 10/15 個人逛豫園（12:00–15:00）時也可以先買。</div>
+  <div class="callout souvenir-group-note">10/17 夜遊船後，從十六鋪碼頭步行約 8 分鐘就到豫園商城（晚餐也在這裡吃南翔二樓）（營業至 22:00）。這個時段時間確定、<b>三人都在</b>。Justin 10/15 個人逛豫園（12:00–15:00）時也可以先買。</div>
   <div class="souvenir-grid">
 
     <label class="souvenir-card">
@@ -1446,7 +1626,7 @@
   </div>
 
   <div class="souvenir-group-title">10/18 晚上 19:30–21:45・南京東路（三人一起）</div>
-  <div class="callout souvenir-group-note">10/18 晚上三個人都在漢庭附近，是<b>全員一起採買</b>的時段。19:15 從人民廣場搭地鐵 2 號線 1 站到南京東路，<b>由東往西</b>逛回來：雙妹 → 邵萬生 → 沈大成 → 第一食品 → 泰康。邵萬生、沈大成 <b>21:30 打烊</b>，其餘營業至 22:00，所以先處理最早關門的；最後從泰康走回漢庭約 8 分鐘。時間不夠就先跳過雙妹，10/19 下午 Justin 還有補買的機會。</div>
+  <div class="callout souvenir-group-note">10/18 晚上三個人都在漢庭附近，是<b>全員一起採買</b>的時段。18:50 先在新雅粵菜館吃晚餐，20:00 從西端的泰康開始<b>由西往東</b>逛：泰康 → 第一食品 → 沈大成 → 邵萬生 → 雙妹。沈大成、邵萬生 <b>21:30 打烊</b>，其餘營業至 22:00；最後從南京東路站搭地鐵回人民廣場。時間不夠就先跳過雙妹，10/19 下午 Justin 還有補買的機會。</div>
   <div class="souvenir-grid">
 
     <label class="souvenir-card">
@@ -1600,7 +1780,7 @@
 
 </div><!-- /page-souvenir -->
 
-<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v4.4 · 最後更新 2026/09/20</footer>
+<footer>行程僅供同行人參考，實際時間請以現場與航班資訊為準。<br>版本 v4.9 · 最後更新 2026/10/09</footer>
 
 <script>
   (function(){
@@ -1668,9 +1848,9 @@
           Object.assign({}, WESTIN, {label:"The Westin Bund Center（入住）"}),
           {lat:31.239181, lng:121.489649, label:"萬國建築博覽群 · 16:30"},
           {lat:31.241431, lng:121.49082, label:"黃浦公園 · 17:15"},
-          {lat:31.23472, lng:121.49066, label:"Yujintian 晚餐 · 18:00"},
-          {lat:31.238733, lng:121.490528, label:"外灘觀光隧道 · 18:45"},
-          {lat:31.233518, lng:121.505618, label:"上海中心大廈觀光層 · 19:15–20:45"}
+          {lat:31.2340, lng:121.4800, label:"老正興 晚餐 · 17:45（位置約略，請以 App 為準）"},
+          {lat:31.238733, lng:121.490528, label:"外灘觀光隧道 · 19:00"},
+          {lat:31.233518, lng:121.505618, label:"上海中心大廈觀光層 · 19:30–20:45"}
         ],
         extraPoints: [
           {lat:31.2263942, lng:121.4919337, label:"豫園（本體）· Justin 個人行程 12:00–15:00", color:"#4EA8DE"}
@@ -1685,7 +1865,7 @@
         points:[
           WESTIN,
           {lat:31.231695, lng:121.493788, label:"十六鋪碼頭・夜遊船 · 18:30"},
-          Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟 · 20:20–21:40"}),
+          Object.assign({}, YUYUAN, {label:"豫園老街／城隍廟 · 南翔晚餐 19:40，逛街 20:40–21:40"}),
           {lat:31.2312797, lng:121.4868817, label:"老百姓大藥房 · 順路買美寶（回程）"}
         ]
       },
@@ -1694,11 +1874,12 @@
         points:[
           Object.assign({}, WESTIN, {label:"The Westin Bund Center · 17:30 取行李出發"}),
           Object.assign({}, HANTING, {label:"漢庭酒店 · 18:00 入住"}),
-          {lat:31.238076, lng:121.484147, label:"① 雙妹／恒基名人 · 19:30"},
-          {lat:31.236716, lng:121.48233, label:"② 邵萬生（至 21:30）"},
+          {lat:31.2352, lng:121.4770, label:"新雅粵菜館 晚餐 · 18:50（位置約略）"},
+          {lat:31.235152, lng:121.475894, label:"① 泰康食品 · 20:00 起"},
+          {lat:31.235325, lng:121.476781, label:"② 第一食品商店"},
           {lat:31.23576, lng:121.478316, label:"③ 沈大成（至 21:30）"},
-          {lat:31.235325, lng:121.476781, label:"④ 第一食品商店"},
-          {lat:31.235152, lng:121.475894, label:"⑤ 泰康食品"}
+          {lat:31.236716, lng:121.48233, label:"④ 邵萬生（至 21:30）"},
+          {lat:31.238076, lng:121.484147, label:"⑤ 雙妹／恒基名人（最後，可跳過）"}
         ]
       },
       "5": {
